@@ -215,6 +215,9 @@ describe("status and salesforce gate", () => {
     const queries = salesforceQueries();
     expect(queries.ma_stages).toContain("RecordType.Name = 'M&As'");
     expect(queries.churn_cases).toBe("SELECT COUNT(Id) n FROM Case WHERE IsClosed = false AND Subject LIKE '%churn%'");
+    expect(queries.new_sales_won_ytd).toContain("Type != 'Existing Business'");
+    expect(queries.upsell_won_ytd).toContain("Type = 'Existing Business'");
+    expect(queries.churn_cases).not.toMatch(/Account/);
     process.env.SF_SOQL_JSON = JSON.stringify({ churn_cases: "SELECT COUNT(Id) n FROM Case WHERE IsClosed = false AND Type = 'Custom'" });
     expect(salesforceQueries().churn_cases).toContain("Type = 'Custom'");
     expect(salesforceQueries().ma_stages).toContain("'M&As'");

@@ -19,6 +19,14 @@ const DEFAULT_QUERIES: Record<string, string> = {
   new_accounts: "SELECT COUNT(Id) n FROM Account WHERE CreatedDate = THIS_YEAR",
   upsell:
     "SELECT COUNT(Id) n, SUM(Amount) total FROM Opportunity WHERE IsClosed = false AND Type = 'Existing Business'",
+  new_sales_won_ytd:
+    "SELECT SUM(Amount) total, COUNT(Id) n FROM Opportunity WHERE IsWon = true AND CloseDate = THIS_YEAR AND Type != 'Existing Business'",
+  new_sales_won_month:
+    "SELECT SUM(Amount) total, COUNT(Id) n FROM Opportunity WHERE IsWon = true AND CloseDate = THIS_MONTH AND Type != 'Existing Business'",
+  upsell_won_ytd:
+    "SELECT SUM(Amount) total, COUNT(Id) n FROM Opportunity WHERE IsWon = true AND CloseDate = THIS_YEAR AND Type = 'Existing Business'",
+  upsell_won_month:
+    "SELECT SUM(Amount) total, COUNT(Id) n FROM Opportunity WHERE IsWon = true AND CloseDate = THIS_MONTH AND Type = 'Existing Business'",
   ma_stages:
     "SELECT StageName, COUNT(Id) n, SUM(Amount) total FROM Opportunity WHERE RecordType.Name = 'M&As' GROUP BY StageName",
   churn_cases: "SELECT COUNT(Id) n FROM Case WHERE IsClosed = false AND Subject LIKE '%churn%'",
@@ -191,6 +199,10 @@ export type SalesforceView = {
   newClients: number | null;
   upsellCount: number | null;
   upsellAmount: number | null;
+  newSalesWonYtd: number | null;
+  newSalesWonMonth: number | null;
+  upsellWonYtd: number | null;
+  upsellWonMonth: number | null;
   churnCases: number | null;
   maStages: { stage: string; count: number; amount: number | null }[] | null;
   queryErrors: { name: string; error: string }[];
@@ -210,6 +222,10 @@ export async function salesforceView(): Promise<SalesforceView> {
     newClients: null,
     upsellCount: null,
     upsellAmount: null,
+    newSalesWonYtd: null,
+    newSalesWonMonth: null,
+    upsellWonYtd: null,
+    upsellWonMonth: null,
     churnCases: null,
     maStages: null,
     queryErrors: [],
@@ -244,6 +260,10 @@ export async function salesforceView(): Promise<SalesforceView> {
     newClients: num(first("new_accounts"), "n"),
     upsellCount: num(first("upsell"), "n"),
     upsellAmount: num(first("upsell"), "total"),
+    newSalesWonYtd: num(first("new_sales_won_ytd"), "total"),
+    newSalesWonMonth: num(first("new_sales_won_month"), "total"),
+    upsellWonYtd: num(first("upsell_won_ytd"), "total"),
+    upsellWonMonth: num(first("upsell_won_month"), "total"),
     churnCases: num(first("churn_cases"), "n"),
     maStages: stages,
     queryErrors: errors,

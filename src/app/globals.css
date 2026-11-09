@@ -137,20 +137,19 @@ body:has(.home-app) {
 .home-tile {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 6px;
+  justify-content: flex-start;
+  gap: 2px;
   min-height: 0;
   overflow: hidden;
   text-decoration: none;
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: 18px;
-  padding: 16px 18px;
+  padding: 12px 14px 10px;
   border-top: 5px solid var(--tone, #c8bfb2);
   box-shadow: var(--shadow);
 }
-.home-tile:nth-child(-n + 3) { grid-column: span 2; }
-.home-tile:nth-child(n + 4) { grid-column: span 3; }
+.home-tile { grid-column: span 2; }
 .home-tile[data-status="green"] { --tone: var(--good); }
 .home-tile[data-status="yellow"] { --tone: var(--watch); }
 .home-tile[data-status="red"] { --tone: var(--bad); }
@@ -163,23 +162,23 @@ body:has(.home-app) {
 }
 .home-value {
   font-family: var(--font-serif), Georgia, serif;
-  font-size: clamp(40px, 4.6vw, 68px);
-  line-height: 0.92;
-  letter-spacing: -0.045em;
+  font-size: clamp(26px, 2.5vw, 40px);
+  line-height: 1;
+  letter-spacing: -0.04em;
   font-variant-numeric: tabular-nums;
 }
-.home-detail { font-size: 16px; font-weight: 700; }
-.home-extra { color: var(--muted); font-size: 14px; }
-.home-tile .status { align-self: flex-start; margin-top: 4px; }
+.home-detail { font-size: 14px; font-weight: 700; }
+.home-extra, .home-period { color: var(--muted); font-size: 12px; line-height: 1.3; }
+.home-names { margin: 2px 0 0; padding: 0; list-style: none; font-size: 12px; line-height: 1.25; }
+.home-names li { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.home-tile .status { align-self: flex-start; margin-top: auto; }
 
 @media (max-width: 1100px) {
   html:has(.home-app),
   body:has(.home-app),
   .home-app { height: auto; overflow: auto; }
   .home-grid { display: grid; grid-template-columns: 1fr; grid-template-rows: none; }
-  .home-tile,
-  .home-tile:nth-child(-n + 3),
-  .home-tile:nth-child(n + 4) { grid-column: auto; min-height: 180px; }
+  .home-tile { grid-column: auto; min-height: 180px; }
 }
 .nav-row { padding-top: 14px; justify-content: flex-start; overflow-x: auto; }
 .nav-row a {

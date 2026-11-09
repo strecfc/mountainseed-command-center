@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BackHome } from "@/components/BackHome";
+import { offTrackReadouts } from "@/components/HomeBoard";
 import { SectionBlock } from "@/components/Metrics";
 import { getDashboard } from "@/lib/dashboard";
 
@@ -27,6 +28,26 @@ export default async function GoalsPage() {
           </p>
         </div>
       </div>
+      <section className="section">
+        <h2 className="section-title">Off track</h2>
+        <div className="panel">
+          {offTrackReadouts(model).length ? (
+            <ul className="lines">
+              {offTrackReadouts(model).map((item) => (
+                <li key={item.label}>
+                  <span>{item.label}</span>
+                  <strong>
+                    {item.headline}
+                    {item.headlineGoal ? ` vs ${item.headlineGoal}` : ""}
+                  </strong>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>No scorecard goals are off track.</p>
+          )}
+        </div>
+      </section>
       <SectionBlock title="New sales" items={model.newSales} />
       <SectionBlock title="Upsell" items={model.upsell} />
       <SectionBlock title="M&A" items={model.ma} />
