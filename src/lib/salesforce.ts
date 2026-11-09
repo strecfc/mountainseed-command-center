@@ -20,32 +20,43 @@ const DEFAULT_QUERIES: Record<string, string> = {
   upsell:
     "SELECT COUNT(Id) n, SUM(Amount) total FROM Opportunity WHERE IsClosed = false AND Type = 'Existing Business'",
   ma_stages:
-    "SELECT StageName, COUNT(Id) n, SUM(Amount) total FROM Opportunity WHERE RecordType.Name = 'M&A' GROUP BY StageName",
-  churn_cases:
-    "SELECT COUNT(Id) n FROM Case WHERE IsClosed = false AND (Type = 'Churn Risk' OR Subject LIKE '%churn%')",
+    "SELECT StageName, COUNT(Id) n, SUM(Amount) total FROM Opportunity WHERE RecordType.Name = 'M&As' GROUP BY StageName",
+  churn_cases: "SELECT COUNT(Id) n FROM Case WHERE IsClosed = false AND Subject LIKE '%churn%'",
 };
 
 export type SalesforceConfig = {
   loginUrl: string;
   clientId: string;
   clientSecret: string;
-  username: string;
-  password: string;
+  grantType: "client_credentials" | "password";
+  username: string | null;
+  password: string | null;
 };
 
 export function salesforceConfig(): SalesforceConfig | null {
+  const loginUrl = (process.env.SF_LOGIN_URL || "").trim().replace(/\/$/, "");
   const clientId = process.env.SF_CLIENT_ID?.trim() || "";
   const clientSecret = process.env.SF_CLIENT_SECRET?.trim() || "";
+  if (!loginUrl || !clientId || !clientSecret) return null;
   const username = process.env.SF_USERNAME?.trim() || "";
   const password = process.env.SF_PASSWORD || "";
-  if (!clientId || !clientSecret || !username || !password) return null;
-  const token = process.env.SF_SECURITY_TOKEN || "";
+  if (username && password) {
+    return {
+      loginUrl,
+      clientId,
+      clientSecret,
+      grantType: "password",
+      username,
+      password: `${password}${process.env.SF_SECURITY_TOKEN || ""}`,
+    };
+  }
   return {
-    loginUrl: (process.env.SF_LOGIN_URL || "https://login.salesforce.com").replace(/\/$/, ""),
+    loginUrl,
     clientId,
     clientSecret,
-    username,
-    password: `${password}${token}`,
+    grantType: "client_credentials",
+    username: null,
+    password: null,
   };
 }
 
@@ -62,13 +73,9 @@ export function salesforceQueries(): Record<string, string> {
 }
 
 function scrub(message: string, config: SalesforceConfig): string {
-  return message
-    .split(config.password)
-    .join("[redacted]")
-    .split(config.clientSecret)
-    .join("[redacted]")
-    .split(config.clientId)
-    .join("[redacted]");
+  let out = message.split(config.clientSecret).join("[redacted]").split(config.clientId).join("[redacted]");
+  if (config.password) out = out.split(config.password).join("[redacted]");
+  return out;
 }
 
 async function soql(
@@ -100,12 +107,14 @@ export async function pullSalesforce(): Promise<{ status: string; message: strin
     };
   }
   const body = new URLSearchParams({
-    grant_type: "password",
+    grant_type: config.grantType,
     client_id: config.clientId,
     client_secret: config.clientSecret,
-    username: config.username,
-    password: config.password,
   });
+  if (config.grantType === "password" && config.username && config.password) {
+    body.set("username", config.username);
+    body.set("password", config.password);
+  }
   let instanceUrl = "";
   let accessToken = "";
   try {

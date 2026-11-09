@@ -29,10 +29,10 @@ Copy `.env.example` to `.env.local`. Never commit real passwords, Salesforce sec
 | `CRON_SECRET` | Bearer token for `POST /api/cron/daily`. |
 | `ENABLE_DAILY_JOB` | `true` on a long-running host so the in-process scheduler runs. `false` on Vercel. |
 | `DAILY_JOB_UTC_HOUR` | UTC hour for the daily Salesforce pull. `11` is 6:00 AM US Eastern standard time. |
-| `SF_LOGIN_URL` | Usually `https://login.salesforce.com`. |
-| `SF_CLIENT_ID` / `SF_CLIENT_SECRET` | Connected-app credentials. |
-| `SF_USERNAME` / `SF_PASSWORD` / `SF_SECURITY_TOKEN` | User used for the daily SOQL pull. The token is appended to the password. |
-| `SF_SOQL_JSON` | Optional JSON object of query name to SOQL, overriding the built-in queries. |
+| `SF_LOGIN_URL` | The org’s My Domain URL, such as `https://yourorg.my.salesforce.com`. Required. Client credentials does not work on `https://login.salesforce.com`. |
+| `SF_CLIENT_ID` / `SF_CLIENT_SECRET` | Connected app. With `SF_LOGIN_URL`, these three mark Salesforce as connected. |
+| `SF_USERNAME` / `SF_PASSWORD` / `SF_SECURITY_TOKEN` | Optional. Used only when both username and password are set. The token is appended to the password. |
+| `SF_SOQL_JSON` | Optional JSON object of query name to SOQL. Overrides `open_pipeline`, `wins_ytd`, `new_accounts`, `upsell`, `ma_stages`, and `churn_cases`. |
 
 If the Salesforce variables are empty, every Salesforce tile says **Not connected** and the app does not call Salesforce.
 
@@ -145,7 +145,7 @@ Use a host with managed Postgres. Railway or Render fit a long-running Node serv
 2. Set `ADMIN_EMAIL`, `ADMIN_PASSWORD`, `APP_BASE_URL`, and `CRON_SECRET`.
 3. Build with `npm run build` and start with `npm start` (`output: "standalone"` is enabled for container hosts).
 4. Sign in, change anything you do not want left on the seeded admin, and add the rest of the leadership team.
-5. Add Salesforce credentials when the connected app is ready. Use **Admin → Sync now** or wait for the daily job. Map SOQL to your org with `SF_SOQL_JSON` if the default objects do not match. The default pull asks for open pipeline, year-to-date wins, new accounts, open existing-business opportunities, M&A opportunities by stage, and open churn-risk cases. A failed query is stored on that snapshot and does not block the others.
+5. Add Salesforce when the connected app is ready: `SF_LOGIN_URL` (My Domain), `SF_CLIENT_ID`, and `SF_CLIENT_SECRET`. The daily pull uses the OAuth client-credentials grant. Set `SF_USERNAME` and `SF_PASSWORD` only if that org still needs the username-password grant. Use **Admin → Sync now** or wait for the daily job. The default queries are open pipeline, year-to-date wins, new accounts, open existing-business opportunities, M&A opportunities whose record type is `M&As`, and open cases whose subject contains “churn”. Override any of those with `SF_SOQL_JSON`. A failed query is stored on that snapshot and does not block the others.
 
 Seed data is loaded once, the first time the database is empty. Later uploads are not overwritten by the seed.
 

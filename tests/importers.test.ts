@@ -8,7 +8,7 @@ import { parseBudgetWorkbook } from "@/lib/importers/budget";
 import { parseOrderCsv, summarizeOrders } from "@/lib/importers/orders";
 import { parseMarketplaceNotes, parseScorecardCsv, parseScorecardText } from "@/lib/importers/scorecard";
 import { rate } from "@/lib/status";
-import { salesforceConfig, pullSalesforce } from "@/lib/salesforce";
+import { pullSalesforce, salesforceConfig, salesforceQueries } from "@/lib/salesforce";
 
 const seedDir = path.join(process.cwd(), "data", "seed");
 
@@ -166,5 +166,58 @@ describe("status and salesforce gate", () => {
     global.fetch = original;
     expect(result.status).toBe("not_connected");
     expect(calls).toHaveLength(0);
+  });
+
+  it("uses client credentials on the My Domain URL, and password only when a user is set", async () => {
+    const previous = {
+      SF_LOGIN_URL: process.env.SF_LOGIN_URL,
+      SF_CLIENT_ID: process.env.SF_CLIENT_ID,
+      SF_CLIENT_SECRET: process.env.SF_CLIENT_SECRET,
+      SF_USERNAME: process.env.SF_USERNAME,
+      SF_PASSWORD: process.env.SF_PASSWORD,
+    };
+    const restore = () => {
+      for (const [key, value] of Object.entries(previous)) {
+        if (value == null) delete process.env[key];
+        else process.env[key] = value;
+      }
+    };
+    const bodies: string[] = [];
+    const original = global.fetch;
+    global.fetch = (async (_input: RequestInfo | URL, init?: RequestInit) => {
+      bodies.push(String(init?.body || ""));
+      return new Response(JSON.stringify({ error_description: "rejected" }), { status: 400 });
+    }) as typeof fetch;
+    try {
+      process.env.SF_LOGIN_URL = "https://mountainseed.my.salesforce.com";
+      process.env.SF_CLIENT_ID = "client-id";
+      process.env.SF_CLIENT_SECRET = "client-secret";
+      delete process.env.SF_USERNAME;
+      delete process.env.SF_PASSWORD;
+      expect(salesforceConfig()?.grantType).toBe("client_credentials");
+      await pullSalesforce();
+      expect(bodies.at(-1)).toContain("grant_type=client_credentials");
+      expect(bodies.at(-1)).not.toContain("username=");
+
+      process.env.SF_USERNAME = "integration@mountainseed.com";
+      process.env.SF_PASSWORD = "secret-password";
+      expect(salesforceConfig()?.grantType).toBe("password");
+      await pullSalesforce();
+      expect(bodies.at(-1)).toContain("grant_type=password");
+      expect(bodies.at(-1)).toContain("username=integration%40mountainseed.com");
+    } finally {
+      global.fetch = original;
+      restore();
+    }
+  });
+
+  it("queries M&As and churn subjects, both overridable", () => {
+    const queries = salesforceQueries();
+    expect(queries.ma_stages).toContain("RecordType.Name = 'M&As'");
+    expect(queries.churn_cases).toBe("SELECT COUNT(Id) n FROM Case WHERE IsClosed = false AND Subject LIKE '%churn%'");
+    process.env.SF_SOQL_JSON = JSON.stringify({ churn_cases: "SELECT COUNT(Id) n FROM Case WHERE IsClosed = false AND Type = 'Custom'" });
+    expect(salesforceQueries().churn_cases).toContain("Type = 'Custom'");
+    expect(salesforceQueries().ma_stages).toContain("'M&As'");
+    delete process.env.SF_SOQL_JSON;
   });
 });
