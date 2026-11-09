@@ -178,7 +178,8 @@ button { cursor: pointer; }
 table { width: 100%; border-collapse: collapse; font-size: 14px; }
 th, td { text-align: left; padding: 8px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
 th { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
-.num { font-variant-numeric: tabular-nums; text-align: right; }
+.num { font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+.chart { width: 100%; height: auto; display: block; }
 .scroll { overflow-x: auto; }
 
 .form { display: grid; gap: 12px; }

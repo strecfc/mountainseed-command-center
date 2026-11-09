@@ -114,6 +114,16 @@ CREATE TABLE IF NOT EXISTS parser_mappings (
   updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
+CREATE TABLE IF NOT EXISTS budget_snapshots (
+  id TEXT PRIMARY KEY,
+  period_end DATE NOT NULL UNIQUE,
+  received_on DATE,
+  source TEXT NOT NULL,
+  filename TEXT,
+  payload TEXT NOT NULL,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
 CREATE TABLE IF NOT EXISTS monthly_financials (
   id TEXT PRIMARY KEY,
   period DATE NOT NULL UNIQUE,

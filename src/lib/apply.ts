@@ -2,6 +2,7 @@ import { randomUUID } from "node:crypto";
 import { metaSet, query } from "./db";
 import { metricKey, parseNumeric } from "./format";
 import type { AugurWorkbook } from "./importers/augur";
+import { parseBudgetSnapshot, type MoneyCell } from "./importers/bva";
 import type { MonthlyActuals } from "./importers/budget";
 import type { OrderLine } from "./importers/orders";
 import type { ParsedMetric } from "./importers/scorecard";
@@ -241,6 +242,63 @@ export async function replaceOrders(lines: OrderLine[], filename: string, upload
     );
   }
   return lines.length;
+}
+
+function percentPoints(cell: MoneyCell | undefined, field: "actual" | "budget"): number | null {
+  const value = cell?.[field];
+  return value == null ? null : value * 100;
+}
+
+export async function saveBudgetSnapshot(
+  raw: unknown,
+  meta: { source: string; receivedOn: string; filename?: string; actor?: string | null },
+): Promise<{ periodEnd: string }> {
+  const snapshot = parseBudgetSnapshot(raw);
+  const filename = meta.filename || snapshot.filename;
+  await query(
+    `INSERT INTO budget_snapshots (id, period_end, received_on, source, filename, payload)
+     VALUES ($1, $2, $3, $4, $5, $6)
+     ON CONFLICT (period_end) DO UPDATE SET
+       received_on = EXCLUDED.received_on,
+       source = EXCLUDED.source,
+       filename = EXCLUDED.filename,
+       payload = EXCLUDED.payload,
+       created_at = now()`,
+    [randomUUID(), snapshot.periodEnd, meta.receivedOn, meta.source, filename, JSON.stringify(raw)],
+  );
+  for (const month of snapshot.monthly) {
+    if (!/^\d{4}-\d{2}$/.test(month.month)) continue;
+    const lines = month.lines;
+    await saveMonthly(
+      {
+        period: `${month.month}-01`,
+        revenueActual: lines.total_revenue?.actual ?? null,
+        revenueBudget: lines.total_revenue?.budget ?? null,
+        grossProfitActual: lines.gross_profit?.actual ?? null,
+        grossProfitBudget: lines.gross_profit?.budget ?? null,
+        grossMarginActual: percentPoints(lines.gross_margin, "actual"),
+        grossMarginBudget: percentPoints(lines.gross_margin, "budget"),
+        grossMarginAppraisal: null,
+        grossMarginNonAppraisal: null,
+        ebitdaActual: lines.ebitda?.actual ?? null,
+        ebitdaBudget: lines.ebitda?.budget ?? null,
+        ebitdaMarginActual: percentPoints(lines.ebitda_margin, "actual"),
+        ebitdaMarginBudget: percentPoints(lines.ebitda_margin, "budget"),
+        expensesActual: lines.total_operating_expenses?.actual ?? null,
+        expensesBudget: lines.total_operating_expenses?.budget ?? null,
+      },
+      `bva:${snapshot.periodEnd}`,
+      filename,
+    );
+  }
+  await recordUpload(
+    "budget",
+    filename,
+    meta.actor ?? null,
+    "saved",
+    `Budget vs actual through ${snapshot.periodEnd}. Reported EBITDA. YTD budget is Q1+Q2+Q3.`,
+  );
+  return { periodEnd: snapshot.periodEnd };
 }
 
 export async function recordUpload(

@@ -1,7 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
 import { randomUUID } from "node:crypto";
-import { replaceAugurDeals, upsertMetrics } from "./apply";
+import { replaceAugurDeals, saveBudgetSnapshot, upsertMetrics } from "./apply";
+import { BVA_RECEIVED_ON, BVA_SOURCE } from "./importers/bva";
 import { seedAdminFromEnv } from "./auth";
 import { metaGet, metaSet, query } from "./db";
 import { weekLabelToIso } from "./format";
@@ -55,7 +56,10 @@ function fromSummary(metric: SummaryMetric, sectionFallback = "MarketPlace", cat
 export async function seedDatabase(): Promise<void> {
   await seedAdminFromEnv();
   const seeded = await metaGet("seed_version");
-  if (seeded === "1") return;
+  if (seeded === "1") {
+    await seedSeptemberBudget();
+    return;
+  }
 
   const root = path.join(process.cwd(), "data", "seed");
   const summary = JSON.parse(fs.readFileSync(path.join(root, "summary.json"), "utf8")) as {
@@ -147,4 +151,17 @@ export async function seedDatabase(): Promise<void> {
 
   await metaSet("latest_scorecard_week", "2026-10-25");
   await metaSet("seed_version", "1");
+  await seedSeptemberBudget();
+}
+
+async function seedSeptemberBudget(): Promise<void> {
+  const existing = await query<{ id: string }>("SELECT id FROM budget_snapshots WHERE period_end = $1", ["2026-09-30"]);
+  if (existing.length) return;
+  const raw = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "seed", "finance_bva_2026-09.json"), "utf8")) as unknown;
+  await saveBudgetSnapshot(raw, {
+    source: BVA_SOURCE,
+    receivedOn: BVA_RECEIVED_ON,
+    filename: "LT_BvA_Sep2026.xlsx",
+    actor: null,
+  });
 }

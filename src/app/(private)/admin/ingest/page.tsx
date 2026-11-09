@@ -12,7 +12,7 @@ export default async function IngestPage() {
       <div className="page-head">
         <div>
           <h1>Ingest API</h1>
-          <p>POST /api/ingest with Authorization: Bearer &lt;token&gt;. Datasets: weekly_scorecard, monthly_financials, notes, orders, at_risk.</p>
+          <p>POST /api/ingest with Authorization: Bearer &lt;token&gt;. Datasets: weekly_scorecard, monthly_financials, budget_vs_actual, notes, orders, at_risk.</p>
         </div>
       </div>
       <IngestAdmin tokens={tokens} />

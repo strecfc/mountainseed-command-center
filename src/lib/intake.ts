@@ -1,4 +1,5 @@
-import { saveMonthly, recordUpload, replaceAugurDeals, replaceOrders, upsertMetrics } from "./apply";
+import { recordUpload, replaceAugurDeals, replaceOrders, saveBudgetSnapshot, saveMonthly, upsertMetrics } from "./apply";
+import { describeBudgetUpload } from "./importers/bva";
 import { query } from "./db";
 import { weekLabelToIso } from "./format";
 import { parseAugurWorkbook } from "./importers/augur";
@@ -118,7 +119,28 @@ export async function intakeScorecard(options: {
   return { metrics: written, message };
 }
 
-export async function intakeBudget(buffer: Buffer, filename: string, actor: string | null): Promise<{ periods: number; warnings: string[] }> {
+export async function intakeBudget(
+  buffer: Buffer,
+  filename: string,
+  actor: string | null,
+): Promise<{ periods: number; warnings: string[]; message?: string; periodEnd?: string }> {
+  const text = buffer.toString("utf8").trim();
+  if (filename.toLowerCase().endsWith(".json") || text.startsWith("{")) {
+    let raw: unknown;
+    try {
+      raw = JSON.parse(text);
+    } catch {
+      throw new Error("That file is not valid JSON.");
+    }
+    const described = describeBudgetUpload(raw);
+    const saved = await saveBudgetSnapshot(raw, { ...described, filename, actor });
+    return {
+      periods: 1,
+      warnings: [],
+      periodEnd: saved.periodEnd,
+      message: `Saved budget vs actual through ${saved.periodEnd}. Reported EBITDA. The Finance tab uses September, year-to-date, and the P&L quarters.`,
+    };
+  }
   const mapping = await activeBudgetMapping();
   const parsed = await parseBudgetWorkbook(buffer, filename, mapping);
   if (!parsed.periods.length) {

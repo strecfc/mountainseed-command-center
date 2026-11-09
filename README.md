@@ -75,9 +75,30 @@ The seeded week ending is **25 Oct 2026**, from the Scorecard received **3 Nov 2
 
 ## Monthly budget vs actual
 
-Upload the finance workbook, for example `LT Budget vs Actual October 2026.xlsx`.
+September 2026 is already loaded from Max DiPlotti’s 16 Oct 2026 email (`data/seed/finance_bva_2026-09.json`, workbook `data/seed/LT_BvA_Sep2026.xlsx`). The Finance tab shows September and year-to-date actual versus budget, the FY 2026 budget, the Jan–Sep trend, and the revenue lines. EBITDA on that tab is **reported EBITDA**. The workbook has no adjusted EBITDA line.
 
-The parser looks for a header row containing Actual and Budget, then matches row labels for revenue, gross margin, appraisal and non-appraisal gross margin, EBITDA, EBITDA margin, and expenses. The month comes from the filename. Change the label list under **Budget parser mapping** if Susan or Max uses different row names. Gross margin and EBITDA on the scoreboard switch to this file once a month is saved. Until then they say awaiting data (EBITDA is not on the weekly scorecard).
+Year-to-date budget is Q1 + Q2 + Q3 from the P&L. It is not the full-year budget. April–June monthly operating expense and EBITDA on the chart come from the Q2 tab; the Q2 total used for that quarter is the later P&L column, because the Q2 tab’s G&A staff does not match.
+
+To load the next month:
+
+1. Sign in as an admin and open **Admin → Uploads**.
+2. Under **Monthly budget vs actual**, choose either the `.xlsx` workbook or a `.json` file in the same shape as `data/seed/finance_bva_2026-09.json` (`period_end`, `september`, `ytd`, `quarters`, `full_year_budget`, `monthly`).
+3. The new `period_end` becomes the latest snapshot. September stays in the database.
+
+Or push the JSON with the ingest token. `snapshot` is the file itself:
+
+```bash
+jq -n --slurpfile snapshot data/seed/finance_bva_2026-09.json \
+  '{dataset:"budget_vs_actual", snapshot:$snapshot[0]}' \
+| curl -X POST "$APP_BASE_URL/api/ingest" \
+  -H "Authorization: Bearer $INGEST_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d @-
+```
+
+A plain `.xlsx` still works for a simpler Actual/Budget sheet. Row labels for that parser are edited under **Budget parser mapping**.
+
+The scoreboard keeps the weekly scorecard gross margin and adds the BvA year-to-date gross margin with its as-of date. Reported EBITDA margin uses the BvA year-to-date figure against the BvA budget. Long Ridge’s 35% target stays a labeled reference line.
 
 ## Orders (ValuTrac)
 
@@ -105,10 +126,11 @@ curl -X POST "$APP_BASE_URL/api/ingest" \
   }'
 ```
 
-`dataset` is one of `weekly_scorecard`, `monthly_financials`, `notes`, `orders`, or `at_risk`.
+`dataset` is one of `weekly_scorecard`, `monthly_financials`, `budget_vs_actual`, `notes`, `orders`, or `at_risk`.
 
 - `weekly_scorecard` takes `text` (email or CSV) or `rows` of `{ label, weekEnding, value, totalQtd, avgQtd, qtdGoal, wkGoal, section, category }`.
-- `monthly_financials` takes `financials` with `period` (`YYYY-MM-01`) and the actual/budget numbers.
+- `budget_vs_actual` takes `snapshot`, the September-style JSON (`period_end`, `september`, `ytd`, `quarters`, `monthly`).
+- `monthly_financials` takes `financials` with `period` (`YYYY-MM-01`) and the actual/budget numbers. Use this for a single month, not for the full BvA package.
 - `notes` takes `weekEnding` plus `note.whatChanged`, `note.owner`, and `note.nextStep`.
 - `orders` takes CSV in `text`.
 - `at_risk` takes `rows` of `{ clientName, tier, reason, annualValue }`.

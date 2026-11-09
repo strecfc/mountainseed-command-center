@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { FinanceBoardView } from "@/components/FinanceBoard";
 import { ReadoutList } from "@/components/Metrics";
 import { financeReadouts, getDashboard, sectionReadouts } from "@/lib/dashboard";
 import { formatIsoDate } from "@/lib/format";
@@ -21,7 +22,7 @@ const SECTIONS: Record<string, { title: string; lede: string; section?: string; 
   },
   finance: {
     title: "Finance",
-    lede: "Cash, gross margin, expense budget-to-actual, and voluntary turnover from the weekly scorecard. EBITDA arrives with the monthly workbook.",
+    lede: "September budget vs actual from Max DiPlotti, then the weekly cash, margin, and turnover lines.",
     finance: true,
   },
 };
@@ -43,8 +44,10 @@ export default async function SectionPage({ params }: { params: Promise<{ slug: 
           <p>{spec.lede} Week ending {data.featuredWeek ? formatIsoDate(data.featuredWeek) : "Awaiting data"}.</p>
         </div>
       </div>
+      {finance?.budget ? <FinanceBoardView board={finance.budget} /> : null}
+      {finance ? <h2 className="section-title">Weekly scorecard</h2> : null}
       <ReadoutList items={data.readouts} />
-      {finance ? (
+      {finance && !finance.budget ? (
         <div className="panel">
           <b>Latest monthly actuals</b>
           <p>{finance.monthly ? `${finance.monthly.filename || finance.monthly.period}` : "Awaiting data. Upload the budget vs actual workbook from Admin."}</p>

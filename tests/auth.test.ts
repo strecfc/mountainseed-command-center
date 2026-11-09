@@ -123,7 +123,14 @@ describe("signed-in access and seed", () => {
     const revenue = body.heroes.find((hero: { id: string }) => hero.id === "revenue");
     expect(margin.headline).toBe("68.1%");
     expect(margin.overall).toBe("yellow");
-    expect(ebitda.headline).toBe("Awaiting data");
+    expect(margin.lines.some((line: { label: string; value: string }) => line.label.includes("30 Sep 2026") && line.value.startsWith("68.1%"))).toBe(true);
+    expect(ebitda.headline).toBe("23.3%");
+    expect(ebitda.goal).toContain("24.7%");
+    expect(ebitda.windows.find((window: { label: string }) => window.label === "September").value).toBe("28.4%");
+    expect(ebitda.windows.find((window: { label: string; goal: string }) => window.label === "September").goal).toBe("30.6%");
+    expect(ebitda.lines[0].label).toContain("Long Ridge");
+    expect(ebitda.lines[0].value).toBe("35%");
+    expect(ebitda.source).toContain("2026-10-16");
     expect(revenue.headline).toBe("Awaiting data");
     expect(revenue.goal).toContain("53");
     const churn = body.defense.find((item: { label: string }) => item.label === "MP Client Logo Churn");

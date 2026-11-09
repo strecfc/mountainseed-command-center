@@ -3,13 +3,15 @@ import { hashToken } from "@/lib/auth";
 import { sql } from "@/lib/db";
 import { json, readJson } from "@/lib/http";
 import { intakeBudget, intakeOrders, intakeScorecard, rowsToMetrics } from "@/lib/intake";
-import { saveMonthly } from "@/lib/apply";
+import { saveBudgetSnapshot, saveMonthly } from "@/lib/apply";
+import { describeBudgetUpload } from "@/lib/importers/bva";
 import { randomUUID } from "node:crypto";
 
 export const runtime = "nodejs";
 
 const schema = z.object({
-  dataset: z.enum(["weekly_scorecard", "monthly_financials", "notes", "orders", "at_risk"]),
+  dataset: z.enum(["weekly_scorecard", "monthly_financials", "budget_vs_actual", "notes", "orders", "at_risk"]),
+  snapshot: z.unknown().optional(),
   source: z.string().max(200).optional(),
   text: z.string().optional(),
   weekEnding: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
@@ -83,6 +85,12 @@ export async function POST(req: Request) {
     if (body.dataset === "orders") {
       if (!body.text) return json({ error: "orders dataset requires CSV text." }, 400);
       return json(await intakeOrders(body.text, "ingest.csv", source));
+    }
+    if (body.dataset === "budget_vs_actual") {
+      if (!body.snapshot || typeof body.snapshot !== "object") return json({ error: "snapshot object is required." }, 400);
+      const described = describeBudgetUpload(body.snapshot);
+      const saved = await saveBudgetSnapshot(body.snapshot, { ...described, filename: "ingest.json", actor: source });
+      return json({ ok: true, periodEnd: saved.periodEnd });
     }
     if (body.dataset === "monthly_financials") {
       if (!body.financials) return json({ error: "financials object is required." }, 400);

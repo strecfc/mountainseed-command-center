@@ -12,6 +12,7 @@ import {
 import { LABELS } from "./labels";
 import type { OrderLine, OrderSummary } from "./importers/orders";
 import { summarizeOrders } from "./importers/orders";
+import { parseBudgetSnapshot, presentBudget, type FinanceBoard } from "./importers/bva";
 import { salesforceView, type SalesforceView } from "./salesforce";
 import { directionFor, rate, worstStatus, type Direction, type Status } from "./status";
 
@@ -83,6 +84,7 @@ type Monthly = {
   expensesActual: number | null;
   expensesBudget: number | null;
   filename: string | null;
+  source: string;
   updatedAt: string;
 };
 
@@ -359,12 +361,23 @@ async function loadMonthly(): Promise<Monthly[]> {
     expensesActual: num(row.expenses_actual),
     expensesBudget: num(row.expenses_budget),
     filename: row.filename == null ? null : String(row.filename),
+    source: row.source == null ? "" : String(row.source),
     updatedAt: asTime(row.updated_at),
   }));
 }
 
+async function loadFinanceBoard(): Promise<FinanceBoard | null> {
+  const rows = await sql<{ payload: string; received_on: unknown; source: string }>(
+    "SELECT payload, received_on, source FROM budget_snapshots ORDER BY period_end DESC, created_at DESC LIMIT 1",
+  );
+  const row = rows[0];
+  if (!row) return null;
+  const received = row.received_on ? asIso(row.received_on) : "";
+  return presentBudget(parseBudgetSnapshot(JSON.parse(row.payload)), received, row.source);
+}
+
 function annualizedRevenue(months: Monthly[]): { value: number; months: number; label: string } | null {
-  const withRevenue = months.filter((month) => month.revenueActual != null);
+  const withRevenue = months.filter((month) => month.revenueActual != null && !month.source.startsWith("bva:"));
   if (!withRevenue.length) return null;
   const sum = withRevenue.reduce((total, month) => total + (month.revenueActual as number), 0);
   const value = (sum / withRevenue.length) * 12;
@@ -383,6 +396,7 @@ export async function getDashboard(): Promise<DashboardModel> {
   for (const row of targetsRows) targets[row.key] = num(row.value_numeric);
   const months = await loadMonthly();
   const latest = months.at(-1) || null;
+  const budget = await loadFinanceBoard();
   const runRate = annualizedRevenue(months);
   const upside = targets.revenue_run_rate_2027_upside;
   const order = buildReadout(byLabel, featuredWeek, LABELS.orderRevenue, calendar.trail, calendar.history);
@@ -428,22 +442,55 @@ export async function getDashboard(): Promise<DashboardModel> {
     goal: gmGoal == null ? "Goal not set" : `Blended goal ${gmGoal}%`,
     windows: gm.windows,
     lines: [
+      budget
+        ? {
+            label: `BvA YTD gross margin, as of ${budget.periodLabel}`,
+            value: `${budget.scoreboard.ytdGrossMargin} vs budget ${budget.scoreboard.ytdGrossMarginBudget}`,
+          }
+        : { label: "BvA gross margin", value: "Awaiting data" },
       { label: "Appraisal gross margin", value: appraisal == null ? "Awaiting data" : `${appraisal}%` },
       { label: "Non-appraisal gross margin", value: nonAppraisal == null ? "Awaiting data" : `${nonAppraisal}%` },
     ],
-    updated: latest?.grossMarginActual != null ? formatTimestamp(latest.updatedAt) : gm.updated,
-    source: latest?.grossMarginActual != null ? `Monthly budget vs actual${latest.filename ? ` · ${latest.filename}` : ""}` : gm.source,
+    updated: gm.updated,
+    source: gm.source,
   };
 
   let ebitdaHeadline = "Awaiting data";
   let ebitdaStatus: Status = "none";
   let ebitdaUpdated: string | null = null;
   let ebitdaSource = "Awaiting data";
+  let ebitdaCaption = "From the monthly budget vs actual workbook";
+  let ebitdaGoal = ebitdaTarget == null ? "Long Ridge target not set" : `Long Ridge target ${ebitdaTarget}%`;
   const ebitdaLines: { label: string; value: string }[] = [
-    { label: "Long Ridge target", value: ebitdaTarget == null ? "Awaiting data" : `${ebitdaTarget}%` },
-    { label: "Dollar gap vs target", value: "Awaiting data" },
+    {
+      label: "Long Ridge target (reference, not the budget)",
+      value: ebitdaTarget == null ? "Awaiting data" : `${ebitdaTarget}%`,
+    },
+    { label: "YTD reported EBITDA vs budget", value: "Awaiting data" },
   ];
-  if (latest && (latest.ebitdaMarginActual != null || (latest.ebitdaActual != null && latest.revenueActual))) {
+  let ebitdaWindows: WindowView[] = [
+    { label: "September", value: "Awaiting data", goal: null, status: "none" },
+    { label: "YTD", value: "Awaiting data", goal: null, status: "none" },
+    { label: "Q3", value: "Awaiting data", goal: null, status: "none" },
+  ];
+  if (budget) {
+    const board = budget.scoreboard;
+    ebitdaHeadline = board.ytdMargin;
+    ebitdaCaption = "YTD reported EBITDA margin vs its budget";
+    ebitdaGoal = `YTD budget ${board.ytdBudget}`;
+    ebitdaUpdated = budget.updated;
+    ebitdaSource = `${budget.source} · as of ${budget.periodLabel}`;
+    const septemberStatus = rate(board.septemberMarginNumber, board.septemberBudgetNumber, "higher");
+    const ytdStatus = rate(board.ytdMarginNumber, board.ytdBudgetNumber, "higher");
+    const q3Status = rate(board.q3MarginNumber, board.q3BudgetNumber, "higher");
+    ebitdaStatus = worstStatus([septemberStatus, ytdStatus]);
+    ebitdaWindows = [
+      { label: "September", value: board.septemberMargin, goal: board.septemberBudget, status: septemberStatus },
+      { label: "YTD", value: board.ytdMargin, goal: board.ytdBudget, status: ytdStatus },
+      { label: "Q3", value: board.q3Margin, goal: board.q3Budget, status: q3Status },
+    ];
+    ebitdaLines[1] = { label: "YTD reported EBITDA vs budget", value: board.ytdEbitdaVariance };
+  } else if (latest && (latest.ebitdaMarginActual != null || (latest.ebitdaActual != null && latest.revenueActual))) {
     const margin =
       latest.ebitdaMarginActual != null
         ? latest.ebitdaMarginActual
@@ -452,24 +499,20 @@ export async function getDashboard(): Promise<DashboardModel> {
     ebitdaStatus = rate(margin, ebitdaTarget, "higher");
     ebitdaUpdated = formatTimestamp(latest.updatedAt);
     ebitdaSource = `Monthly budget vs actual${latest.filename ? ` · ${latest.filename}` : ""}`;
-    if (latest.revenueActual != null && latest.ebitdaActual != null && ebitdaTarget != null) {
-      const gap = latest.ebitdaActual - latest.revenueActual * (ebitdaTarget / 100);
-      ebitdaLines[1] = { label: "Dollar gap vs target", value: formatUsd(gap) };
-    }
+    ebitdaWindows = [
+      { label: "This month", value: ebitdaHeadline, goal: ebitdaTarget == null ? null : `${ebitdaTarget}%`, status: ebitdaStatus },
+      { label: "Trailing 4 weeks", value: "Awaiting data", goal: null, status: "none" },
+      { label: "YTD", value: "Awaiting data", goal: null, status: "none" },
+    ];
   }
-  const ebitdaWindows: WindowView[] = [
-    { label: "This month", value: ebitdaHeadline, goal: ebitdaTarget == null ? null : `${ebitdaTarget}%`, status: ebitdaStatus },
-    { label: "Trailing 4 weeks", value: "Awaiting data", goal: null, status: "none" },
-    { label: "YTD", value: "Awaiting data", goal: ebitdaTarget == null ? null : `${ebitdaTarget}%`, status: "none" },
-  ];
   const ebitdaHero: Hero = {
     id: "ebitda",
     kicker: "Scoreboard",
-    title: "EBITDA margin",
+    title: "Reported EBITDA margin",
     overall: ebitdaStatus,
     headline: ebitdaHeadline,
-    caption: "From the monthly budget vs actual workbook",
-    goal: ebitdaTarget == null ? "Long Ridge target not set" : `Long Ridge target ${ebitdaTarget}%`,
+    caption: ebitdaCaption,
+    goal: ebitdaGoal,
     windows: ebitdaWindows,
     lines: ebitdaLines,
     updated: ebitdaUpdated,
@@ -724,7 +767,7 @@ export async function sectionReadouts(section: string): Promise<{ featuredWeek: 
   };
 }
 
-export async function financeReadouts(): Promise<{ featuredWeek: string | null; readouts: Readout[]; monthly: Monthly | null }> {
+export async function financeReadouts(): Promise<{ featuredWeek: string | null; readouts: Readout[]; monthly: Monthly | null; budget: FinanceBoard | null }> {
   const { featuredWeek, byLabel, catalog } = await loadObservations();
   const calendar = weekCalendar(byLabel, featuredWeek);
   const labels = catalog.filter((item) => item.category === "Fin").map((item) => item.label);
@@ -733,5 +776,6 @@ export async function financeReadouts(): Promise<{ featuredWeek: string | null; 
     featuredWeek,
     readouts: labels.map((label) => buildReadout(byLabel, featuredWeek, label, calendar.trail, calendar.history)),
     monthly: months.at(-1) || null,
+    budget: await loadFinanceBoard(),
   };
 }

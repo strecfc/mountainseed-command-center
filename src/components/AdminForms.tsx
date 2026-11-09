@@ -171,12 +171,12 @@ export function UploadForms({ metrics }: { metrics: { label: string; section: st
       <form className="form panel" onSubmit={async (event) => {
         event.preventDefault();
         const response = await fetch("/api/admin/uploads/budget", { method: "POST", body: new FormData(event.currentTarget) });
-        const body = (await response.json()) as { error?: string; periods?: number; warnings?: string[] };
-        setMessage(body.error || `Saved ${body.periods || 0} month(s). ${(body.warnings || []).join(" ")}`);
+        const body = (await response.json()) as { error?: string; periods?: number; warnings?: string[]; message?: string };
+        setMessage(body.error || body.message || `Saved ${body.periods || 0} month(s). ${(body.warnings || []).join(" ")}`);
       }}>
         <h2 className="section-title" style={{ fontSize: 24 }}>Monthly budget vs actual</h2>
-        <p className="lede">Example filename: LT Budget vs Actual October 2026.xlsx. Revenue, gross margin, EBITDA, and expenses are matched from the parser mapping.</p>
-        <label>Workbook<input name="file" type="file" accept=".xlsx" required /></label>
+        <p className="lede">Upload next month’s workbook (.xlsx) or the same JSON shape as data/seed/finance_bva_2026-09.json. A new period_end becomes the latest snapshot.</p>
+        <label>Workbook or JSON<input name="file" type="file" accept=".xlsx,.json" required /></label>
         <button className="primary" type="submit">Upload workbook</button>
       </form>
       <form className="form panel" onSubmit={async (event) => {
