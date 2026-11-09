@@ -1,25 +1,33 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import type { SessionUser } from "@/lib/auth";
-import { NavLinks } from "./NavLinks";
 import { SignOut } from "./SignOut";
 
 export function Shell({ user, children }: { user: SessionUser; children: React.ReactNode }) {
+  const pathname = usePathname();
+  const home = pathname === "/";
   return (
-    <>
+    <div className={home ? "home-app" : "app"}>
       <header className="topbar">
         <div className="topbar-row">
-          <p className="brand">
+          <Link href="/" className="brand">
             MountainSeed
-            <small>Leadership Command Center</small>
-          </p>
+            {home ? null : <small>Leadership Command Center</small>}
+          </Link>
           <div className="who">
-            {user.name}
-            <span>{user.role === "admin" ? "Admin" : "Viewer"}</span>
+            <span className="who-name">{user.name}</span>
+            {user.role === "admin" && !home ? (
+              <Link className="quiet-link" href="/admin">
+                Admin
+              </Link>
+            ) : null}
             <SignOut />
           </div>
         </div>
-        <NavLinks admin={user.role === "admin"} />
       </header>
-      <main className="wrap">{children}</main>
-    </>
+      <main className={home ? "home-main" : "wrap"}>{children}</main>
+    </div>
   );
 }

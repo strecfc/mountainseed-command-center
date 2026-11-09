@@ -124,6 +124,7 @@ export type DashboardModel = {
   } | null;
   monthly: Monthly | null;
   targets: Record<string, number | null>;
+  budget: FinanceBoard | null;
 };
 
 function asIso(value: unknown): string {
@@ -754,6 +755,7 @@ export async function getDashboard(): Promise<DashboardModel> {
     augur,
     monthly: latest,
     targets,
+    budget,
   };
 }
 

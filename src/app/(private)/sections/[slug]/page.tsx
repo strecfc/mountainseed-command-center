@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { BackHome } from "@/components/BackHome";
 import { FinanceBoardView } from "@/components/FinanceBoard";
 import { ReadoutList } from "@/components/Metrics";
 import { financeReadouts, getDashboard, sectionReadouts } from "@/lib/dashboard";
@@ -38,6 +39,7 @@ export default async function SectionPage({ params }: { params: Promise<{ slug: 
   const model = slug === "augur" ? await getDashboard() : null;
   return (
     <>
+      <BackHome />
       <div className="page-head">
         <div>
           <h1>{spec.title}</h1>

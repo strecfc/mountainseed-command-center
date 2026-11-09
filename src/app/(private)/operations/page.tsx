@@ -1,3 +1,4 @@
+import { BackHome } from "@/components/BackHome";
 import { SectionBlock } from "@/components/Metrics";
 import { getDashboard } from "@/lib/dashboard";
 
@@ -11,6 +12,7 @@ export default async function OperationsPage() {
   const orders = model.orders;
   return (
     <>
+      <BackHome />
       <div className="page-head">
         <div>
           <h1>Operations</h1>

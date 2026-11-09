@@ -1,3 +1,4 @@
+import { BackHome } from "@/components/BackHome";
 import { NotesForm } from "@/components/NotesForm";
 import { requirePageUser } from "@/lib/current-user";
 import { sql } from "@/lib/db";
@@ -12,6 +13,7 @@ export default async function NotesPage() {
   );
   return (
     <>
+      <BackHome />
       <div className="page-head">
         <div>
           <h1>What changed</h1>

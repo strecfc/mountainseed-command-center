@@ -1,3 +1,4 @@
+import { BackHome } from "@/components/BackHome";
 import { SectionBlock } from "@/components/Metrics";
 import { getDashboard } from "@/lib/dashboard";
 import { formatUsd } from "@/lib/format";
@@ -7,6 +8,7 @@ export default async function GrowthPage() {
   const sf = model.salesforce;
   return (
     <>
+      <BackHome />
       <div className="page-head">
         <div>
           <h1>Growth</h1>

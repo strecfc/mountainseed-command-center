@@ -1,3 +1,4 @@
+import { BackHome } from "@/components/BackHome";
 import { SectionBlock } from "@/components/Metrics";
 import { getDashboard } from "@/lib/dashboard";
 import { formatUsd } from "@/lib/format";
@@ -6,6 +7,7 @@ export default async function DefensePage() {
   const model = await getDashboard();
   return (
     <>
+      <BackHome />
       <div className="page-head">
         <div>
           <h1>Defense</h1>

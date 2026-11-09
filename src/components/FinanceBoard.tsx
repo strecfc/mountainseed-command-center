@@ -58,7 +58,7 @@ function Chart({ title, points, footnote }: { title: string; points: TrendPoint[
 export function FinanceBoardView({ board }: { board: FinanceBoard }) {
   return (
     <>
-      <section className="section">
+      <section className="section" id="revenue">
         <h2 className="section-title">September and year to date</h2>
         <p className="lede">
           {board.ebitdaLabel}. This workbook has no adjusted EBITDA line. As of {board.periodLabel}. {board.source}.
@@ -79,7 +79,7 @@ export function FinanceBoardView({ board }: { board: FinanceBoard }) {
             </thead>
             <tbody>
               {board.rows.map((row) => (
-                <tr key={row.label}>
+                <tr key={row.label} id={row.label === "Gross margin" ? "margin" : row.label === "Reported EBITDA margin" ? "ebitda" : undefined}>
                   <td>{row.label}</td>
                   <td className="num">{row.septemberActual}</td>
                   <td className="num">{row.septemberBudget}</td>
