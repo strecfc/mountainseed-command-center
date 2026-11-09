@@ -19,11 +19,10 @@ function compact(value: string): string {
   return value;
 }
 
-function thousands(readout: Readout | undefined): string {
-  if (!readout || readout.headline === "Awaiting data") return "Awaiting data";
-  return readout.label.includes("Thousands") && readout.headline.startsWith("$")
-    ? `${readout.headline}k`
-    : readout.headline;
+function withUnit(readout: Readout | undefined, raw: string | null | undefined): string {
+  if (!raw || raw === "Awaiting data") return "Awaiting data";
+  if (readout?.label.includes("Thousands") && raw.startsWith("$") && !raw.endsWith("k")) return `${raw}k`;
+  return raw;
 }
 
 function word(status: Status): string {
@@ -79,20 +78,20 @@ export function HomeBoard({ model }: { model: DashboardModel }) {
       value: churn?.headline || "Awaiting data",
       detail: churn ? `vs ${churnGoal} ceiling` : "Awaiting data: leadership Scorecard",
       extra: retentionWeek && retentionWeek.value !== "Awaiting data"
-        ? `YoY net retention ${retentionWeek.value} vs ${retentionWeek.goal || "100%"} goal`
+        ? `Net retention (scorecard) ${retentionWeek.value} vs ${retentionWeek.goal || "100%"}`
         : "Awaiting data: Year-over-Year Net Retention %",
-      period: `Week ending ${model.featuredLabel} · Leadership Scorecard`,
+      period: `True NDR awaiting client revenue · week ending ${model.featuredLabel}`,
       status: churn?.overall || "none",
       names: [] as string[],
     },
     {
       href: "/sales",
       kicker: "New sales",
-      value: thousands(newSales),
-      detail: newSales?.headlineGoal ? `vs ${newSales.headlineGoal} QTD goal` : "vs plan",
+      value: withUnit(newSales, newSales?.headline),
+      detail: newSales?.headlineGoal ? `vs ${withUnit(newSales, newSales.headlineGoal)} QTD goal` : "vs plan",
       extra: realization && realization.headline !== "Awaiting data"
-        ? `Evaluation realization ${realization.headline} vs ${realization.headlineGoal || "100%"}`
-        : "Awaiting data: Salesforce won upsell",
+        ? `Client upsell: awaiting Salesforce · Eval realization ${realization.headline} vs ${realization.headlineGoal || "100%"}`
+        : "Client upsell: awaiting Salesforce",
       period: "New EL value · MarketPlace Sales Scorecard · through 18 Oct 2026",
       status: newSales?.overall || "none",
       names: [],
