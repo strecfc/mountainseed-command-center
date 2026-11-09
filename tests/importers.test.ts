@@ -218,6 +218,9 @@ describe("status and salesforce gate", () => {
     expect(queries.new_sales_won_ytd).toContain("Type != 'Existing Business'");
     expect(queries.upsell_won_ytd).toContain("Type = 'Existing Business'");
     expect(queries.churn_cases).not.toMatch(/Account/);
+    expect(queries.churned_accounts).toBe(
+      "SELECT Id, Name, Closed_AMC_Date__c, Last_Order_Date__c, Days_Since_Last_Order__c, AMC_Client_Type__c, AMC_Closed_Lost_Reason__c, Owner.Name, RecordType.Name FROM Account WHERE Type = 'Past Client' AND RecordType.Name = 'Depository Institution' AND Closed_AMC_Date__c = LAST_N_DAYS:365 ORDER BY Closed_AMC_Date__c DESC",
+    );
     process.env.SF_SOQL_JSON = JSON.stringify({ churn_cases: "SELECT COUNT(Id) n FROM Case WHERE IsClosed = false AND Type = 'Custom'" });
     expect(salesforceQueries().churn_cases).toContain("Type = 'Custom'");
     expect(salesforceQueries().ma_stages).toContain("'M&As'");

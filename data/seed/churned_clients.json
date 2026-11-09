@@ -1,0 +1,822 @@
+{
+  "as_of": "2026-11-09 America/New_York",
+  "scorecard_context": {
+    "metric": "MP Client Logo Churn",
+    "source": "Max DiPlotti Leadership Scorecard email 2026-11-03 4:22 PM America/New_York",
+    "week_ending": "2026-10-25",
+    "value": "9.02%",
+    "goal_ceiling": "10%",
+    "weekly_values": {
+      "25-Oct": "9.02%",
+      "18-Oct": "9.02%",
+      "11-Oct": "9.02%",
+      "4-Oct": "8.65%",
+      "27-Sep": "9.02%"
+    },
+    "named_list_in_email": false,
+    "named_list_in_attachments": false,
+    "related_sales_scorecard_attachments": [
+      "Clients with No Orders.pdf",
+      "Clients with No Orders.xlsx",
+      "Clients with No Orders - Greater Than $5k.pdf"
+    ],
+    "related_attachment_note": "MarketPlace Sales Scorecard 2026-10-27 lists dormant/no-order clients; not confirmed as the logo-churn definition. Attachments were not downloaded in this read-only pass."
+  },
+  "confidence": {
+    "overall": "medium",
+    "notes": [
+      "No dedicated Churn_Date / Customer_Status field exists on Account.",
+      "Account.Type picklist value 'Past Client' is the clear lost-client status (429 accounts).",
+      "RecordType 'Depository Institution' scopes to bank/CU logos (vs Non Depository vendors/appraisal firms).",
+      "Closed_AMC_Date__c is the best date proxy for AMC logo churn WHEN Type='Past Client', but the same field also appears on active Clients as historical closed-won dates \u2014 do not use Closed_AMC_Date alone.",
+      "35 Past Client Depository accounts with Closed_AMC_Date in TTM (2025-10-25..2026-10-25) / 388 = 9.0206% which rounds to the scorecard's 9.02%. Live SF denominator of exactly 388 was NOT found (closest: 373 Depository Clients with AMC_Client_Type set; 378 Clients with AMC_Client_Type; 510 Depository Clients).",
+      "AccountHistory Type Client\u2192Past Client is tracked but NewValue cannot be filtered in SOQL; Apr 1 2026 had a bulk ~150+ Non-Depository appraisal-firm cleanup that must be excluded. Type flips are also noisy (some later reactivated to Client or still ordered after the flip).",
+      "App DEFAULT_QUERIES currently only has churn_cases = Case WHERE Subject LIKE '%churn%' \u2014 that does not produce logo names.",
+      "Exact Max/FP&A definition (order-warehouse vs Salesforce Closed_AMC) was not documented in Outlook. Confirm with Max before treating this list as audit-grade."
+    ]
+  },
+  "recommended_definition": {
+    "label": "AMC logo churned (Salesforce proxy)",
+    "filter": "Account.Type = 'Past Client' AND RecordType.Name = 'Depository Institution' AND Closed_AMC_Date__c in trailing 12 months ending scorecard week",
+    "churn_date_field": "Closed_AMC_Date__c",
+    "status_field": "Type",
+    "status_value": "Past Client",
+    "scope_field": "RecordType.Name",
+    "scope_value": "Depository Institution",
+    "reason_field": "AMC_Closed_Lost_Reason__c",
+    "notes_field": "Client_Success_Notes__c (label: MarketPlace Churn Notes)"
+  },
+  "candidate_fields_inspected": {
+    "Account.Type_picklist": [
+      "Active Prospect",
+      "Client",
+      "Past Client",
+      "Archived",
+      "CRE Owner",
+      "Alt Lender/Distressed Buyer",
+      "New Client",
+      "CUSO Client",
+      "Non-Bank Institution",
+      "Inactive Prospect"
+    ],
+    "Account.Type_counts": {
+      "Active Prospect": 28807,
+      "Archived": 1184,
+      "Client": 570,
+      "Past Client": 429,
+      "Non-Bank Institution": 245,
+      "New Client": 18,
+      "CRE Owner": 10,
+      "Alt Lender/Distressed Buyer": 9,
+      "Inactive Prospect": 5,
+      "CUSO Client": 2
+    },
+    "RecordType_counts_clientish": {
+      "Depository Institution / Client": 510,
+      "Depository Institution / Past Client": 176,
+      "Non Depository / Past Client": 253,
+      "Non Depository / Client": 60,
+      "Non Depository / New Client": 18
+    },
+    "Closed_AMC_Date__c": "date; label Closed AMC Date \u2014 used on Past Clients with AMC_Closed_Lost_Reason as closed-lost timing; ALSO populated on many active Clients (historical closed-won)",
+    "AMC_Closed_Lost_Reason__c": "string on Account",
+    "AMC_Client_Type__c": "picklist including 'No Orders in 140+ Days' (dormancy precursor, not churn)",
+    "Last_Order_Date__c": "date",
+    "Days_Since_Last_Order__c": "number",
+    "MarketPlace_Churn_Risk__c": "picklist Medium/High \u2014 risk, not actual churn",
+    "Analytics_Churn_Risk__c": "picklist Medium/High \u2014 risk, not actual churn",
+    "Churn_Reasons__c": "multipicklist (Analytics/product churn reasons)",
+    "Client_Success_Notes__c": "textarea labeled MarketPlace Churn Notes",
+    "no_fields_named": [
+      "Churn_Date__c",
+      "Customer_Status__c",
+      "Inactive__c",
+      "Lost_Date__c"
+    ]
+  },
+  "counts_vs_scorecard": {
+    "scorecard_logo_churn_pct": 0.0902,
+    "recommended_ttm_count": 35,
+    "implied_denominator_if_35_over_pct": 388,
+    "live_denominators_tried": {
+      "Client_plus_NewClient": 588,
+      "Client_with_AMC_Client_Type": 378,
+      "Depository_Client_with_AMC_Client_Type": 373,
+      "Depository_Client": 510,
+      "Client_Type_includes_Appraisal_Management": 477
+    },
+    "week_ending_2026_10_04_closed_amc_ttm_count": 34,
+    "arithmetic_note": "35/388=9.02%; 34/393\u22488.65% (matches the one week that showed 8.65%). Exact 388/393 bases not located as a live SOQL count."
+  },
+  "sf_soql_json_recommended": {
+    "churned_accounts": "SELECT Id, Name, Closed_AMC_Date__c, Last_Order_Date__c, Days_Since_Last_Order__c, AMC_Client_Type__c, AMC_Closed_Lost_Reason__c, Owner.Name, RecordType.Name FROM Account WHERE Type = 'Past Client' AND RecordType.Name = 'Depository Institution' AND Closed_AMC_Date__c = LAST_N_DAYS:365 ORDER BY Closed_AMC_Date__c DESC",
+    "churned_accounts_ytd": "SELECT Id, Name, Closed_AMC_Date__c, Last_Order_Date__c, Days_Since_Last_Order__c, AMC_Client_Type__c, AMC_Closed_Lost_Reason__c, Owner.Name FROM Account WHERE Type = 'Past Client' AND RecordType.Name = 'Depository Institution' AND Closed_AMC_Date__c = THIS_YEAR ORDER BY Closed_AMC_Date__c DESC",
+    "active_amc_logos": "SELECT COUNT(Id) n FROM Account WHERE Type = 'Client' AND RecordType.Name = 'Depository Institution' AND AMC_Client_Type__c != null",
+    "active_depository_clients": "SELECT COUNT(Id) n FROM Account WHERE Type IN ('Client','New Client') AND RecordType.Name = 'Depository Institution'",
+    "type_history_past_client_raw": "SELECT AccountId, Account.Name, CreatedDate, OldValue, NewValue, CreatedBy.Name FROM AccountHistory WHERE Field = 'Type' AND CreatedDate = LAST_N_DAYS:400 ORDER BY Id",
+    "type_history_note": "Salesforce rejects WHERE NewValue = 'Past Client'. Pull Field='Type' history and filter NewValue/OldValue client-side; exclude 2026-04-01 bulk Non-Depository vendor cleanup."
+  },
+  "lists": {
+    "recommended_ttm_closed_amc_past_client_depository": {
+      "window": "2025-10-25 through 2026-10-25 (scorecard week ending 25-Oct)",
+      "count": 35,
+      "accounts": [
+        {
+          "Id": "0010B00001zt0R8QAI",
+          "Name": "Goldenwest Federal Credit Union",
+          "Closed_AMC_Date__c": "2026-10-14",
+          "Last_Order_Date__c": "2023-09-26",
+          "Days_Since_Last_Order__c": 1140,
+          "AMC_Client_Type__c": "Base Core Only",
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": "Cameron Bowes"
+        },
+        {
+          "Id": "0010B000022QFHtQAO",
+          "Name": "Citizens National Bank of Cheboygan",
+          "Closed_AMC_Date__c": "2026-09-11",
+          "Last_Order_Date__c": "2025-01-13",
+          "Days_Since_Last_Order__c": 665,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Keeping Internal",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "001U000001VxtSTIAZ",
+          "Name": "First Community Bank",
+          "Closed_AMC_Date__c": "2026-08-31",
+          "Last_Order_Date__c": "2022-02-08",
+          "Days_Since_Last_Order__c": 1735,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Non Decision Maker",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "001U000001SykEAIAZ",
+          "Name": "Park State Bank & Trust",
+          "Closed_AMC_Date__c": "2026-08-21",
+          "Last_Order_Date__c": "2024-11-15",
+          "Days_Since_Last_Order__c": 724,
+          "AMC_Client_Type__c": "Core and Non-Core(low orders)",
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": "Thomas Jones"
+        },
+        {
+          "Id": "001U000000udvUuIAI",
+          "Name": "Horizon Bank - Waverly NE",
+          "Closed_AMC_Date__c": "2026-08-21",
+          "Last_Order_Date__c": "2024-03-13",
+          "Days_Since_Last_Order__c": 971,
+          "AMC_Client_Type__c": "No Orders in 140+ Days",
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "0010B00001q17CbQAI",
+          "Name": "Adams Bank & Trust",
+          "Closed_AMC_Date__c": "2026-08-20",
+          "Last_Order_Date__c": "2024-01-25",
+          "Days_Since_Last_Order__c": 1019,
+          "AMC_Client_Type__c": "Core and Non-Core",
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": "Whit Collmus"
+        },
+        {
+          "Id": "001U000000ZYueaIAD",
+          "Name": "Burling Bank",
+          "Closed_AMC_Date__c": "2026-08-18",
+          "Last_Order_Date__c": "2026-03-26",
+          "Days_Since_Last_Order__c": 228,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Keeping Internal",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "001U000001UPyKtIAL",
+          "Name": "Devon Bank",
+          "Closed_AMC_Date__c": "2026-08-03",
+          "Last_Order_Date__c": "2021-10-13",
+          "Days_Since_Last_Order__c": 1853,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Staying With Current Provider",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "001U000000Z8AKtIAN",
+          "Name": "First Bank of Alabama",
+          "Closed_AMC_Date__c": "2026-07-23",
+          "Last_Order_Date__c": "2023-10-04",
+          "Days_Since_Last_Order__c": 1132,
+          "AMC_Client_Type__c": "Review Only",
+          "AMC_Closed_Lost_Reason__c": "Keeping Internal",
+          "Owner": "Whit Collmus"
+        },
+        {
+          "Id": "001U000001VFoaGIAT",
+          "Name": "American Momentum Bank",
+          "Closed_AMC_Date__c": "2026-07-17",
+          "Last_Order_Date__c": "2021-11-16",
+          "Days_Since_Last_Order__c": 1819,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "001U000000Z8ALDIA3",
+          "Name": "HomeTrust Bank",
+          "Closed_AMC_Date__c": "2026-07-16",
+          "Last_Order_Date__c": "2022-01-10",
+          "Days_Since_Last_Order__c": 1764,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Keeping Internal",
+          "Owner": "Whit Collmus"
+        },
+        {
+          "Id": "001U000001hoblDIAQ",
+          "Name": "The Southern Bank Company",
+          "Closed_AMC_Date__c": "2026-07-08",
+          "Last_Order_Date__c": null,
+          "Days_Since_Last_Order__c": null,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "001U000000Z7Mb7IAF",
+          "Name": "Itasca Bank & Trust Co.",
+          "Closed_AMC_Date__c": "2026-07-06",
+          "Last_Order_Date__c": "2024-08-09",
+          "Days_Since_Last_Order__c": 822,
+          "AMC_Client_Type__c": "Non-Core Only",
+          "AMC_Closed_Lost_Reason__c": "No Longer Interested",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "001U000001jCMAOIA4",
+          "Name": "The Peoples Bank, Biloxi, Mississippi",
+          "Closed_AMC_Date__c": "2026-07-02",
+          "Last_Order_Date__c": null,
+          "Days_Since_Last_Order__c": null,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "001U000001Yt70aIAB",
+          "Name": "Androscoggin Savings Bank",
+          "Closed_AMC_Date__c": "2026-06-30",
+          "Last_Order_Date__c": "2024-07-25",
+          "Days_Since_Last_Order__c": 837,
+          "AMC_Client_Type__c": "No Orders in 140+ Days",
+          "AMC_Closed_Lost_Reason__c": "Keeping Internal",
+          "Owner": "Whit Collmus"
+        },
+        {
+          "Id": "0010B000022QFFPQA4",
+          "Name": "First State Bank of Burnet",
+          "Closed_AMC_Date__c": "2026-06-24",
+          "Last_Order_Date__c": "2021-09-07",
+          "Days_Since_Last_Order__c": 1889,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "0010B00001vIG2OQAW",
+          "Name": "West Coast Community Bank",
+          "Closed_AMC_Date__c": "2026-06-08",
+          "Last_Order_Date__c": "2026-01-15",
+          "Days_Since_Last_Order__c": 298,
+          "AMC_Client_Type__c": "Core and Non-Core",
+          "AMC_Closed_Lost_Reason__c": null,
+          "Owner": "Whit Collmus"
+        },
+        {
+          "Id": "001U000001cSAWVIA4",
+          "Name": "Citizens State Bank of La Crosse",
+          "Closed_AMC_Date__c": "2026-06-03",
+          "Last_Order_Date__c": "2023-02-09",
+          "Days_Since_Last_Order__c": 1369,
+          "AMC_Client_Type__c": "Base Core Only",
+          "AMC_Closed_Lost_Reason__c": "Staying With Current Provider",
+          "Owner": "Whit Collmus"
+        },
+        {
+          "Id": "001U000000wJZP1IAO",
+          "Name": "Plains State Bank",
+          "Closed_AMC_Date__c": "2026-06-03",
+          "Last_Order_Date__c": "2023-06-26",
+          "Days_Since_Last_Order__c": 1232,
+          "AMC_Client_Type__c": "Core and Non-Core",
+          "AMC_Closed_Lost_Reason__c": "Keeping Internal",
+          "Owner": "Whit Collmus"
+        },
+        {
+          "Id": "0016f00002t6As3AAE",
+          "Name": "Evermore Bank",
+          "Closed_AMC_Date__c": "2026-06-03",
+          "Last_Order_Date__c": "2024-04-08",
+          "Days_Since_Last_Order__c": 945,
+          "AMC_Client_Type__c": "Review Only",
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "0010B000022QFK5QAO",
+          "Name": "Capital Community Bank",
+          "Closed_AMC_Date__c": "2026-05-28",
+          "Last_Order_Date__c": "2021-11-29",
+          "Days_Since_Last_Order__c": 1806,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "001U000000zax4UIAQ",
+          "Name": "Americana Community Bank",
+          "Closed_AMC_Date__c": "2026-05-22",
+          "Last_Order_Date__c": "2021-05-12",
+          "Days_Since_Last_Order__c": 2007,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Keeping Internal",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "0010B000022QFOaQAO",
+          "Name": "Oakstar Bank",
+          "Closed_AMC_Date__c": "2026-05-18",
+          "Last_Order_Date__c": "2023-10-31",
+          "Days_Since_Last_Order__c": 1105,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Staying With Current Provider",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "0010B000022QFZFQA4",
+          "Name": "American First Credit Union",
+          "Closed_AMC_Date__c": "2026-05-13",
+          "Last_Order_Date__c": null,
+          "Days_Since_Last_Order__c": null,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Staying With Current Provider",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "0010B000022QFaxQAG",
+          "Name": "Greenwood Credit Union",
+          "Closed_AMC_Date__c": "2026-04-22",
+          "Last_Order_Date__c": "2023-04-04",
+          "Days_Since_Last_Order__c": 1315,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "001U000000Z89HoIAJ",
+          "Name": "North State Bank",
+          "Closed_AMC_Date__c": "2026-04-15",
+          "Last_Order_Date__c": "2021-12-06",
+          "Days_Since_Last_Order__c": 1799,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Staying With Current Provider",
+          "Owner": "Whit Collmus"
+        },
+        {
+          "Id": "0010B000022QFhHQAW",
+          "Name": "Fremont Federal Credit Union",
+          "Closed_AMC_Date__c": "2026-03-31",
+          "Last_Order_Date__c": "2023-09-22",
+          "Days_Since_Last_Order__c": 1144,
+          "AMC_Client_Type__c": "Non-Core Only",
+          "AMC_Closed_Lost_Reason__c": "Keeping Internal",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "001U000000dPntFIAS",
+          "Name": "Nicolet National Bank",
+          "Closed_AMC_Date__c": "2026-03-06",
+          "Last_Order_Date__c": null,
+          "Days_Since_Last_Order__c": null,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Keeping Internal",
+          "Owner": "Andrew Spysinski"
+        },
+        {
+          "Id": "0010B000020bxUqQAI",
+          "Name": "Academy Bank, National Association",
+          "Closed_AMC_Date__c": "2026-02-06",
+          "Last_Order_Date__c": "2024-11-05",
+          "Days_Since_Last_Order__c": 734,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": null,
+          "Owner": "Cameron Bowes"
+        },
+        {
+          "Id": "0010B000022QFHXQA4",
+          "Name": "The Bankers Bank - Oklahoma City, OK",
+          "Closed_AMC_Date__c": "2026-01-26",
+          "Last_Order_Date__c": null,
+          "Days_Since_Last_Order__c": null,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Appraisal Volume Too Small",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "001U000001jB8lJIAS",
+          "Name": "Builtwell Bank",
+          "Closed_AMC_Date__c": "2026-01-20",
+          "Last_Order_Date__c": null,
+          "Days_Since_Last_Order__c": null,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Lost to Competition",
+          "Owner": "Whit Collmus"
+        },
+        {
+          "Id": "001U000001e04SpIAI",
+          "Name": "Enterprise Bank & Trust",
+          "Closed_AMC_Date__c": "2026-01-08",
+          "Last_Order_Date__c": "2024-01-25",
+          "Days_Since_Last_Order__c": 1019,
+          "AMC_Client_Type__c": "Non-Core Only",
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": "Whit Collmus"
+        },
+        {
+          "Id": "0010B00001llRNRQA2",
+          "Name": "Listerhill Credit Union",
+          "Closed_AMC_Date__c": "2025-12-05",
+          "Last_Order_Date__c": "2021-11-18",
+          "Days_Since_Last_Order__c": 1817,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Staying With Current Provider",
+          "Owner": "Whit Collmus"
+        },
+        {
+          "Id": "001U000000Z7OftIAF",
+          "Name": "S&T Bank",
+          "Closed_AMC_Date__c": "2025-11-21",
+          "Last_Order_Date__c": "2021-12-16",
+          "Days_Since_Last_Order__c": 1789,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": "Cameron Bowes"
+        },
+        {
+          "Id": "001U000000w1gB8IAI",
+          "Name": "Central Penn Bank & Trust",
+          "Closed_AMC_Date__c": "2025-11-10",
+          "Last_Order_Date__c": "2025-05-29",
+          "Days_Since_Last_Order__c": 529,
+          "AMC_Client_Type__c": "Core and Non-Core(low orders)",
+          "AMC_Closed_Lost_Reason__c": null,
+          "Owner": "Thomas Jones"
+        }
+      ]
+    },
+    "recommended_ytd_2026_through_2026_10_25": {
+      "count": 32,
+      "accounts": [
+        {
+          "Id": "0010B00001zt0R8QAI",
+          "Name": "Goldenwest Federal Credit Union",
+          "Closed_AMC_Date__c": "2026-10-14",
+          "Last_Order_Date__c": "2023-09-26",
+          "Days_Since_Last_Order__c": 1140,
+          "AMC_Client_Type__c": "Base Core Only",
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": "Cameron Bowes"
+        },
+        {
+          "Id": "0010B000022QFHtQAO",
+          "Name": "Citizens National Bank of Cheboygan",
+          "Closed_AMC_Date__c": "2026-09-11",
+          "Last_Order_Date__c": "2025-01-13",
+          "Days_Since_Last_Order__c": 665,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Keeping Internal",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "001U000001VxtSTIAZ",
+          "Name": "First Community Bank",
+          "Closed_AMC_Date__c": "2026-08-31",
+          "Last_Order_Date__c": "2022-02-08",
+          "Days_Since_Last_Order__c": 1735,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Non Decision Maker",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "001U000001SykEAIAZ",
+          "Name": "Park State Bank & Trust",
+          "Closed_AMC_Date__c": "2026-08-21",
+          "Last_Order_Date__c": "2024-11-15",
+          "Days_Since_Last_Order__c": 724,
+          "AMC_Client_Type__c": "Core and Non-Core(low orders)",
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": "Thomas Jones"
+        },
+        {
+          "Id": "001U000000udvUuIAI",
+          "Name": "Horizon Bank - Waverly NE",
+          "Closed_AMC_Date__c": "2026-08-21",
+          "Last_Order_Date__c": "2024-03-13",
+          "Days_Since_Last_Order__c": 971,
+          "AMC_Client_Type__c": "No Orders in 140+ Days",
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "0010B00001q17CbQAI",
+          "Name": "Adams Bank & Trust",
+          "Closed_AMC_Date__c": "2026-08-20",
+          "Last_Order_Date__c": "2024-01-25",
+          "Days_Since_Last_Order__c": 1019,
+          "AMC_Client_Type__c": "Core and Non-Core",
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": "Whit Collmus"
+        },
+        {
+          "Id": "001U000000ZYueaIAD",
+          "Name": "Burling Bank",
+          "Closed_AMC_Date__c": "2026-08-18",
+          "Last_Order_Date__c": "2026-03-26",
+          "Days_Since_Last_Order__c": 228,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Keeping Internal",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "001U000001UPyKtIAL",
+          "Name": "Devon Bank",
+          "Closed_AMC_Date__c": "2026-08-03",
+          "Last_Order_Date__c": "2021-10-13",
+          "Days_Since_Last_Order__c": 1853,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Staying With Current Provider",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "001U000000Z8AKtIAN",
+          "Name": "First Bank of Alabama",
+          "Closed_AMC_Date__c": "2026-07-23",
+          "Last_Order_Date__c": "2023-10-04",
+          "Days_Since_Last_Order__c": 1132,
+          "AMC_Client_Type__c": "Review Only",
+          "AMC_Closed_Lost_Reason__c": "Keeping Internal",
+          "Owner": "Whit Collmus"
+        },
+        {
+          "Id": "001U000001VFoaGIAT",
+          "Name": "American Momentum Bank",
+          "Closed_AMC_Date__c": "2026-07-17",
+          "Last_Order_Date__c": "2021-11-16",
+          "Days_Since_Last_Order__c": 1819,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "001U000000Z8ALDIA3",
+          "Name": "HomeTrust Bank",
+          "Closed_AMC_Date__c": "2026-07-16",
+          "Last_Order_Date__c": "2022-01-10",
+          "Days_Since_Last_Order__c": 1764,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Keeping Internal",
+          "Owner": "Whit Collmus"
+        },
+        {
+          "Id": "001U000001hoblDIAQ",
+          "Name": "The Southern Bank Company",
+          "Closed_AMC_Date__c": "2026-07-08",
+          "Last_Order_Date__c": null,
+          "Days_Since_Last_Order__c": null,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "001U000000Z7Mb7IAF",
+          "Name": "Itasca Bank & Trust Co.",
+          "Closed_AMC_Date__c": "2026-07-06",
+          "Last_Order_Date__c": "2024-08-09",
+          "Days_Since_Last_Order__c": 822,
+          "AMC_Client_Type__c": "Non-Core Only",
+          "AMC_Closed_Lost_Reason__c": "No Longer Interested",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "001U000001jCMAOIA4",
+          "Name": "The Peoples Bank, Biloxi, Mississippi",
+          "Closed_AMC_Date__c": "2026-07-02",
+          "Last_Order_Date__c": null,
+          "Days_Since_Last_Order__c": null,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "001U000001Yt70aIAB",
+          "Name": "Androscoggin Savings Bank",
+          "Closed_AMC_Date__c": "2026-06-30",
+          "Last_Order_Date__c": "2024-07-25",
+          "Days_Since_Last_Order__c": 837,
+          "AMC_Client_Type__c": "No Orders in 140+ Days",
+          "AMC_Closed_Lost_Reason__c": "Keeping Internal",
+          "Owner": "Whit Collmus"
+        },
+        {
+          "Id": "0010B000022QFFPQA4",
+          "Name": "First State Bank of Burnet",
+          "Closed_AMC_Date__c": "2026-06-24",
+          "Last_Order_Date__c": "2021-09-07",
+          "Days_Since_Last_Order__c": 1889,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "0010B00001vIG2OQAW",
+          "Name": "West Coast Community Bank",
+          "Closed_AMC_Date__c": "2026-06-08",
+          "Last_Order_Date__c": "2026-01-15",
+          "Days_Since_Last_Order__c": 298,
+          "AMC_Client_Type__c": "Core and Non-Core",
+          "AMC_Closed_Lost_Reason__c": null,
+          "Owner": "Whit Collmus"
+        },
+        {
+          "Id": "001U000001cSAWVIA4",
+          "Name": "Citizens State Bank of La Crosse",
+          "Closed_AMC_Date__c": "2026-06-03",
+          "Last_Order_Date__c": "2023-02-09",
+          "Days_Since_Last_Order__c": 1369,
+          "AMC_Client_Type__c": "Base Core Only",
+          "AMC_Closed_Lost_Reason__c": "Staying With Current Provider",
+          "Owner": "Whit Collmus"
+        },
+        {
+          "Id": "001U000000wJZP1IAO",
+          "Name": "Plains State Bank",
+          "Closed_AMC_Date__c": "2026-06-03",
+          "Last_Order_Date__c": "2023-06-26",
+          "Days_Since_Last_Order__c": 1232,
+          "AMC_Client_Type__c": "Core and Non-Core",
+          "AMC_Closed_Lost_Reason__c": "Keeping Internal",
+          "Owner": "Whit Collmus"
+        },
+        {
+          "Id": "0016f00002t6As3AAE",
+          "Name": "Evermore Bank",
+          "Closed_AMC_Date__c": "2026-06-03",
+          "Last_Order_Date__c": "2024-04-08",
+          "Days_Since_Last_Order__c": 945,
+          "AMC_Client_Type__c": "Review Only",
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "0010B000022QFK5QAO",
+          "Name": "Capital Community Bank",
+          "Closed_AMC_Date__c": "2026-05-28",
+          "Last_Order_Date__c": "2021-11-29",
+          "Days_Since_Last_Order__c": 1806,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "001U000000zax4UIAQ",
+          "Name": "Americana Community Bank",
+          "Closed_AMC_Date__c": "2026-05-22",
+          "Last_Order_Date__c": "2021-05-12",
+          "Days_Since_Last_Order__c": 2007,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Keeping Internal",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "0010B000022QFOaQAO",
+          "Name": "Oakstar Bank",
+          "Closed_AMC_Date__c": "2026-05-18",
+          "Last_Order_Date__c": "2023-10-31",
+          "Days_Since_Last_Order__c": 1105,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Staying With Current Provider",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "0010B000022QFZFQA4",
+          "Name": "American First Credit Union",
+          "Closed_AMC_Date__c": "2026-05-13",
+          "Last_Order_Date__c": null,
+          "Days_Since_Last_Order__c": null,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Staying With Current Provider",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "0010B000022QFaxQAG",
+          "Name": "Greenwood Credit Union",
+          "Closed_AMC_Date__c": "2026-04-22",
+          "Last_Order_Date__c": "2023-04-04",
+          "Days_Since_Last_Order__c": 1315,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "001U000000Z89HoIAJ",
+          "Name": "North State Bank",
+          "Closed_AMC_Date__c": "2026-04-15",
+          "Last_Order_Date__c": "2021-12-06",
+          "Days_Since_Last_Order__c": 1799,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Staying With Current Provider",
+          "Owner": "Whit Collmus"
+        },
+        {
+          "Id": "0010B000022QFhHQAW",
+          "Name": "Fremont Federal Credit Union",
+          "Closed_AMC_Date__c": "2026-03-31",
+          "Last_Order_Date__c": "2023-09-22",
+          "Days_Since_Last_Order__c": 1144,
+          "AMC_Client_Type__c": "Non-Core Only",
+          "AMC_Closed_Lost_Reason__c": "Keeping Internal",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "001U000000dPntFIAS",
+          "Name": "Nicolet National Bank",
+          "Closed_AMC_Date__c": "2026-03-06",
+          "Last_Order_Date__c": null,
+          "Days_Since_Last_Order__c": null,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Keeping Internal",
+          "Owner": "Andrew Spysinski"
+        },
+        {
+          "Id": "0010B000020bxUqQAI",
+          "Name": "Academy Bank, National Association",
+          "Closed_AMC_Date__c": "2026-02-06",
+          "Last_Order_Date__c": "2024-11-05",
+          "Days_Since_Last_Order__c": 734,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": null,
+          "Owner": "Cameron Bowes"
+        },
+        {
+          "Id": "0010B000022QFHXQA4",
+          "Name": "The Bankers Bank - Oklahoma City, OK",
+          "Closed_AMC_Date__c": "2026-01-26",
+          "Last_Order_Date__c": null,
+          "Days_Since_Last_Order__c": null,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Appraisal Volume Too Small",
+          "Owner": "Madie Dreesman"
+        },
+        {
+          "Id": "001U000001jB8lJIAS",
+          "Name": "Builtwell Bank",
+          "Closed_AMC_Date__c": "2026-01-20",
+          "Last_Order_Date__c": null,
+          "Days_Since_Last_Order__c": null,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Lost to Competition",
+          "Owner": "Whit Collmus"
+        },
+        {
+          "Id": "001U000001e04SpIAI",
+          "Name": "Enterprise Bank & Trust",
+          "Closed_AMC_Date__c": "2026-01-08",
+          "Last_Order_Date__c": "2024-01-25",
+          "Days_Since_Last_Order__c": 1019,
+          "AMC_Client_Type__c": "Non-Core Only",
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": "Whit Collmus"
+        }
+      ]
+    },
+    "rejected_or_secondary": {
+      "type_history_client_to_past_excluding_apr1_bulk_ttm": {
+        "count": 48,
+        "why_secondary": "48/532 also equals 9.02% arithmetically, but many Type flips later reactivated (Piermont Bank, Nizari Progressive Federal Credit Union back to Client), some still ordered after flip (National Bank of Commerce Last_Order 2026-10-05), and Closed_AMC_Date often predates the flip by years. Also includes Non Depository (Bridge33, Stronghill Capital, AppraisalFirst, Security National Life).",
+        "cannot_express_cleanly_in_SF_SOQL_JSON": true
+      },
+      "raw_type_to_past_client_including_apr1_2026": {
+        "ytd_unique": 212,
+        "why_rejected": "2026-04-01 bulk moved ~150+ appraisal firms (Non Depository) Client\u2192Past Client \u2014 not MP bank logo churn."
+      },
+      "churn_cases_default_query": {
+        "soql": "SELECT COUNT(Id) n FROM Case WHERE IsClosed = false AND Subject LIKE '%churn%'",
+        "why_rejected": "Does not return Account names; Case Subject keyword is not the logo-churn metric."
+      }
+    }
+  },
+  "outlook_search": {
+    "max_scorecard_emails_checked": true,
+    "canonical_body_path": "/workspace/leadership-scorecards/2026-11-03-Scorecard-body.txt",
+    "result": "Scorecard bodies contain only the MP Client Logo Churn percentage series; no churned-client name list. No Max email found that defines logo churn or attaches a churned-logo roster."
+  }
+}

@@ -58,7 +58,7 @@ export function offTrackReadouts(model: DashboardModel): Readout[] {
     .sort((a, b) => miss(b) - miss(a));
 }
 
-export function HomeBoard({ model }: { model: DashboardModel }) {
+export function HomeBoard({ model, recentChurn = [] }: { model: DashboardModel; recentChurn?: string[] }) {
   const revenue = model.budget?.rows.find((row) => row.label === "Total revenue");
   const churn = findReadout(model, LABELS.logoChurn);
   const retention = findReadout(model, LABELS.yoyRetention);
@@ -82,7 +82,7 @@ export function HomeBoard({ model }: { model: DashboardModel }) {
         : "Awaiting data: Year-over-Year Net Retention %",
       period: `True NDR awaiting client revenue · week ending ${model.featuredLabel}`,
       status: churn?.overall || "none",
-      names: [] as string[],
+      names: recentChurn.map((name) => truncate(name)),
     },
     {
       href: "/sales",

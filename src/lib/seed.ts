@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { randomUUID } from "node:crypto";
 import { replaceAugurDeals, saveBudgetSnapshot, upsertMetrics } from "./apply";
+import { seedChurnedClients } from "./churned-clients";
 import { BVA_RECEIVED_ON, BVA_SOURCE } from "./importers/bva";
 import { seedAdminFromEnv } from "./auth";
 import { metaGet, metaSet, query } from "./db";
@@ -58,6 +59,7 @@ export async function seedDatabase(): Promise<void> {
   const seeded = await metaGet("seed_version");
   if (seeded === "1") {
     await seedSeptemberBudget();
+    await seedChurnedClients();
     return;
   }
 
@@ -152,6 +154,7 @@ export async function seedDatabase(): Promise<void> {
   await metaSet("latest_scorecard_week", "2026-10-25");
   await metaSet("seed_version", "1");
   await seedSeptemberBudget();
+  await seedChurnedClients();
 }
 
 async function seedSeptemberBudget(): Promise<void> {

@@ -30,6 +30,8 @@ const DEFAULT_QUERIES: Record<string, string> = {
   ma_stages:
     "SELECT StageName, COUNT(Id) n, SUM(Amount) total FROM Opportunity WHERE RecordType.Name = 'M&As' GROUP BY StageName",
   churn_cases: "SELECT COUNT(Id) n FROM Case WHERE IsClosed = false AND Subject LIKE '%churn%'",
+  churned_accounts:
+    "SELECT Id, Name, Closed_AMC_Date__c, Last_Order_Date__c, Days_Since_Last_Order__c, AMC_Client_Type__c, AMC_Closed_Lost_Reason__c, Owner.Name, RecordType.Name FROM Account WHERE Type = 'Past Client' AND RecordType.Name = 'Depository Institution' AND Closed_AMC_Date__c = LAST_N_DAYS:365 ORDER BY Closed_AMC_Date__c DESC",
 };
 
 export type SalesforceConfig = {

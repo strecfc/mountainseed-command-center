@@ -114,6 +114,18 @@ CREATE TABLE IF NOT EXISTS parser_mappings (
   updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
+CREATE TABLE IF NOT EXISTS churned_clients (
+  id TEXT PRIMARY KEY,
+  name TEXT NOT NULL,
+  closed_on DATE,
+  last_order_on DATE,
+  days_since_last_order DOUBLE PRECISION,
+  reason TEXT,
+  owner_name TEXT,
+  source TEXT NOT NULL,
+  as_of DATE NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS budget_snapshots (
   id TEXT PRIMARY KEY,
   period_end DATE NOT NULL UNIQUE,
