@@ -1,0 +1,4793 @@
+{
+  "source": {
+    "file": "LT_BvA_Sep2026.xlsx",
+    "path": "/workspace/sfdc-revenue/2026-11-08/2027-consolidated-bridge/src/LT_BvA_Sep2026.xlsx",
+    "email": "Max DiPlotti \u2014 Budget vs Actual - September 2026 (Oct 16 2026)",
+    "primary_sheet": "P&L",
+    "supporting_sheets": [
+      "Q1 2026",
+      "Q2 2026"
+    ]
+  },
+  "period_end": "2026-09-30",
+  "currency": "USD",
+  "units": {
+    "money": "USD",
+    "margins": "decimal (0.69 = 69%)",
+    "variance": "actual - budget",
+    "variance_pct": "(actual - budget) / budget"
+  },
+  "monthly": [
+    {
+      "month": "2026-01",
+      "sheet": "Q1 2026",
+      "lines": {
+        "marketplace": {
+          "actual": 1396062.0,
+          "budget": 1318463.81,
+          "variance": 77598.19,
+          "variance_pct": 0.058855
+        },
+        "mp_appraisal": {
+          "actual": 1282367.0,
+          "budget": 1239048.24,
+          "variance": 43318.76,
+          "variance_pct": 0.03496132
+        },
+        "other_marketplace": {
+          "actual": 113695.0,
+          "budget": 79415.56,
+          "variance": 34279.44,
+          "variance_pct": 0.43164634
+        },
+        "commercial_evaluations": {
+          "actual": 32810.0,
+          "budget": 23236.31,
+          "variance": 9573.69,
+          "variance_pct": 0.412014
+        },
+        "residential_evaluations": {
+          "actual": 22175.0,
+          "budget": 19736.51,
+          "variance": 2438.49,
+          "variance_pct": 0.12355229
+        },
+        "environmentals": {
+          "actual": 44085.0,
+          "budget": 23040.87,
+          "variance": 21044.13,
+          "variance_pct": 0.91333925
+        },
+        "compliance_screen": {
+          "actual": 6070.0,
+          "budget": 4398.13,
+          "variance": 1671.87,
+          "variance_pct": 0.38013224
+        },
+        "site_inspections": {
+          "actual": 6215.0,
+          "budget": 6498.58,
+          "variance": -283.58,
+          "variance_pct": -0.04363655
+        },
+        "avm": {
+          "actual": 2340.0,
+          "budget": 2505.17,
+          "variance": -165.17,
+          "variance_pct": -0.06593025
+        },
+        "other_revenue_mp": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "augur": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "market_data_reports": {
+          "actual": 112970.0,
+          "budget": 108023.34,
+          "variance": 4946.66,
+          "variance_pct": 0.04579256
+        },
+        "mountainseed_analytics": {
+          "actual": 31900.01,
+          "budget": 32317.0,
+          "variance": -416.99,
+          "variance_pct": -0.01290312
+        },
+        "nbp": {
+          "actual": 76000.0,
+          "budget": 60000.0,
+          "variance": 16000.0,
+          "variance_pct": 0.26666667
+        },
+        "capital_markets": {
+          "actual": 34833.33,
+          "budget": 34833.33,
+          "variance": 0.0,
+          "variance_pct": 0.0
+        },
+        "sale_leaseback_mres": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "fund_slb_acquisition_carried_interest": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "fund_management_fees": {
+          "actual": 34833.33,
+          "budget": 34833.33,
+          "variance": 0.0,
+          "variance_pct": 0.0
+        },
+        "quaint_oak": {
+          "actual": 24741.0,
+          "budget": 24973.25,
+          "variance": -232.25,
+          "variance_pct": -0.00929995
+        },
+        "total_revenue": {
+          "actual": 1676506.34,
+          "budget": 1578610.72,
+          "variance": 97895.62,
+          "variance_pct": 0.06201378
+        },
+        "direct_staff_costs": {
+          "actual": 588792.17,
+          "budget": 589606.9,
+          "variance": -814.73,
+          "variance_pct": -0.00138183
+        },
+        "other_direct_costs": {
+          "actual": 53743.19,
+          "budget": 57811.33,
+          "variance": -4068.14,
+          "variance_pct": -0.07036926
+        },
+        "capital_markets_direct_costs": {
+          "actual": 38378.29,
+          "budget": 37291.89,
+          "variance": 1086.4,
+          "variance_pct": 0.02913223
+        },
+        "total_cost_of_sales": {
+          "actual": 680913.65,
+          "budget": 684710.13,
+          "variance": -3796.48,
+          "variance_pct": -0.00554465
+        },
+        "gross_profit": {
+          "actual": 995592.69,
+          "budget": 893900.59,
+          "variance": 101692.1,
+          "variance_pct": 0.1137622
+        },
+        "gross_margin": {
+          "actual": 0.59384964,
+          "budget": 0.56625777,
+          "variance": 0.02759187,
+          "variance_pct": 0.04872669
+        },
+        "ga_staff": {
+          "actual": 541146.25,
+          "budget": 535511.01,
+          "variance": 5635.24,
+          "variance_pct": 0.01052312
+        },
+        "sales_marketing": {
+          "actual": 165233.18,
+          "budget": 171205.75,
+          "variance": -5972.57,
+          "variance_pct": -0.03488531
+        },
+        "compliance_licensing": {
+          "actual": 21124.21,
+          "budget": 18933.75,
+          "variance": 2190.46,
+          "variance_pct": 0.11569073
+        },
+        "rent_office": {
+          "actual": 55164.76,
+          "budget": 58735.0,
+          "variance": -3570.24,
+          "variance_pct": -0.06078556
+        },
+        "hr_expenses": {
+          "actual": 13441.57,
+          "budget": 14147.0,
+          "variance": -705.43,
+          "variance_pct": -0.04986428
+        },
+        "it_expenses": {
+          "actual": 28579.07,
+          "budget": 32968.96,
+          "variance": -4389.89,
+          "variance_pct": -0.13315221
+        },
+        "professional_fees": {
+          "actual": 30917.0,
+          "budget": 50031.67,
+          "variance": -19114.67,
+          "variance_pct": -0.38205137
+        },
+        "insurance": {
+          "actual": 9529.42,
+          "budget": 12992.01,
+          "variance": -3462.59,
+          "variance_pct": -0.26651707
+        },
+        "other_ga": {
+          "actual": 16886.33,
+          "budget": 19666.2,
+          "variance": -2779.87,
+          "variance_pct": -0.14135273
+        },
+        "total_operating_expenses": {
+          "actual": 882021.79,
+          "budget": 914191.34,
+          "variance": -32169.55,
+          "variance_pct": -0.03518908
+        },
+        "ebitda": {
+          "actual": 113570.9,
+          "budget": -20290.75,
+          "variance": 133861.65,
+          "variance_pct": -6.59717628
+        },
+        "ebitda_margin": {
+          "actual": 0.0677426,
+          "budget": -0.01285355,
+          "variance": 0.08059615,
+          "variance_pct": -6.27034243
+        },
+        "sublease_income": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "interest_income_expense": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "other_inc_exp": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "depreciation_amortization": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "due_diligence": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "total_other_income_expenses": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "total_expenses": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "net_income": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "nvv": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "loan_sales_mres": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        }
+      }
+    },
+    {
+      "month": "2026-02",
+      "sheet": "Q1 2026",
+      "lines": {
+        "marketplace": {
+          "actual": 1360667.0,
+          "budget": 1302189.12,
+          "variance": 58477.88,
+          "variance_pct": 0.04490736
+        },
+        "mp_appraisal": {
+          "actual": 1253347.0,
+          "budget": 1223966.33,
+          "variance": 29380.67,
+          "variance_pct": 0.02400447
+        },
+        "other_marketplace": {
+          "actual": 107320.0,
+          "budget": 78222.79,
+          "variance": 29097.21,
+          "variance_pct": 0.37197871
+        },
+        "commercial_evaluations": {
+          "actual": 32945.0,
+          "budget": 22887.32,
+          "variance": 10057.68,
+          "variance_pct": 0.43944347
+        },
+        "residential_evaluations": {
+          "actual": 22475.0,
+          "budget": 19440.08,
+          "variance": 3034.92,
+          "variance_pct": 0.15611674
+        },
+        "environmentals": {
+          "actual": 38305.0,
+          "budget": 22694.81,
+          "variance": 15610.19,
+          "variance_pct": 0.68783089
+        },
+        "compliance_screen": {
+          "actual": 6705.0,
+          "budget": 4332.07,
+          "variance": 2372.93,
+          "variance_pct": 0.54775822
+        },
+        "site_inspections": {
+          "actual": 6110.0,
+          "budget": 6400.97,
+          "variance": -290.97,
+          "variance_pct": -0.04545727
+        },
+        "avm": {
+          "actual": 780.0,
+          "budget": 2467.54,
+          "variance": -1687.54,
+          "variance_pct": -0.68389572
+        },
+        "other_revenue_mp": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "augur": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "market_data_reports": {
+          "actual": 109020.0,
+          "budget": 106306.17,
+          "variance": 2713.83,
+          "variance_pct": 0.02552848
+        },
+        "mountainseed_analytics": {
+          "actual": 27399.98,
+          "budget": 29447.31,
+          "variance": -2047.33,
+          "variance_pct": -0.06952528
+        },
+        "nbp": {
+          "actual": 74000.0,
+          "budget": 66500.0,
+          "variance": 7500.0,
+          "variance_pct": 0.11278195
+        },
+        "capital_markets": {
+          "actual": 95482.33,
+          "budget": 542176.2,
+          "variance": -446693.87,
+          "variance_pct": -0.82389059
+        },
+        "sale_leaseback_mres": {
+          "actual": 60649.0,
+          "budget": 507342.87,
+          "variance": -446693.87,
+          "variance_pct": -0.88045757
+        },
+        "fund_slb_acquisition_carried_interest": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "fund_management_fees": {
+          "actual": 34833.33,
+          "budget": 34833.33,
+          "variance": 0.0,
+          "variance_pct": 0.0
+        },
+        "quaint_oak": {
+          "actual": 24741.0,
+          "budget": 24973.25,
+          "variance": -232.25,
+          "variance_pct": -0.00929995
+        },
+        "total_revenue": {
+          "actual": 1691310.31,
+          "budget": 2071592.05,
+          "variance": -380281.74,
+          "variance_pct": -0.1835698
+        },
+        "direct_staff_costs": {
+          "actual": 504216.35,
+          "budget": 534587.49,
+          "variance": -30371.14,
+          "variance_pct": -0.05681229
+        },
+        "other_direct_costs": {
+          "actual": 55912.32,
+          "budget": 59902.91,
+          "variance": -3990.59,
+          "variance_pct": -0.0666176
+        },
+        "capital_markets_direct_costs": {
+          "actual": 60469.41,
+          "budget": 289481.45,
+          "variance": -229012.04,
+          "variance_pct": -0.79111128
+        },
+        "total_cost_of_sales": {
+          "actual": 620598.08,
+          "budget": 883971.85,
+          "variance": -263373.77,
+          "variance_pct": -0.29794362
+        },
+        "gross_profit": {
+          "actual": 1070712.23,
+          "budget": 1187620.2,
+          "variance": -116907.97,
+          "variance_pct": -0.09843885
+        },
+        "gross_margin": {
+          "actual": 0.6330667,
+          "budget": 0.57328864,
+          "variance": 0.05977805,
+          "variance_pct": 0.10427217
+        },
+        "ga_staff": {
+          "actual": 409590.32,
+          "budget": 464306.32,
+          "variance": -54716.0,
+          "variance_pct": -0.11784462
+        },
+        "sales_marketing": {
+          "actual": 165697.43,
+          "budget": 164875.72,
+          "variance": 821.71,
+          "variance_pct": 0.00498383
+        },
+        "compliance_licensing": {
+          "actual": 20444.98,
+          "budget": 21397.72,
+          "variance": -952.74,
+          "variance_pct": -0.0445251
+        },
+        "rent_office": {
+          "actual": 57036.55,
+          "budget": 54250.0,
+          "variance": 2786.55,
+          "variance_pct": 0.05136498
+        },
+        "hr_expenses": {
+          "actual": 13155.93,
+          "budget": 17447.0,
+          "variance": -4291.07,
+          "variance_pct": -0.24594887
+        },
+        "it_expenses": {
+          "actual": 33287.5,
+          "budget": 37133.54,
+          "variance": -3846.04,
+          "variance_pct": -0.10357321
+        },
+        "professional_fees": {
+          "actual": 25340.0,
+          "budget": 50431.67,
+          "variance": -25091.67,
+          "variance_pct": -0.49753792
+        },
+        "insurance": {
+          "actual": 9244.58,
+          "budget": 12992.01,
+          "variance": -3747.43,
+          "variance_pct": -0.28844131
+        },
+        "other_ga": {
+          "actual": 10431.42,
+          "budget": 19514.8,
+          "variance": -9083.38,
+          "variance_pct": -0.46546117
+        },
+        "total_operating_expenses": {
+          "actual": 744228.71,
+          "budget": 842348.78,
+          "variance": -98120.07,
+          "variance_pct": -0.1164839
+        },
+        "ebitda": {
+          "actual": 326483.52,
+          "budget": 345271.42,
+          "variance": -18787.9,
+          "variance_pct": -0.05441488
+        },
+        "ebitda_margin": {
+          "actual": 0.19303585,
+          "budget": 0.1666696,
+          "variance": 0.02636625,
+          "variance_pct": 0.15819469
+        },
+        "sublease_income": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "interest_income_expense": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "other_inc_exp": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "depreciation_amortization": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "due_diligence": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "total_other_income_expenses": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "total_expenses": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "net_income": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "nvv": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "loan_sales_mres": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        }
+      }
+    },
+    {
+      "month": "2026-03",
+      "sheet": "Q1 2026",
+      "lines": {
+        "marketplace": {
+          "actual": 1649713.5,
+          "budget": 1546245.5,
+          "variance": 103468.0,
+          "variance_pct": 0.06691564
+        },
+        "mp_appraisal": {
+          "actual": 1517393.5,
+          "budget": 1453362.09,
+          "variance": 64031.41,
+          "variance_pct": 0.04405744
+        },
+        "other_marketplace": {
+          "actual": 132320.0,
+          "budget": 92883.41,
+          "variance": 39436.59,
+          "variance_pct": 0.42458161
+        },
+        "commercial_evaluations": {
+          "actual": 46135.0,
+          "budget": 27176.89,
+          "variance": 18958.11,
+          "variance_pct": 0.69758199
+        },
+        "residential_evaluations": {
+          "actual": 26305.0,
+          "budget": 23083.56,
+          "variance": 3221.44,
+          "variance_pct": 0.13955536
+        },
+        "environmentals": {
+          "actual": 40605.0,
+          "budget": 26948.3,
+          "variance": 13656.7,
+          "variance_pct": 0.50677398
+        },
+        "compliance_screen": {
+          "actual": 4005.0,
+          "budget": 5143.99,
+          "variance": -1138.99,
+          "variance_pct": -0.22142225
+        },
+        "site_inspections": {
+          "actual": 12930.0,
+          "budget": 7600.65,
+          "variance": 5329.35,
+          "variance_pct": 0.70117042
+        },
+        "avm": {
+          "actual": 2340.0,
+          "budget": 2930.01,
+          "variance": -590.01,
+          "variance_pct": -0.20136789
+        },
+        "other_revenue_mp": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "augur": {
+          "actual": 1000.0,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "market_data_reports": {
+          "actual": 126795.0,
+          "budget": 125336.78,
+          "variance": 1458.22,
+          "variance_pct": 0.01163444
+        },
+        "mountainseed_analytics": {
+          "actual": 27050.0,
+          "budget": 28200.94,
+          "variance": -1150.94,
+          "variance_pct": -0.04081203
+        },
+        "nbp": {
+          "actual": 115000.0,
+          "budget": 77000.0,
+          "variance": 38000.0,
+          "variance_pct": 0.49350649
+        },
+        "capital_markets": {
+          "actual": 554107.33,
+          "budget": 419021.16,
+          "variance": 135086.17,
+          "variance_pct": 0.32238508
+        },
+        "sale_leaseback_mres": {
+          "actual": 519274.0,
+          "budget": 384187.83,
+          "variance": 135086.17,
+          "variance_pct": 0.35161491
+        },
+        "fund_slb_acquisition_carried_interest": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "fund_management_fees": {
+          "actual": 34833.33,
+          "budget": 34833.33,
+          "variance": 0.0,
+          "variance_pct": 0.0
+        },
+        "quaint_oak": {
+          "actual": 24741.0,
+          "budget": 24973.25,
+          "variance": -232.25,
+          "variance_pct": -0.00929995
+        },
+        "total_revenue": {
+          "actual": 2498406.83,
+          "budget": 2220777.62,
+          "variance": 277629.21,
+          "variance_pct": 0.12501441
+        },
+        "direct_staff_costs": {
+          "actual": 600942.18,
+          "budget": 579475.08,
+          "variance": 21467.1,
+          "variance_pct": 0.03704576
+        },
+        "other_direct_costs": {
+          "actual": 65265.13,
+          "budget": 63897.3,
+          "variance": 1367.83,
+          "variance_pct": 0.02140662
+        },
+        "capital_markets_direct_costs": {
+          "actual": 229998.24,
+          "budget": 114265.62,
+          "variance": 115732.62,
+          "variance_pct": 1.01283849
+        },
+        "total_cost_of_sales": {
+          "actual": 896205.55,
+          "budget": 757638.01,
+          "variance": 138567.54,
+          "variance_pct": 0.18289412
+        },
+        "gross_profit": {
+          "actual": 1602201.28,
+          "budget": 1463139.61,
+          "variance": 139061.67,
+          "variance_pct": 0.09504334
+        },
+        "gross_margin": {
+          "actual": 0.64128919,
+          "budget": 0.65884112,
+          "variance": -0.01755193,
+          "variance_pct": -0.02664062
+        },
+        "ga_staff": {
+          "actual": 435375.03,
+          "budget": 557894.42,
+          "variance": -122519.39,
+          "variance_pct": -0.21961036
+        },
+        "sales_marketing": {
+          "actual": 185931.73,
+          "budget": 178768.99,
+          "variance": 7162.74,
+          "variance_pct": 0.04006703
+        },
+        "compliance_licensing": {
+          "actual": 23606.36,
+          "budget": 23578.5,
+          "variance": 27.86,
+          "variance_pct": 0.0011816
+        },
+        "rent_office": {
+          "actual": 55187.44,
+          "budget": 54250.0,
+          "variance": 937.44,
+          "variance_pct": 0.01728
+        },
+        "hr_expenses": {
+          "actual": 15938.68,
+          "budget": 24047.0,
+          "variance": -8108.32,
+          "variance_pct": -0.33718634
+        },
+        "it_expenses": {
+          "actual": 34366.29,
+          "budget": 36014.38,
+          "variance": -1648.09,
+          "variance_pct": -0.045762
+        },
+        "professional_fees": {
+          "actual": 84240.3,
+          "budget": 51491.67,
+          "variance": 32748.63,
+          "variance_pct": 0.63599871
+        },
+        "insurance": {
+          "actual": 9524.54,
+          "budget": 12992.01,
+          "variance": -3467.47,
+          "variance_pct": -0.26689269
+        },
+        "other_ga": {
+          "actual": 102910.87,
+          "budget": 88833.11,
+          "variance": 14077.76,
+          "variance_pct": 0.1584742
+        },
+        "total_operating_expenses": {
+          "actual": 947081.24,
+          "budget": 1027870.09,
+          "variance": -80788.85,
+          "variance_pct": -0.0785983
+        },
+        "ebitda": {
+          "actual": 655120.04,
+          "budget": 435269.52,
+          "variance": 219850.52,
+          "variance_pct": 0.50509053
+        },
+        "ebitda_margin": {
+          "actual": 0.26221512,
+          "budget": 0.1959987,
+          "variance": 0.06621642,
+          "variance_pct": 0.33784111
+        },
+        "sublease_income": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "interest_income_expense": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "other_inc_exp": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "depreciation_amortization": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "due_diligence": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "total_other_income_expenses": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "total_expenses": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "net_income": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "nvv": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "loan_sales_mres": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        }
+      }
+    },
+    {
+      "month": "2026-04",
+      "sheet": "Q2 2026",
+      "lines": {
+        "marketplace": {
+          "actual": 1850965.0,
+          "budget": 1815820.04,
+          "variance": 35144.96,
+          "variance_pct": 0.01935487
+        },
+        "mp_appraisal": {
+          "actual": 1733422.5,
+          "budget": 1706479.79,
+          "variance": 26942.71,
+          "variance_pct": 0.01578847
+        },
+        "other_marketplace": {
+          "actual": 117542.5,
+          "budget": 109340.25,
+          "variance": 8202.25,
+          "variance_pct": 0.07501581
+        },
+        "commercial_evaluations": {
+          "actual": 34652.5,
+          "budget": 31992.02,
+          "variance": 2660.48,
+          "variance_pct": 0.08316069
+        },
+        "residential_evaluations": {
+          "actual": 18200.0,
+          "budget": 27173.45,
+          "variance": -8973.45,
+          "variance_pct": -0.33022861
+        },
+        "environmentals": {
+          "actual": 48475.0,
+          "budget": 31722.93,
+          "variance": 16752.07,
+          "variance_pct": 0.5280744
+        },
+        "compliance_screen": {
+          "actual": 6385.0,
+          "budget": 6055.39,
+          "variance": 329.61,
+          "variance_pct": 0.05443171
+        },
+        "site_inspections": {
+          "actual": 8270.0,
+          "budget": 8947.31,
+          "variance": -677.31,
+          "variance_pct": -0.07570013
+        },
+        "avm": {
+          "actual": 1560.0,
+          "budget": 3449.14,
+          "variance": -1889.14,
+          "variance_pct": -0.54771353
+        },
+        "other_revenue_mp": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "augur": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "market_data_reports": {
+          "actual": 156815.0,
+          "budget": 139040.0,
+          "variance": 17775.0,
+          "variance_pct": 0.12784091
+        },
+        "mountainseed_analytics": {
+          "actual": 27050.0,
+          "budget": 25769.39,
+          "variance": 1280.61,
+          "variance_pct": 0.0496949
+        },
+        "nbp": {
+          "actual": 118000.0,
+          "budget": 99000.0,
+          "variance": 19000.0,
+          "variance_pct": 0.19191919
+        },
+        "capital_markets": {
+          "actual": 34833.33,
+          "budget": 34833.33,
+          "variance": 0.0,
+          "variance_pct": 0.0
+        },
+        "sale_leaseback_mres": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "fund_slb_acquisition_carried_interest": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "fund_management_fees": {
+          "actual": 34833.33,
+          "budget": 34833.33,
+          "variance": 0.0,
+          "variance_pct": 0.0
+        },
+        "quaint_oak": {
+          "actual": 24741.0,
+          "budget": 24973.25,
+          "variance": -232.25,
+          "variance_pct": -0.00929995
+        },
+        "total_revenue": {
+          "actual": 2212404.33,
+          "budget": 2139436.02,
+          "variance": 72968.31,
+          "variance_pct": 0.03410633
+        },
+        "direct_staff_costs": {
+          "actual": 614395.87,
+          "budget": 637836.55,
+          "variance": -23440.68,
+          "variance_pct": -0.03675029
+        },
+        "other_direct_costs": {
+          "actual": 64949.8,
+          "budget": 67969.81,
+          "variance": -3020.01,
+          "variance_pct": -0.04443161
+        },
+        "capital_markets_direct_costs": {
+          "actual": 48252.4,
+          "budget": 40808.81,
+          "variance": 7443.59,
+          "variance_pct": 0.18240147
+        },
+        "total_cost_of_sales": {
+          "actual": 727598.07,
+          "budget": 746615.17,
+          "variance": -19017.1,
+          "variance_pct": -0.02547108
+        },
+        "gross_profit": {
+          "actual": 1484806.26,
+          "budget": 1392820.85,
+          "variance": 91985.41,
+          "variance_pct": 0.06604253
+        },
+        "gross_margin": {
+          "actual": 0.67112789,
+          "budget": 0.65102244,
+          "variance": 0.02010546,
+          "variance_pct": 0.03088289
+        },
+        "ga_staff": {
+          "actual": 429205.71,
+          "budget": 503008.23,
+          "variance": -73802.52,
+          "variance_pct": -0.14672229
+        },
+        "sales_marketing": {
+          "actual": 229502.01,
+          "budget": 244510.38,
+          "variance": -15008.37,
+          "variance_pct": -0.06138133
+        },
+        "compliance_licensing": {
+          "actual": 26061.72,
+          "budget": 29090.6,
+          "variance": -3028.88,
+          "variance_pct": -0.10411876
+        },
+        "rent_office": {
+          "actual": 53336.11,
+          "budget": 55925.0,
+          "variance": -2588.89,
+          "variance_pct": -0.04629218
+        },
+        "hr_expenses": {
+          "actual": 14084.28,
+          "budget": 18097.0,
+          "variance": -4012.72,
+          "variance_pct": -0.22173399
+        },
+        "it_expenses": {
+          "actual": 36269.81,
+          "budget": 35605.12,
+          "variance": 664.69,
+          "variance_pct": 0.01866829
+        },
+        "professional_fees": {
+          "actual": 46881.46,
+          "budget": 81570.0,
+          "variance": -34688.54,
+          "variance_pct": -0.425261
+        },
+        "insurance": {
+          "actual": 9492.9,
+          "budget": 10955.43,
+          "variance": -1462.53,
+          "variance_pct": -0.13349818
+        },
+        "other_ga": {
+          "actual": 151916.38,
+          "budget": 142414.48,
+          "variance": 9501.9,
+          "variance_pct": 0.06672006
+        },
+        "total_operating_expenses": {
+          "actual": 996750.38,
+          "budget": 1121176.24,
+          "variance": -124425.86,
+          "variance_pct": -0.11097797
+        },
+        "ebitda": {
+          "actual": 488055.88,
+          "budget": 271644.61,
+          "variance": 216411.27,
+          "variance_pct": 0.79667057
+        },
+        "ebitda_margin": {
+          "actual": 0.22059977,
+          "budget": 0.1269702,
+          "variance": 0.09362957,
+          "variance_pct": 0.73741376
+        },
+        "sublease_income": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "interest_income_expense": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "other_inc_exp": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "depreciation_amortization": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "due_diligence": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "total_other_income_expenses": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "total_expenses": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "net_income": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "nvv": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "loan_sales_mres": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        }
+      }
+    },
+    {
+      "month": "2026-05",
+      "sheet": "Q2 2026",
+      "lines": {
+        "marketplace": {
+          "actual": 1713358.0,
+          "budget": 1661756.58,
+          "variance": 51601.42,
+          "variance_pct": 0.03105233
+        },
+        "mp_appraisal": {
+          "actual": 1602803.0,
+          "budget": 1561695.69,
+          "variance": 41107.31,
+          "variance_pct": 0.02632223
+        },
+        "other_marketplace": {
+          "actual": 110555.0,
+          "budget": 100060.89,
+          "variance": 10494.11,
+          "variance_pct": 0.10487719
+        },
+        "commercial_evaluations": {
+          "actual": 33650.0,
+          "budget": 29276.96,
+          "variance": 4373.04,
+          "variance_pct": 0.14936794
+        },
+        "residential_evaluations": {
+          "actual": 19635.0,
+          "budget": 24867.33,
+          "variance": -5232.33,
+          "variance_pct": -0.2104097
+        },
+        "environmentals": {
+          "actual": 39750.0,
+          "budget": 29030.71,
+          "variance": 10719.29,
+          "variance_pct": 0.36923977
+        },
+        "compliance_screen": {
+          "actual": 5200.0,
+          "budget": 5541.49,
+          "variance": -341.49,
+          "variance_pct": -0.06162465
+        },
+        "site_inspections": {
+          "actual": 10970.0,
+          "budget": 8187.98,
+          "variance": 2782.02,
+          "variance_pct": 0.33976831
+        },
+        "avm": {
+          "actual": 1350.0,
+          "budget": 3156.42,
+          "variance": -1806.42,
+          "variance_pct": -0.57230078
+        },
+        "other_revenue_mp": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "augur": {
+          "actual": 2500.0,
+          "budget": 5500.0,
+          "variance": -3000.0,
+          "variance_pct": -0.54545455
+        },
+        "market_data_reports": {
+          "actual": 139040.0,
+          "budget": 126400.0,
+          "variance": 12640.0,
+          "variance_pct": 0.1
+        },
+        "mountainseed_analytics": {
+          "actual": 25758.33,
+          "budget": 25334.96,
+          "variance": 423.38,
+          "variance_pct": 0.0167111
+        },
+        "nbp": {
+          "actual": 106000.0,
+          "budget": 90000.0,
+          "variance": 16000.0,
+          "variance_pct": 0.17777778
+        },
+        "capital_markets": {
+          "actual": 55702.99,
+          "budget": 553804.76,
+          "variance": -498101.77,
+          "variance_pct": -0.89941764
+        },
+        "sale_leaseback_mres": {
+          "actual": null,
+          "budget": 498101.77,
+          "variance": null,
+          "variance_pct": null
+        },
+        "fund_slb_acquisition_carried_interest": {
+          "actual": 20869.66,
+          "budget": 20869.66,
+          "variance": 0.0,
+          "variance_pct": 0.0
+        },
+        "fund_management_fees": {
+          "actual": 34833.33,
+          "budget": 34833.33,
+          "variance": 0.0,
+          "variance_pct": 0.0
+        },
+        "quaint_oak": {
+          "actual": 24741.0,
+          "budget": 24973.25,
+          "variance": -232.25,
+          "variance_pct": -0.00929995
+        },
+        "total_revenue": {
+          "actual": 2067100.32,
+          "budget": 2487769.55,
+          "variance": -420669.23,
+          "variance_pct": -0.16909493
+        },
+        "direct_staff_costs": {
+          "actual": 590340.5,
+          "budget": 632192.9,
+          "variance": -41852.4,
+          "variance_pct": -0.06620195
+        },
+        "other_direct_costs": {
+          "actual": 66410.97,
+          "budget": 66473.44,
+          "variance": -62.47,
+          "variance_pct": -0.00093984
+        },
+        "capital_markets_direct_costs": {
+          "actual": 19747.81,
+          "budget": 171495.43,
+          "variance": -151747.62,
+          "variance_pct": -0.88484935
+        },
+        "total_cost_of_sales": {
+          "actual": 676499.28,
+          "budget": 870161.78,
+          "variance": -193662.5,
+          "variance_pct": -0.22255918
+        },
+        "gross_profit": {
+          "actual": 1390601.04,
+          "budget": 1617607.77,
+          "variance": -227006.73,
+          "variance_pct": -0.14033484
+        },
+        "gross_margin": {
+          "actual": 0.67273031,
+          "budget": 0.65022412,
+          "variance": 0.02250619,
+          "variance_pct": 0.03461297
+        },
+        "ga_staff": {
+          "actual": 433756.76,
+          "budget": 451779.76,
+          "variance": -18023.0,
+          "variance_pct": -0.03989333
+        },
+        "sales_marketing": {
+          "actual": 197890.77,
+          "budget": 202144.89,
+          "variance": -4254.12,
+          "variance_pct": -0.02104489
+        },
+        "compliance_licensing": {
+          "actual": 28814.95,
+          "budget": 21397.72,
+          "variance": 7417.23,
+          "variance_pct": 0.34663675
+        },
+        "rent_office": {
+          "actual": 56287.96,
+          "budget": 54710.0,
+          "variance": 1577.96,
+          "variance_pct": 0.02884226
+        },
+        "hr_expenses": {
+          "actual": 11987.96,
+          "budget": 37297.0,
+          "variance": -25309.04,
+          "variance_pct": -0.67858112
+        },
+        "it_expenses": {
+          "actual": 31169.27,
+          "budget": 38705.54,
+          "variance": -7536.27,
+          "variance_pct": -0.19470786
+        },
+        "professional_fees": {
+          "actual": 70887.5,
+          "budget": 93365.0,
+          "variance": -22477.5,
+          "variance_pct": -0.24074867
+        },
+        "insurance": {
+          "actual": 9614.04,
+          "budget": 10955.43,
+          "variance": -1341.39,
+          "variance_pct": -0.12244065
+        },
+        "other_ga": {
+          "actual": 31621.41,
+          "budget": 51099.27,
+          "variance": -19477.86,
+          "variance_pct": -0.38117688
+        },
+        "total_operating_expenses": {
+          "actual": 872030.62,
+          "budget": 961454.61,
+          "variance": -89423.99,
+          "variance_pct": -0.09300906
+        },
+        "ebitda": {
+          "actual": 518570.42,
+          "budget": 656153.17,
+          "variance": -137582.75,
+          "variance_pct": -0.20968084
+        },
+        "ebitda_margin": {
+          "actual": 0.25086853,
+          "budget": 0.26375159,
+          "variance": -0.01288306,
+          "variance_pct": -0.04884542
+        },
+        "sublease_income": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "interest_income_expense": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "other_inc_exp": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "depreciation_amortization": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "due_diligence": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "total_other_income_expenses": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "total_expenses": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "net_income": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "nvv": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "loan_sales_mres": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        }
+      }
+    },
+    {
+      "month": "2026-06",
+      "sheet": "Q2 2026",
+      "lines": {
+        "marketplace": {
+          "actual": 1753056.0,
+          "budget": 1788846.67,
+          "variance": -35790.67,
+          "variance_pct": -0.02000768
+        },
+        "mp_appraisal": {
+          "actual": 1623847.0,
+          "budget": 1681142.6,
+          "variance": -57295.6,
+          "variance_pct": -0.03408134
+        },
+        "other_marketplace": {
+          "actual": 129209.0,
+          "budget": 107704.08,
+          "variance": 21504.92,
+          "variance_pct": 0.19966677
+        },
+        "commercial_evaluations": {
+          "actual": 47570.0,
+          "budget": 31513.29,
+          "variance": 16056.71,
+          "variance_pct": 0.50952186
+        },
+        "residential_evaluations": {
+          "actual": 29240.0,
+          "budget": 26766.82,
+          "variance": 2473.18,
+          "variance_pct": 0.09239703
+        },
+        "environmentals": {
+          "actual": 43964.0,
+          "budget": 31248.23,
+          "variance": 12715.77,
+          "variance_pct": 0.40692782
+        },
+        "compliance_screen": {
+          "actual": 2580.0,
+          "budget": 5964.78,
+          "variance": -3384.78,
+          "variance_pct": -0.56746108
+        },
+        "site_inspections": {
+          "actual": 4985.0,
+          "budget": 8813.42,
+          "variance": -3828.42,
+          "variance_pct": -0.43438557
+        },
+        "avm": {
+          "actual": 870.0,
+          "budget": 3397.53,
+          "variance": -2527.53,
+          "variance_pct": -0.74393148
+        },
+        "other_revenue_mp": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "augur": {
+          "actual": 4254.44,
+          "budget": 10500.0,
+          "variance": -6245.56,
+          "variance_pct": -0.59481524
+        },
+        "market_data_reports": {
+          "actual": 138955.0,
+          "budget": 132720.0,
+          "variance": 6235.0,
+          "variance_pct": 0.0469786
+        },
+        "mountainseed_analytics": {
+          "actual": 25833.33,
+          "budget": 25047.58,
+          "variance": 785.75,
+          "variance_pct": 0.0313703
+        },
+        "nbp": {
+          "actual": 100000.0,
+          "budget": 94500.0,
+          "variance": 5500.0,
+          "variance_pct": 0.05820106
+        },
+        "capital_markets": {
+          "actual": 34833.33,
+          "budget": 1823666.04,
+          "variance": -1788832.71,
+          "variance_pct": -0.98089928
+        },
+        "sale_leaseback_mres": {
+          "actual": null,
+          "budget": 1788832.71,
+          "variance": null,
+          "variance_pct": null
+        },
+        "fund_slb_acquisition_carried_interest": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "fund_management_fees": {
+          "actual": 34833.33,
+          "budget": 34833.33,
+          "variance": 0.0,
+          "variance_pct": 0.0
+        },
+        "quaint_oak": {
+          "actual": 24741.0,
+          "budget": 24973.25,
+          "variance": -232.25,
+          "variance_pct": -0.00929995
+        },
+        "total_revenue": {
+          "actual": 2081673.1,
+          "budget": 3900253.55,
+          "variance": -1818580.45,
+          "variance_pct": -0.46627237
+        },
+        "direct_staff_costs": {
+          "actual": 245745.17,
+          "budget": 663722.1,
+          "variance": -417976.93,
+          "variance_pct": -0.62974689
+        },
+        "other_direct_costs": {
+          "actual": 69006.36,
+          "budget": 68629.49,
+          "variance": 376.87,
+          "variance_pct": 0.0054914
+        },
+        "capital_markets_direct_costs": {
+          "actual": 35812.51,
+          "budget": 518651.2,
+          "variance": -482838.69,
+          "variance_pct": -0.93095069
+        },
+        "total_cost_of_sales": {
+          "actual": 350564.04,
+          "budget": 1251002.79,
+          "variance": -900438.75,
+          "variance_pct": -0.71977357
+        },
+        "gross_profit": {
+          "actual": 1731109.06,
+          "budget": 2649250.76,
+          "variance": -918141.7,
+          "variance_pct": -0.34656655
+        },
+        "gross_margin": {
+          "actual": 0.83159506,
+          "budget": 0.67925091,
+          "variance": 0.15234415,
+          "variance_pct": 0.22428259
+        },
+        "ga_staff": {
+          "actual": 1179192.6,
+          "budget": 486908.04,
+          "variance": 692284.56,
+          "variance_pct": 1.42179734
+        },
+        "sales_marketing": {
+          "actual": 495715.42,
+          "budget": 214621.71,
+          "variance": 281093.71,
+          "variance_pct": 1.30971699
+        },
+        "compliance_licensing": {
+          "actual": 26673.43,
+          "budget": 28456.14,
+          "variance": -1782.71,
+          "variance_pct": -0.06264753
+        },
+        "rent_office": {
+          "actual": 53775.46,
+          "budget": 54750.0,
+          "variance": -974.54,
+          "variance_pct": -0.01779982
+        },
+        "hr_expenses": {
+          "actual": 22395.59,
+          "budget": 14797.0,
+          "variance": 7598.59,
+          "variance_pct": 0.51352234
+        },
+        "it_expenses": {
+          "actual": 33841.87,
+          "budget": 34225.96,
+          "variance": -384.09,
+          "variance_pct": -0.01122228
+        },
+        "professional_fees": {
+          "actual": 54730.0,
+          "budget": 84845.0,
+          "variance": -30115.0,
+          "variance_pct": -0.35494136
+        },
+        "insurance": {
+          "actual": 9733.13,
+          "budget": 10955.43,
+          "variance": -1222.3,
+          "variance_pct": -0.11157024
+        },
+        "other_ga": {
+          "actual": 25987.82,
+          "budget": 9554.29,
+          "variance": 16433.53,
+          "variance_pct": 1.72001614
+        },
+        "total_operating_expenses": {
+          "actual": 1902045.32,
+          "budget": 939113.58,
+          "variance": 962931.74,
+          "variance_pct": 1.02536239
+        },
+        "ebitda": {
+          "actual": -170936.26,
+          "budget": 1710137.18,
+          "variance": -1881073.44,
+          "variance_pct": -1.09995471
+        },
+        "ebitda_margin": {
+          "actual": -0.08211484,
+          "budget": 0.43846821,
+          "variance": -0.52058305,
+          "variance_pct": -1.18727662
+        },
+        "sublease_income": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "interest_income_expense": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "other_inc_exp": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "depreciation_amortization": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "due_diligence": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "total_other_income_expenses": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "total_expenses": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "net_income": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "nvv": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "loan_sales_mres": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        }
+      }
+    },
+    {
+      "month": "2026-07",
+      "sheet": "P&L",
+      "lines": {
+        "marketplace": {
+          "actual": 1784999.25,
+          "budget": 1788271.58,
+          "variance": -3272.33,
+          "variance_pct": -0.00182988
+        },
+        "mp_appraisal": {
+          "actual": 1633734.0,
+          "budget": 1680975.28,
+          "variance": -47241.28,
+          "variance_pct": -0.0281035
+        },
+        "other_marketplace": {
+          "actual": 151265.25,
+          "budget": 107296.29,
+          "variance": 43968.96,
+          "variance_pct": 0.40979006
+        },
+        "commercial_evaluations": {
+          "actual": 59465.25,
+          "budget": 32252.35,
+          "variance": 27212.9,
+          "variance_pct": 0.84374954
+        },
+        "residential_evaluations": {
+          "actual": 30475.0,
+          "budget": 27523.85,
+          "variance": 2951.15,
+          "variance_pct": 0.10722145
+        },
+        "environmentals": {
+          "actual": 39340.0,
+          "budget": 31129.92,
+          "variance": 8210.08,
+          "variance_pct": 0.26373609
+        },
+        "compliance_screen": {
+          "actual": 6105.0,
+          "budget": 5942.2,
+          "variance": 162.8,
+          "variance_pct": 0.02739766
+        },
+        "site_inspections": {
+          "actual": 14560.0,
+          "budget": 8780.06,
+          "variance": 5779.94,
+          "variance_pct": 0.65830384
+        },
+        "avm": {
+          "actual": 1320.0,
+          "budget": 1667.92,
+          "variance": -347.92,
+          "variance_pct": -0.20859704
+        },
+        "other_revenue_mp": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "augur": {
+          "actual": 6466.66,
+          "budget": 6754.44,
+          "variance": -287.78,
+          "variance_pct": -0.04260652
+        },
+        "market_data_reports": {
+          "actual": 127500.0,
+          "budget": 143385.0,
+          "variance": -15885.0,
+          "variance_pct": -0.11078565
+        },
+        "mountainseed_analytics": {
+          "actual": 24958.33,
+          "budget": 25467.58,
+          "variance": -509.25,
+          "variance_pct": -0.01999614
+        },
+        "nbp": {
+          "actual": 97000.0,
+          "budget": 93500.0,
+          "variance": 3500.0,
+          "variance_pct": 0.03743316
+        },
+        "capital_markets": {
+          "actual": 419021.33,
+          "budget": 419021.16,
+          "variance": 0.17,
+          "variance_pct": 4.1e-07
+        },
+        "sale_leaseback_mres": {
+          "actual": 384188.0,
+          "budget": 384187.83,
+          "variance": 0.17,
+          "variance_pct": 4.4e-07
+        },
+        "fund_slb_acquisition_carried_interest": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "fund_management_fees": {
+          "actual": 34833.33,
+          "budget": 34833.33,
+          "variance": 0.0,
+          "variance_pct": 0.0
+        },
+        "quaint_oak": {
+          "actual": 24741.0,
+          "budget": 24741.0,
+          "variance": 0.0,
+          "variance_pct": 0.0
+        },
+        "total_revenue": {
+          "actual": 2484686.57,
+          "budget": 2501140.76,
+          "variance": -16454.19,
+          "variance_pct": -0.00657867
+        },
+        "direct_staff_costs": {
+          "actual": 602954.31,
+          "budget": 586928.71,
+          "variance": 16025.6,
+          "variance_pct": 0.02730417
+        },
+        "other_direct_costs": {
+          "actual": 67364.83,
+          "budget": 73248.29,
+          "variance": -5883.46,
+          "variance_pct": -0.08032216
+        },
+        "capital_markets_direct_costs": {
+          "actual": 95538.72,
+          "budget": 99828.52,
+          "variance": -4289.8,
+          "variance_pct": -0.04297172
+        },
+        "total_cost_of_sales": {
+          "actual": 765857.86,
+          "budget": 760005.52,
+          "variance": 5852.34,
+          "variance_pct": 0.00770039
+        },
+        "gross_profit": {
+          "actual": 1718828.71,
+          "budget": 1741135.24,
+          "variance": -22306.53,
+          "variance_pct": -0.01281149
+        },
+        "gross_margin": {
+          "actual": 0.69176883,
+          "budget": 0.69613645,
+          "variance": -0.00436762,
+          "variance_pct": -0.00627409
+        },
+        "ga_staff": {
+          "actual": 506125.19,
+          "budget": 534539.68,
+          "variance": -28414.49,
+          "variance_pct": -0.05315694
+        },
+        "sales_marketing": {
+          "actual": 271515.71,
+          "budget": 273747.55,
+          "variance": -2231.84,
+          "variance_pct": -0.00815292
+        },
+        "compliance_licensing": {
+          "actual": 19808.69,
+          "budget": 28121.83,
+          "variance": -8313.14,
+          "variance_pct": -0.29561154
+        },
+        "rent_office": {
+          "actual": 53392.8,
+          "budget": 56325.0,
+          "variance": -2932.2,
+          "variance_pct": -0.05205859
+        },
+        "hr_expenses": {
+          "actual": 15925.69,
+          "budget": 17610.0,
+          "variance": -1684.31,
+          "variance_pct": -0.09564509
+        },
+        "it_expenses": {
+          "actual": 36586.16,
+          "budget": 38070.17,
+          "variance": -1484.01,
+          "variance_pct": -0.03898083
+        },
+        "professional_fees": {
+          "actual": 67542.0,
+          "budget": 69675.0,
+          "variance": -2133.0,
+          "variance_pct": -0.03061356
+        },
+        "insurance": {
+          "actual": 10342.9,
+          "budget": 10093.0,
+          "variance": 249.9,
+          "variance_pct": 0.02475973
+        },
+        "other_ga": {
+          "actual": 8506.94,
+          "budget": 13857.07,
+          "variance": -5350.13,
+          "variance_pct": -0.38609381
+        },
+        "total_operating_expenses": {
+          "actual": 989746.08,
+          "budget": 1042039.3,
+          "variance": -52293.22,
+          "variance_pct": -0.05018354
+        },
+        "ebitda": {
+          "actual": 729082.63,
+          "budget": 699095.94,
+          "variance": 29986.69,
+          "variance_pct": 0.04289352
+        },
+        "ebitda_margin": {
+          "actual": 0.29343042,
+          "budget": 0.27951084,
+          "variance": 0.01391959,
+          "variance_pct": 0.04979981
+        },
+        "sublease_income": {
+          "actual": -7136.31,
+          "budget": -7136.0,
+          "variance": -0.31,
+          "variance_pct": 4.344e-05
+        },
+        "interest_income_expense": {
+          "actual": 137079.12,
+          "budget": 123279.23,
+          "variance": 13799.89,
+          "variance_pct": 0.11194009
+        },
+        "other_inc_exp": {
+          "actual": -7608.78,
+          "budget": -250.0,
+          "variance": -7358.78,
+          "variance_pct": 29.43512
+        },
+        "depreciation_amortization": {
+          "actual": 16848.0,
+          "budget": 16900.0,
+          "variance": -52.0,
+          "variance_pct": -0.00307692
+        },
+        "due_diligence": {
+          "actual": 27307.5,
+          "budget": 23333.33,
+          "variance": 3974.17,
+          "variance_pct": 0.17032143
+        },
+        "total_other_income_expenses": {
+          "actual": 166489.53,
+          "budget": 156126.56,
+          "variance": 10362.97,
+          "variance_pct": 0.06637541
+        },
+        "total_expenses": {
+          "actual": 1922093.47,
+          "budget": 1958171.38,
+          "variance": -36077.91,
+          "variance_pct": -0.01842429
+        },
+        "net_income": {
+          "actual": 562593.1,
+          "budget": 542969.38,
+          "variance": 19623.72,
+          "variance_pct": 0.03614149
+        },
+        "nvv": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "loan_sales_mres": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        }
+      }
+    },
+    {
+      "month": "2026-08",
+      "sheet": "P&L",
+      "lines": {
+        "marketplace": {
+          "actual": 1676076.5,
+          "budget": 1694682.86,
+          "variance": -18606.36,
+          "variance_pct": -0.01097926
+        },
+        "mp_appraisal": {
+          "actual": 1519366.5,
+          "budget": 1593001.89,
+          "variance": -73635.39,
+          "variance_pct": -0.04622429
+        },
+        "other_marketplace": {
+          "actual": 156710.0,
+          "budget": 101680.97,
+          "variance": 55029.03,
+          "variance_pct": 0.54119299
+        },
+        "commercial_evaluations": {
+          "actual": 49465.0,
+          "budget": 30564.43,
+          "variance": 18900.57,
+          "variance_pct": 0.61838456
+        },
+        "residential_evaluations": {
+          "actual": 27790.0,
+          "budget": 26083.4,
+          "variance": 1706.6,
+          "variance_pct": 0.06542862
+        },
+        "environmentals": {
+          "actual": 61475.0,
+          "budget": 29500.74,
+          "variance": 31974.26,
+          "variance_pct": 1.08384593
+        },
+        "compliance_screen": {
+          "actual": 3145.0,
+          "budget": 5631.21,
+          "variance": -2486.21,
+          "variance_pct": -0.4415059
+        },
+        "site_inspections": {
+          "actual": 13215.0,
+          "budget": 8320.55,
+          "variance": 4894.45,
+          "variance_pct": 0.58823563
+        },
+        "avm": {
+          "actual": 1620.0,
+          "budget": 1580.63,
+          "variance": 39.37,
+          "variance_pct": 0.02490542
+        },
+        "other_revenue_mp": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "augur": {
+          "actual": 12615.86,
+          "budget": 31754.44,
+          "variance": -19138.58,
+          "variance_pct": -0.60270568
+        },
+        "market_data_reports": {
+          "actual": 114550.0,
+          "budget": 136867.5,
+          "variance": -22317.5,
+          "variance_pct": -0.16305916
+        },
+        "mountainseed_analytics": {
+          "actual": 24558.34,
+          "budget": 24543.08,
+          "variance": 15.26,
+          "variance_pct": 0.00062176
+        },
+        "nbp": {
+          "actual": 90000.0,
+          "budget": 94500.0,
+          "variance": -4500.0,
+          "variance_pct": -0.04761905
+        },
+        "capital_markets": {
+          "actual": 148747.33,
+          "budget": 148747.27,
+          "variance": 0.06,
+          "variance_pct": 4e-07
+        },
+        "sale_leaseback_mres": {
+          "actual": 113914.0,
+          "budget": 113913.94,
+          "variance": 0.06,
+          "variance_pct": 5.2e-07
+        },
+        "fund_slb_acquisition_carried_interest": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "fund_management_fees": {
+          "actual": 34833.33,
+          "budget": 34833.33,
+          "variance": 0.0,
+          "variance_pct": 0.0
+        },
+        "quaint_oak": {
+          "actual": 24741.0,
+          "budget": 24741.0,
+          "variance": 0.0,
+          "variance_pct": 0.0
+        },
+        "total_revenue": {
+          "actual": 2091289.03,
+          "budget": 2155836.15,
+          "variance": -64547.12,
+          "variance_pct": -0.02994064
+        },
+        "direct_staff_costs": {
+          "actual": 531662.76,
+          "budget": 542767.8,
+          "variance": -11105.04,
+          "variance_pct": -0.02046001
+        },
+        "other_direct_costs": {
+          "actual": 68038.34,
+          "budget": 74197.11,
+          "variance": -6158.77,
+          "variance_pct": -0.08300553
+        },
+        "capital_markets_direct_costs": {
+          "actual": 78329.35,
+          "budget": 82256.16,
+          "variance": -3926.81,
+          "variance_pct": -0.04773883
+        },
+        "total_cost_of_sales": {
+          "actual": 678030.45,
+          "budget": 699221.07,
+          "variance": -21190.62,
+          "variance_pct": -0.03030604
+        },
+        "gross_profit": {
+          "actual": 1413258.58,
+          "budget": 1456615.08,
+          "variance": -43356.5,
+          "variance_pct": -0.02976524
+        },
+        "gross_margin": {
+          "actual": 0.67578348,
+          "budget": 0.67566131,
+          "variance": 0.00012217,
+          "variance_pct": 0.00018081
+        },
+        "ga_staff": {
+          "actual": 431653.85,
+          "budget": 467141.73,
+          "variance": -35487.88,
+          "variance_pct": -0.07596812
+        },
+        "sales_marketing": {
+          "actual": 261772.31,
+          "budget": 270176.68,
+          "variance": -8404.37,
+          "variance_pct": -0.03110695
+        },
+        "compliance_licensing": {
+          "actual": 18781.63,
+          "budget": 21397.72,
+          "variance": -2616.09,
+          "variance_pct": -0.12226003
+        },
+        "rent_office": {
+          "actual": 52991.0,
+          "budget": 54250.0,
+          "variance": -1259.0,
+          "variance_pct": -0.02320737
+        },
+        "hr_expenses": {
+          "actual": 11998.12,
+          "budget": 61900.0,
+          "variance": -49901.88,
+          "variance_pct": -0.80616931
+        },
+        "it_expenses": {
+          "actual": 34652.06,
+          "budget": 35672.33,
+          "variance": -1020.27,
+          "variance_pct": -0.02860125
+        },
+        "professional_fees": {
+          "actual": 94267.88,
+          "budget": 58911.67,
+          "variance": 35356.21,
+          "variance_pct": 0.60015639
+        },
+        "insurance": {
+          "actual": 9503.62,
+          "budget": 10093.0,
+          "variance": -589.38,
+          "variance_pct": -0.05839493
+        },
+        "other_ga": {
+          "actual": 14844.21,
+          "budget": 9502.79,
+          "variance": 5341.42,
+          "variance_pct": 0.56208917
+        },
+        "total_operating_expenses": {
+          "actual": 930464.68,
+          "budget": 989045.92,
+          "variance": -58581.24,
+          "variance_pct": -0.05923005
+        },
+        "ebitda": {
+          "actual": 482793.9,
+          "budget": 467569.16,
+          "variance": 15224.74,
+          "variance_pct": 0.03256147
+        },
+        "ebitda_margin": {
+          "actual": 0.23085948,
+          "budget": 0.2168853,
+          "variance": 0.01397419,
+          "variance_pct": 0.06443123
+        },
+        "sublease_income": {
+          "actual": -7136.31,
+          "budget": -7136.0,
+          "variance": -0.31,
+          "variance_pct": 4.344e-05
+        },
+        "interest_income_expense": {
+          "actual": 136320.38,
+          "budget": 123279.23,
+          "variance": 13041.15,
+          "variance_pct": 0.10578545
+        },
+        "other_inc_exp": {
+          "actual": -361.99,
+          "budget": -250.0,
+          "variance": -111.99,
+          "variance_pct": 0.44796
+        },
+        "depreciation_amortization": {
+          "actual": 15494.03,
+          "budget": 16900.0,
+          "variance": -1405.97,
+          "variance_pct": -0.08319349
+        },
+        "due_diligence": {
+          "actual": 74786.64,
+          "budget": 23333.33,
+          "variance": 51453.31,
+          "variance_pct": 2.20514171
+        },
+        "total_other_income_expenses": {
+          "actual": 219102.75,
+          "budget": 156126.56,
+          "variance": 62976.19,
+          "variance_pct": 0.40336624
+        },
+        "total_expenses": {
+          "actual": 1827597.88,
+          "budget": 1844393.56,
+          "variance": -16795.68,
+          "variance_pct": -0.00910634
+        },
+        "net_income": {
+          "actual": 263691.15,
+          "budget": 311442.6,
+          "variance": -47751.45,
+          "variance_pct": -0.15332343
+        },
+        "nvv": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "loan_sales_mres": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        }
+      }
+    },
+    {
+      "month": "2026-09",
+      "sheet": "P&L",
+      "lines": {
+        "marketplace": {
+          "actual": 1750548.5,
+          "budget": 1762484.82,
+          "variance": -11936.32,
+          "variance_pct": -0.00677244
+        },
+        "mp_appraisal": {
+          "actual": 1589526.0,
+          "budget": 1656735.73,
+          "variance": -67209.73,
+          "variance_pct": -0.04056756
+        },
+        "other_marketplace": {
+          "actual": 161022.5,
+          "budget": 105749.09,
+          "variance": 55273.41,
+          "variance_pct": 0.52268451
+        },
+        "commercial_evaluations": {
+          "actual": 52707.5,
+          "budget": 31787.27,
+          "variance": 20920.23,
+          "variance_pct": 0.65813231
+        },
+        "residential_evaluations": {
+          "actual": 32245.0,
+          "budget": 27126.96,
+          "variance": 5118.04,
+          "variance_pct": 0.18866984
+        },
+        "environmentals": {
+          "actual": 58865.0,
+          "budget": 30681.03,
+          "variance": 28183.97,
+          "variance_pct": 0.91861249
+        },
+        "compliance_screen": {
+          "actual": 6450.0,
+          "budget": 5856.51,
+          "variance": 593.49,
+          "variance_pct": 0.10133821
+        },
+        "site_inspections": {
+          "actual": 8465.0,
+          "budget": 8653.45,
+          "variance": -188.45,
+          "variance_pct": -0.0217772
+        },
+        "avm": {
+          "actual": 1290.0,
+          "budget": 1643.87,
+          "variance": -353.87,
+          "variance_pct": -0.21526769
+        },
+        "other_revenue_mp": {
+          "actual": 1000.0,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "augur": {
+          "actual": 31070.79,
+          "budget": 31754.44,
+          "variance": -683.65,
+          "variance_pct": -0.02152938
+        },
+        "market_data_reports": {
+          "actual": 132720.0,
+          "budget": 136867.5,
+          "variance": -4147.5,
+          "variance_pct": -0.03030303
+        },
+        "mountainseed_analytics": {
+          "actual": 23066.66,
+          "budget": 22749.66,
+          "variance": 317.0,
+          "variance_pct": 0.01393427
+        },
+        "nbp": {
+          "actual": 84000.0,
+          "budget": 99750.0,
+          "variance": -15750.0,
+          "variance_pct": -0.15789474
+        },
+        "capital_markets": {
+          "actual": 507854.33,
+          "budget": 571947.67,
+          "variance": -64093.34,
+          "variance_pct": -0.11206155
+        },
+        "sale_leaseback_mres": {
+          "actual": 473021.0,
+          "budget": 473021.0,
+          "variance": 0.0,
+          "variance_pct": 0.0
+        },
+        "fund_slb_acquisition_carried_interest": {
+          "actual": null,
+          "budget": 64093.34,
+          "variance": null,
+          "variance_pct": null
+        },
+        "fund_management_fees": {
+          "actual": 34833.33,
+          "budget": 34833.33,
+          "variance": 0.0,
+          "variance_pct": 0.0
+        },
+        "quaint_oak": {
+          "actual": 24741.0,
+          "budget": 24741.0,
+          "variance": 0.0,
+          "variance_pct": 0.0
+        },
+        "total_revenue": {
+          "actual": 2554001.28,
+          "budget": 2650295.09,
+          "variance": -96293.81,
+          "variance_pct": -0.03633324
+        },
+        "direct_staff_costs": {
+          "actual": 564005.41,
+          "budget": 568425.06,
+          "variance": -4419.65,
+          "variance_pct": -0.00777526
+        },
+        "other_direct_costs": {
+          "actual": 70881.3,
+          "budget": 75078.74,
+          "variance": -4197.44,
+          "variance_pct": -0.05590717
+        },
+        "capital_markets_direct_costs": {
+          "actual": 149253.7,
+          "budget": 123854.86,
+          "variance": 25398.84,
+          "variance_pct": 0.20506941
+        },
+        "total_cost_of_sales": {
+          "actual": 784140.41,
+          "budget": 767358.66,
+          "variance": 16781.75,
+          "variance_pct": 0.0218695
+        },
+        "gross_profit": {
+          "actual": 1769860.87,
+          "budget": 1882936.44,
+          "variance": -113075.57,
+          "variance_pct": -0.06005278
+        },
+        "gross_margin": {
+          "actual": 0.69297572,
+          "budget": 0.71046294,
+          "variance": -0.01748722,
+          "variance_pct": -0.02461384
+        },
+        "ga_staff": {
+          "actual": 446494.48,
+          "budget": 516315.31,
+          "variance": -69820.83,
+          "variance_pct": -0.13522906
+        },
+        "sales_marketing": {
+          "actual": 263287.35,
+          "budget": 275850.41,
+          "variance": -12563.06,
+          "variance_pct": -0.04554302
+        },
+        "compliance_licensing": {
+          "actual": 24214.3,
+          "budget": 30070.15,
+          "variance": -5855.85,
+          "variance_pct": -0.19473961
+        },
+        "rent_office": {
+          "actual": 53080.02,
+          "budget": 54250.0,
+          "variance": -1169.98,
+          "variance_pct": -0.02156645
+        },
+        "hr_expenses": {
+          "actual": 14493.17,
+          "budget": 26150.0,
+          "variance": -11656.83,
+          "variance_pct": -0.44576788
+        },
+        "it_expenses": {
+          "actual": 47885.43,
+          "budget": 36857.82,
+          "variance": 11027.61,
+          "variance_pct": 0.29919311
+        },
+        "professional_fees": {
+          "actual": 172535.88,
+          "budget": 91142.67,
+          "variance": 81393.21,
+          "variance_pct": 0.89303085
+        },
+        "insurance": {
+          "actual": 9994.34,
+          "budget": 10093.0,
+          "variance": -98.66,
+          "variance_pct": -0.00977509
+        },
+        "other_ga": {
+          "actual": 12147.82,
+          "budget": 29896.54,
+          "variance": -17748.72,
+          "variance_pct": -0.59367137
+        },
+        "total_operating_expenses": {
+          "actual": 1044132.79,
+          "budget": 1070625.9,
+          "variance": -26493.11,
+          "variance_pct": -0.02474544
+        },
+        "ebitda": {
+          "actual": 725728.08,
+          "budget": 812310.54,
+          "variance": -86582.46,
+          "variance_pct": -0.10658788
+        },
+        "ebitda_margin": {
+          "actual": 0.28415337,
+          "budget": 0.30649815,
+          "variance": -0.02234477,
+          "variance_pct": -0.07290345
+        },
+        "sublease_income": {
+          "actual": -7136.31,
+          "budget": -7136.0,
+          "variance": -0.31,
+          "variance_pct": 4.344e-05
+        },
+        "interest_income_expense": {
+          "actual": 133196.09,
+          "budget": 123279.23,
+          "variance": 9916.86,
+          "variance_pct": 0.08044225
+        },
+        "other_inc_exp": {
+          "actual": -180372.2,
+          "budget": -250.0,
+          "variance": -180122.2,
+          "variance_pct": 720.4888
+        },
+        "depreciation_amortization": {
+          "actual": 16848.0,
+          "budget": 16900.0,
+          "variance": -52.0,
+          "variance_pct": -0.00307692
+        },
+        "due_diligence": {
+          "actual": 48747.24,
+          "budget": 23333.33,
+          "variance": 25413.91,
+          "variance_pct": 1.08916743
+        },
+        "total_other_income_expenses": {
+          "actual": 11282.82,
+          "budget": 156126.56,
+          "variance": -144843.74,
+          "variance_pct": -0.92773286
+        },
+        "total_expenses": {
+          "actual": 1839556.02,
+          "budget": 1994111.12,
+          "variance": -154555.1,
+          "variance_pct": -0.07750576
+        },
+        "net_income": {
+          "actual": 714445.26,
+          "budget": 656183.97,
+          "variance": 58261.29,
+          "variance_pct": 0.08878804
+        },
+        "nvv": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        },
+        "loan_sales_mres": {
+          "actual": null,
+          "budget": null,
+          "variance": null,
+          "variance_pct": null
+        }
+      }
+    }
+  ],
+  "september": {
+    "marketplace": {
+      "actual": 1750548.5,
+      "budget": 1762484.82,
+      "variance": -11936.32,
+      "variance_pct": -0.00677244
+    },
+    "mp_appraisal": {
+      "actual": 1589526.0,
+      "budget": 1656735.73,
+      "variance": -67209.73,
+      "variance_pct": -0.04056756
+    },
+    "other_marketplace": {
+      "actual": 161022.5,
+      "budget": 105749.09,
+      "variance": 55273.41,
+      "variance_pct": 0.52268451
+    },
+    "commercial_evaluations": {
+      "actual": 52707.5,
+      "budget": 31787.27,
+      "variance": 20920.23,
+      "variance_pct": 0.65813231
+    },
+    "residential_evaluations": {
+      "actual": 32245.0,
+      "budget": 27126.96,
+      "variance": 5118.04,
+      "variance_pct": 0.18866984
+    },
+    "environmentals": {
+      "actual": 58865.0,
+      "budget": 30681.03,
+      "variance": 28183.97,
+      "variance_pct": 0.91861249
+    },
+    "compliance_screen": {
+      "actual": 6450.0,
+      "budget": 5856.51,
+      "variance": 593.49,
+      "variance_pct": 0.10133821
+    },
+    "site_inspections": {
+      "actual": 8465.0,
+      "budget": 8653.45,
+      "variance": -188.45,
+      "variance_pct": -0.0217772
+    },
+    "avm": {
+      "actual": 1290.0,
+      "budget": 1643.87,
+      "variance": -353.87,
+      "variance_pct": -0.21526769
+    },
+    "other_revenue_mp": {
+      "actual": 1000.0,
+      "budget": null,
+      "variance": null,
+      "variance_pct": null
+    },
+    "augur": {
+      "actual": 31070.79,
+      "budget": 31754.44,
+      "variance": -683.65,
+      "variance_pct": -0.02152938
+    },
+    "market_data_reports": {
+      "actual": 132720.0,
+      "budget": 136867.5,
+      "variance": -4147.5,
+      "variance_pct": -0.03030303
+    },
+    "mountainseed_analytics": {
+      "actual": 23066.66,
+      "budget": 22749.66,
+      "variance": 317.0,
+      "variance_pct": 0.01393427
+    },
+    "nbp": {
+      "actual": 84000.0,
+      "budget": 99750.0,
+      "variance": -15750.0,
+      "variance_pct": -0.15789474
+    },
+    "capital_markets": {
+      "actual": 507854.33,
+      "budget": 571947.67,
+      "variance": -64093.34,
+      "variance_pct": -0.11206155
+    },
+    "sale_leaseback_mres": {
+      "actual": 473021.0,
+      "budget": 473021.0,
+      "variance": 0.0,
+      "variance_pct": 0.0
+    },
+    "fund_slb_acquisition_carried_interest": {
+      "actual": null,
+      "budget": 64093.34,
+      "variance": null,
+      "variance_pct": null
+    },
+    "fund_management_fees": {
+      "actual": 34833.33,
+      "budget": 34833.33,
+      "variance": 0.0,
+      "variance_pct": 0.0
+    },
+    "quaint_oak": {
+      "actual": 24741.0,
+      "budget": 24741.0,
+      "variance": 0.0,
+      "variance_pct": 0.0
+    },
+    "total_revenue": {
+      "actual": 2554001.28,
+      "budget": 2650295.09,
+      "variance": -96293.81,
+      "variance_pct": -0.03633324
+    },
+    "direct_staff_costs": {
+      "actual": 564005.41,
+      "budget": 568425.06,
+      "variance": -4419.65,
+      "variance_pct": -0.00777526
+    },
+    "other_direct_costs": {
+      "actual": 70881.3,
+      "budget": 75078.74,
+      "variance": -4197.44,
+      "variance_pct": -0.05590717
+    },
+    "capital_markets_direct_costs": {
+      "actual": 149253.7,
+      "budget": 123854.86,
+      "variance": 25398.84,
+      "variance_pct": 0.20506941
+    },
+    "total_cost_of_sales": {
+      "actual": 784140.41,
+      "budget": 767358.66,
+      "variance": 16781.75,
+      "variance_pct": 0.0218695
+    },
+    "gross_profit": {
+      "actual": 1769860.87,
+      "budget": 1882936.44,
+      "variance": -113075.57,
+      "variance_pct": -0.06005278
+    },
+    "gross_margin": {
+      "actual": 0.69297572,
+      "budget": 0.71046294,
+      "variance": -0.01748722,
+      "variance_pct": -0.02461384
+    },
+    "ga_staff": {
+      "actual": 446494.48,
+      "budget": 516315.31,
+      "variance": -69820.83,
+      "variance_pct": -0.13522906
+    },
+    "sales_marketing": {
+      "actual": 263287.35,
+      "budget": 275850.41,
+      "variance": -12563.06,
+      "variance_pct": -0.04554302
+    },
+    "compliance_licensing": {
+      "actual": 24214.3,
+      "budget": 30070.15,
+      "variance": -5855.85,
+      "variance_pct": -0.19473961
+    },
+    "rent_office": {
+      "actual": 53080.02,
+      "budget": 54250.0,
+      "variance": -1169.98,
+      "variance_pct": -0.02156645
+    },
+    "hr_expenses": {
+      "actual": 14493.17,
+      "budget": 26150.0,
+      "variance": -11656.83,
+      "variance_pct": -0.44576788
+    },
+    "it_expenses": {
+      "actual": 47885.43,
+      "budget": 36857.82,
+      "variance": 11027.61,
+      "variance_pct": 0.29919311
+    },
+    "professional_fees": {
+      "actual": 172535.88,
+      "budget": 91142.67,
+      "variance": 81393.21,
+      "variance_pct": 0.89303085
+    },
+    "insurance": {
+      "actual": 9994.34,
+      "budget": 10093.0,
+      "variance": -98.66,
+      "variance_pct": -0.00977509
+    },
+    "other_ga": {
+      "actual": 12147.82,
+      "budget": 29896.54,
+      "variance": -17748.72,
+      "variance_pct": -0.59367137
+    },
+    "total_operating_expenses": {
+      "actual": 1044132.79,
+      "budget": 1070625.9,
+      "variance": -26493.11,
+      "variance_pct": -0.02474544
+    },
+    "ebitda": {
+      "actual": 725728.08,
+      "budget": 812310.54,
+      "variance": -86582.46,
+      "variance_pct": -0.10658788
+    },
+    "ebitda_margin": {
+      "actual": 0.28415337,
+      "budget": 0.30649815,
+      "variance": -0.02234477,
+      "variance_pct": -0.07290345
+    },
+    "sublease_income": {
+      "actual": -7136.31,
+      "budget": -7136.0,
+      "variance": -0.31,
+      "variance_pct": 4.344e-05
+    },
+    "interest_income_expense": {
+      "actual": 133196.09,
+      "budget": 123279.23,
+      "variance": 9916.86,
+      "variance_pct": 0.08044225
+    },
+    "other_inc_exp": {
+      "actual": -180372.2,
+      "budget": -250.0,
+      "variance": -180122.2,
+      "variance_pct": 720.4888
+    },
+    "depreciation_amortization": {
+      "actual": 16848.0,
+      "budget": 16900.0,
+      "variance": -52.0,
+      "variance_pct": -0.00307692
+    },
+    "due_diligence": {
+      "actual": 48747.24,
+      "budget": 23333.33,
+      "variance": 25413.91,
+      "variance_pct": 1.08916743
+    },
+    "total_other_income_expenses": {
+      "actual": 11282.82,
+      "budget": 156126.56,
+      "variance": -144843.74,
+      "variance_pct": -0.92773286
+    },
+    "total_expenses": {
+      "actual": 1839556.02,
+      "budget": 1994111.12,
+      "variance": -154555.1,
+      "variance_pct": -0.07750576
+    },
+    "net_income": {
+      "actual": 714445.26,
+      "budget": 656183.97,
+      "variance": 58261.29,
+      "variance_pct": 0.08878804
+    }
+  },
+  "q3": {
+    "marketplace": {
+      "actual": 5211624.25,
+      "budget": 5245439.25,
+      "variance": -33815.0,
+      "variance_pct": -0.00644655
+    },
+    "mp_appraisal": {
+      "actual": 4742626.5,
+      "budget": 4930712.9,
+      "variance": -188086.4,
+      "variance_pct": -0.03814588
+    },
+    "other_marketplace": {
+      "actual": 468997.75,
+      "budget": 314726.36,
+      "variance": 154271.39,
+      "variance_pct": 0.49017628
+    },
+    "commercial_evaluations": {
+      "actual": 161637.75,
+      "budget": 94604.05,
+      "variance": 67033.7,
+      "variance_pct": 0.70857121
+    },
+    "residential_evaluations": {
+      "actual": 90510.0,
+      "budget": 80734.21,
+      "variance": 9775.79,
+      "variance_pct": 0.12108606
+    },
+    "environmentals": {
+      "actual": 159680.0,
+      "budget": 91311.69,
+      "variance": 68368.31,
+      "variance_pct": 0.74873566
+    },
+    "compliance_screen": {
+      "actual": 15700.0,
+      "budget": 17429.92,
+      "variance": -1729.92,
+      "variance_pct": -0.09925021
+    },
+    "site_inspections": {
+      "actual": 36240.0,
+      "budget": 25754.06,
+      "variance": 10485.94,
+      "variance_pct": 0.40715692
+    },
+    "avm": {
+      "actual": 4230.0,
+      "budget": 4892.43,
+      "variance": -662.43,
+      "variance_pct": -0.13539903
+    },
+    "other_revenue_mp": {
+      "actual": 1000.0,
+      "budget": 0.0,
+      "variance": 1000.0,
+      "variance_pct": null
+    },
+    "augur": {
+      "actual": 50153.31,
+      "budget": 70263.33,
+      "variance": -20110.02,
+      "variance_pct": -0.28620932
+    },
+    "market_data_reports": {
+      "actual": 374770.0,
+      "budget": 417120.0,
+      "variance": -42350.0,
+      "variance_pct": -0.10152954
+    },
+    "mountainseed_analytics": {
+      "actual": 72583.33,
+      "budget": 72760.32,
+      "variance": -176.99,
+      "variance_pct": -0.00243255
+    },
+    "nbp": {
+      "actual": 271000.0,
+      "budget": 287750.0,
+      "variance": -16750.0,
+      "variance_pct": -0.05821025
+    },
+    "capital_markets": {
+      "actual": 1075622.99,
+      "budget": 1139716.1,
+      "variance": -64093.11,
+      "variance_pct": -0.05623603
+    },
+    "sale_leaseback_mres": {
+      "actual": 971123.0,
+      "budget": 971122.77,
+      "variance": 0.23,
+      "variance_pct": 2.4e-07
+    },
+    "fund_slb_acquisition_carried_interest": {
+      "actual": 0.0,
+      "budget": 64093.34,
+      "variance": -64093.34,
+      "variance_pct": -1.0
+    },
+    "fund_management_fees": {
+      "actual": 104499.99,
+      "budget": 104499.99,
+      "variance": 0.0,
+      "variance_pct": 0.0
+    },
+    "quaint_oak": {
+      "actual": 74223.0,
+      "budget": 74223.0,
+      "variance": 0.0,
+      "variance_pct": 0.0
+    },
+    "total_revenue": {
+      "actual": 7129976.88,
+      "budget": 7307272.01,
+      "variance": -177295.13,
+      "variance_pct": -0.02426283
+    },
+    "direct_staff_costs": {
+      "actual": 1698622.48,
+      "budget": 1698121.56,
+      "variance": 500.92,
+      "variance_pct": 0.00029498
+    },
+    "other_direct_costs": {
+      "actual": 206284.47,
+      "budget": 222524.14,
+      "variance": -16239.67,
+      "variance_pct": -0.07297937
+    },
+    "capital_markets_direct_costs": {
+      "actual": 323121.77,
+      "budget": 305939.54,
+      "variance": 17182.23,
+      "variance_pct": 0.05616216
+    },
+    "total_cost_of_sales": {
+      "actual": 2228028.72,
+      "budget": 2226585.25,
+      "variance": 1443.47,
+      "variance_pct": 0.00064829
+    },
+    "gross_profit": {
+      "actual": 4901948.16,
+      "budget": 5080686.76,
+      "variance": -178738.6,
+      "variance_pct": -0.03518001
+    },
+    "gross_margin": {
+      "actual": 0.68751249,
+      "budget": 0.69529186,
+      "variance": -0.00777937,
+      "variance_pct": -0.01118864
+    },
+    "ga_staff": {
+      "actual": 1384273.52,
+      "budget": 1517996.73,
+      "variance": -133723.21,
+      "variance_pct": -0.08809189
+    },
+    "sales_marketing": {
+      "actual": 796575.37,
+      "budget": 819774.64,
+      "variance": -23199.27,
+      "variance_pct": -0.02829958
+    },
+    "compliance_licensing": {
+      "actual": 62804.62,
+      "budget": 79589.69,
+      "variance": -16785.07,
+      "variance_pct": -0.21089504
+    },
+    "rent_office": {
+      "actual": 159463.82,
+      "budget": 164825.0,
+      "variance": -5361.18,
+      "variance_pct": -0.0325265
+    },
+    "hr_expenses": {
+      "actual": 42416.98,
+      "budget": 105660.0,
+      "variance": -63243.02,
+      "variance_pct": -0.59855215
+    },
+    "it_expenses": {
+      "actual": 119123.65,
+      "budget": 110600.32,
+      "variance": 8523.33,
+      "variance_pct": 0.07706421
+    },
+    "professional_fees": {
+      "actual": 334345.76,
+      "budget": 219729.33,
+      "variance": 114616.43,
+      "variance_pct": 0.52162552
+    },
+    "insurance": {
+      "actual": 29840.86,
+      "budget": 30279.0,
+      "variance": -438.14,
+      "variance_pct": -0.01447009
+    },
+    "other_ga": {
+      "actual": 35498.97,
+      "budget": 53256.4,
+      "variance": -17757.43,
+      "variance_pct": -0.3334328
+    },
+    "total_operating_expenses": {
+      "actual": 2964343.55,
+      "budget": 3101711.12,
+      "variance": -137367.57,
+      "variance_pct": -0.04428767
+    },
+    "ebitda": {
+      "actual": 1937604.61,
+      "budget": 1978975.64,
+      "variance": -41371.03,
+      "variance_pct": -0.02090528
+    },
+    "ebitda_margin": {
+      "actual": 0.27175468,
+      "budget": 0.27082277,
+      "variance": 0.00093191,
+      "variance_pct": 0.00344105
+    },
+    "sublease_income": {
+      "actual": -21408.93,
+      "budget": -21408.0,
+      "variance": -0.93,
+      "variance_pct": 4.344e-05
+    },
+    "interest_income_expense": {
+      "actual": 406595.59,
+      "budget": 369837.69,
+      "variance": 36757.9,
+      "variance_pct": 0.09938926
+    },
+    "other_inc_exp": {
+      "actual": -188342.97,
+      "budget": -750.0,
+      "variance": -187592.97,
+      "variance_pct": 250.12396
+    },
+    "depreciation_amortization": {
+      "actual": 49190.03,
+      "budget": 50700.0,
+      "variance": -1509.97,
+      "variance_pct": -0.02978245
+    },
+    "due_diligence": {
+      "actual": 150841.38,
+      "budget": 70000.0,
+      "variance": 80841.38,
+      "variance_pct": 1.15487686
+    },
+    "total_other_income_expenses": {
+      "actual": 396875.1,
+      "budget": 468379.69,
+      "variance": -71504.59,
+      "variance_pct": -0.15266374
+    },
+    "total_expenses": {
+      "actual": 5589247.37,
+      "budget": 5796676.06,
+      "variance": -207428.69,
+      "variance_pct": -0.03578408
+    },
+    "net_income": {
+      "actual": 1540729.51,
+      "budget": 1510595.95,
+      "variance": 30133.56,
+      "variance_pct": 0.01994813
+    }
+  },
+  "ytd": {
+    "marketplace": {
+      "actual": 14935445.75,
+      "budget": 14678760.98,
+      "variance": 256684.77,
+      "variance_pct": 0.01748681
+    },
+    "mp_appraisal": {
+      "actual": 13755806.5,
+      "budget": 13796407.64,
+      "variance": -40601.14,
+      "variance_pct": -0.00294288
+    },
+    "other_marketplace": {
+      "actual": 1179639.25,
+      "budget": 882353.34,
+      "variance": 297285.91,
+      "variance_pct": 0.33692388
+    },
+    "commercial_evaluations": {
+      "actual": 389400.25,
+      "budget": 260686.84,
+      "variance": 128713.41,
+      "variance_pct": 0.49374725
+    },
+    "residential_evaluations": {
+      "actual": 228540.0,
+      "budget": 221801.97,
+      "variance": 6738.03,
+      "variance_pct": 0.0303786
+    },
+    "environmentals": {
+      "actual": 414864.0,
+      "budget": 255997.53,
+      "variance": 158866.47,
+      "variance_pct": 0.62057812
+    },
+    "compliance_screen": {
+      "actual": 46645.0,
+      "budget": 48865.79,
+      "variance": -2220.79,
+      "variance_pct": -0.04544668
+    },
+    "site_inspections": {
+      "actual": 85720.0,
+      "budget": 72202.97,
+      "variance": 13517.03,
+      "variance_pct": 0.18720874
+    },
+    "avm": {
+      "actual": 13470.0,
+      "budget": 22798.24,
+      "variance": -9328.24,
+      "variance_pct": -0.40916492
+    },
+    "other_revenue_mp": {
+      "actual": 1000.0,
+      "budget": 0.0,
+      "variance": 1000.0,
+      "variance_pct": null
+    },
+    "augur": {
+      "actual": 57907.75,
+      "budget": 86263.33,
+      "variance": -28355.58,
+      "variance_pct": -0.32870955
+    },
+    "market_data_reports": {
+      "actual": 1158365.0,
+      "budget": 1154946.28,
+      "variance": 3418.72,
+      "variance_pct": 0.00296007
+    },
+    "mountainseed_analytics": {
+      "actual": 237574.98,
+      "budget": 238877.5,
+      "variance": -1302.52,
+      "variance_pct": -0.00545267
+    },
+    "nbp": {
+      "actual": 860000.0,
+      "budget": 774750.0,
+      "variance": 85250.0,
+      "variance_pct": 0.1100355
+    },
+    "capital_markets": {
+      "actual": 1885415.63,
+      "budget": 4548050.92,
+      "variance": -2662635.29,
+      "variance_pct": -0.58544536
+    },
+    "sale_leaseback_mres": {
+      "actual": 1551046.0,
+      "budget": 4149587.95,
+      "variance": -2598541.95,
+      "variance_pct": -0.62621686
+    },
+    "fund_slb_acquisition_carried_interest": {
+      "actual": 20869.66,
+      "budget": 84963.0,
+      "variance": -64093.34,
+      "variance_pct": -0.75436767
+    },
+    "fund_management_fees": {
+      "actual": 313499.97,
+      "budget": 313499.97,
+      "variance": -0.0,
+      "variance_pct": -0.0
+    },
+    "quaint_oak": {
+      "actual": 222669.0,
+      "budget": 224062.5,
+      "variance": -1393.5,
+      "variance_pct": -0.00621925
+    },
+    "total_revenue": {
+      "actual": 19357378.11,
+      "budget": 21705711.51,
+      "variance": -2348333.4,
+      "variance_pct": -0.10818965
+    },
+    "direct_staff_costs": {
+      "actual": 4843054.72,
+      "budget": 5335542.59,
+      "variance": -492487.87,
+      "variance_pct": -0.09230324
+    },
+    "other_direct_costs": {
+      "actual": 581572.24,
+      "budget": 607208.43,
+      "variance": -25636.19,
+      "variance_pct": -0.04221975
+    },
+    "capital_markets_direct_costs": {
+      "actual": 755780.43,
+      "budget": 1477933.95,
+      "variance": -722153.52,
+      "variance_pct": -0.48862368
+    },
+    "total_cost_of_sales": {
+      "actual": 6180407.39,
+      "budget": 7420684.97,
+      "variance": -1240277.58,
+      "variance_pct": -0.16713788
+    },
+    "gross_profit": {
+      "actual": 13176970.72,
+      "budget": 14285026.54,
+      "variance": -1108055.82,
+      "variance_pct": -0.07756764
+    },
+    "gross_margin": {
+      "actual": 0.68072084,
+      "budget": 0.65812293,
+      "variance": 0.02259791,
+      "variance_pct": 0.03433691
+    },
+    "ga_staff": {
+      "actual": 4162540.19,
+      "budget": 4517404.51,
+      "variance": -354864.32,
+      "variance_pct": -0.07855491
+    },
+    "sales_marketing": {
+      "actual": 2236545.91,
+      "budget": 1995902.08,
+      "variance": 240643.83,
+      "variance_pct": 0.12056896
+    },
+    "compliance_licensing": {
+      "actual": 209530.27,
+      "budget": 229894.93,
+      "variance": -20364.66,
+      "variance_pct": -0.08858247
+    },
+    "rent_office": {
+      "actual": 490252.1,
+      "budget": 497445.0,
+      "variance": -7192.9,
+      "variance_pct": -0.01445969
+    },
+    "hr_expenses": {
+      "actual": 133420.99,
+      "budget": 231492.0,
+      "variance": -98071.01,
+      "variance_pct": -0.42364751
+    },
+    "it_expenses": {
+      "actual": 316637.46,
+      "budget": 325253.83,
+      "variance": -8616.37,
+      "variance_pct": -0.02649123
+    },
+    "professional_fees": {
+      "actual": 647342.02,
+      "budget": 631464.33,
+      "variance": 15877.69,
+      "variance_pct": 0.02514423
+    },
+    "insurance": {
+      "actual": 86979.47,
+      "budget": 102121.33,
+      "variance": -15141.86,
+      "variance_pct": -0.14827324
+    },
+    "other_ga": {
+      "actual": 375294.21,
+      "budget": 384338.56,
+      "variance": -9044.35,
+      "variance_pct": -0.02353223
+    },
+    "total_operating_expenses": {
+      "actual": 8658542.62,
+      "budget": 8915316.57,
+      "variance": -256773.95,
+      "variance_pct": -0.02880144
+    },
+    "ebitda": {
+      "actual": 4518428.1,
+      "budget": 5369709.97,
+      "variance": -851281.87,
+      "variance_pct": -0.15853405
+    },
+    "ebitda_margin": {
+      "actual": 0.23342149,
+      "budget": 0.24738696,
+      "variance": -0.01396547,
+      "variance_pct": -0.05645191
+    },
+    "sublease_income": {
+      "actual": -64226.79,
+      "budget": -64224.0,
+      "variance": -2.79,
+      "variance_pct": 4.344e-05
+    },
+    "interest_income_expense": {
+      "actual": 741127.45,
+      "budget": 696714.29,
+      "variance": 44413.16,
+      "variance_pct": 0.06374659
+    },
+    "other_inc_exp": {
+      "actual": -2502242.07,
+      "budget": -1950.0,
+      "variance": -2500292.07,
+      "variance_pct": 1282.20106154
+    },
+    "depreciation_amortization": {
+      "actual": 49190.03,
+      "budget": 161940.0,
+      "variance": -112749.97,
+      "variance_pct": -0.69624534
+    },
+    "due_diligence": {
+      "actual": 158667.38,
+      "budget": 280000.0,
+      "variance": -121332.62,
+      "variance_pct": -0.43333079
+    },
+    "total_other_income_expenses": {
+      "actual": -1617484.0,
+      "budget": 1503572.36,
+      "variance": -3121056.36,
+      "variance_pct": -2.07576067
+    },
+    "total_expenses": {
+      "actual": 13221466.01,
+      "budget": 17839573.89,
+      "variance": -4618107.88,
+      "variance_pct": -0.25886873
+    },
+    "net_income": {
+      "actual": 6135912.1,
+      "budget": 3866137.62,
+      "variance": 2269774.48,
+      "variance_pct": 0.58709097
+    }
+  },
+  "quarters": {
+    "q1": {
+      "marketplace": {
+        "actual": 4406442.5,
+        "budget": 4166898.42,
+        "variance": 239544.08,
+        "variance_pct": 0.05748738
+      },
+      "mp_appraisal": {
+        "actual": 4053107.5,
+        "budget": 3916376.66,
+        "variance": 136730.84,
+        "variance_pct": 0.03491259
+      },
+      "other_marketplace": {
+        "actual": 353335.0,
+        "budget": 250521.76,
+        "variance": 102813.24,
+        "variance_pct": 0.41039643
+      },
+      "commercial_evaluations": {
+        "actual": 111890.0,
+        "budget": 73300.52,
+        "variance": 38589.48,
+        "variance_pct": 0.52645571
+      },
+      "residential_evaluations": {
+        "actual": 70955.0,
+        "budget": 62260.15,
+        "variance": 8694.85,
+        "variance_pct": 0.13965349
+      },
+      "environmentals": {
+        "actual": 122995.0,
+        "budget": 72683.98,
+        "variance": 50311.02,
+        "variance_pct": 0.69218855
+      },
+      "compliance_screen": {
+        "actual": 16780.0,
+        "budget": 13874.2,
+        "variance": 2905.8,
+        "variance_pct": 0.20943944
+      },
+      "site_inspections": {
+        "actual": 25255.0,
+        "budget": 20500.2,
+        "variance": 4754.8,
+        "variance_pct": 0.23193947
+      },
+      "avm": {
+        "actual": 5460.0,
+        "budget": 7902.72,
+        "variance": -2442.72,
+        "variance_pct": -0.30909832
+      },
+      "other_revenue_mp": {
+        "actual": null,
+        "budget": null,
+        "variance": null,
+        "variance_pct": null
+      },
+      "augur": {
+        "actual": 1000.0,
+        "budget": null,
+        "variance": null,
+        "variance_pct": null
+      },
+      "market_data_reports": {
+        "actual": 348785.0,
+        "budget": 339666.28,
+        "variance": 9118.72,
+        "variance_pct": 0.02684612
+      },
+      "mountainseed_analytics": {
+        "actual": 86349.99,
+        "budget": 89965.25,
+        "variance": -3615.26,
+        "variance_pct": -0.04018507
+      },
+      "nbp": {
+        "actual": 265000.0,
+        "budget": 203500.0,
+        "variance": 61500.0,
+        "variance_pct": 0.3022113
+      },
+      "capital_markets": {
+        "actual": 684422.99,
+        "budget": 996030.69,
+        "variance": -311607.7,
+        "variance_pct": -0.3128495
+      },
+      "sale_leaseback_mres": {
+        "actual": 579923.0,
+        "budget": 891530.7,
+        "variance": -311607.7,
+        "variance_pct": -0.34951988
+      },
+      "fund_slb_acquisition_carried_interest": {
+        "actual": null,
+        "budget": null,
+        "variance": null,
+        "variance_pct": null
+      },
+      "fund_management_fees": {
+        "actual": 104499.99,
+        "budget": 104499.99,
+        "variance": 0.0,
+        "variance_pct": 0.0
+      },
+      "quaint_oak": {
+        "actual": 74223.0,
+        "budget": 74919.75,
+        "variance": -696.75,
+        "variance_pct": -0.00929995
+      },
+      "total_revenue": {
+        "actual": 5866223.48,
+        "budget": 5870980.39,
+        "variance": -4756.91,
+        "variance_pct": -0.00081024
+      },
+      "direct_staff_costs": {
+        "actual": 1693950.7,
+        "budget": 1703669.48,
+        "variance": -9718.78,
+        "variance_pct": -0.00570462
+      },
+      "other_direct_costs": {
+        "actual": 174920.64,
+        "budget": 181611.54,
+        "variance": -6690.9,
+        "variance_pct": -0.03684184
+      },
+      "capital_markets_direct_costs": {
+        "actual": 328845.94,
+        "budget": 441038.97,
+        "variance": -112193.03,
+        "variance_pct": -0.25438348
+      },
+      "total_cost_of_sales": {
+        "actual": 2197717.28,
+        "budget": 2326319.99,
+        "variance": -128602.71,
+        "variance_pct": -0.05528161
+      },
+      "gross_profit": {
+        "actual": 3668506.2,
+        "budget": 3544660.4,
+        "variance": 123845.8,
+        "variance_pct": 0.03493869
+      },
+      "gross_margin": {
+        "actual": 0.6253608,
+        "budget": 0.60375954,
+        "variance": 0.02160126,
+        "variance_pct": 0.03577792
+      },
+      "ga_staff": {
+        "actual": 1386111.6,
+        "budget": 1557711.75,
+        "variance": -171600.15,
+        "variance_pct": -0.11016169
+      },
+      "sales_marketing": {
+        "actual": 516862.34,
+        "budget": 514850.45,
+        "variance": 2011.89,
+        "variance_pct": 0.00390772
+      },
+      "compliance_licensing": {
+        "actual": 65175.55,
+        "budget": 64606.6,
+        "variance": 568.95,
+        "variance_pct": 0.00880631
+      },
+      "rent_office": {
+        "actual": 167388.75,
+        "budget": 167235.0,
+        "variance": 153.75,
+        "variance_pct": 0.00091936
+      },
+      "hr_expenses": {
+        "actual": 42536.18,
+        "budget": 55641.0,
+        "variance": -13104.82,
+        "variance_pct": -0.23552452
+      },
+      "it_expenses": {
+        "actual": 96232.86,
+        "budget": 106116.88,
+        "variance": -9884.02,
+        "variance_pct": -0.09314277
+      },
+      "professional_fees": {
+        "actual": 140497.3,
+        "budget": 151955.0,
+        "variance": -11457.7,
+        "variance_pct": -0.07540193
+      },
+      "insurance": {
+        "actual": 28298.54,
+        "budget": 38976.04,
+        "variance": -10677.5,
+        "variance_pct": -0.27395036
+      },
+      "other_ga": {
+        "actual": 130259.64,
+        "budget": 128014.12,
+        "variance": 2245.52,
+        "variance_pct": 0.01754121
+      },
+      "total_operating_expenses": {
+        "actual": 2573362.76,
+        "budget": 2785106.85,
+        "variance": -211744.09,
+        "variance_pct": -0.07602728
+      },
+      "ebitda": {
+        "actual": 1095143.44,
+        "budget": 759553.56,
+        "variance": 335589.88,
+        "variance_pct": 0.44182517
+      },
+      "ebitda_margin": {
+        "actual": 0.18668628,
+        "budget": 0.12937423,
+        "variance": 0.05731205,
+        "variance_pct": 0.44299435
+      },
+      "sublease_income": {
+        "actual": -21408.93,
+        "budget": -21408.0,
+        "variance": -0.93,
+        "variance_pct": 4.344e-05
+      },
+      "interest_income_expense": {
+        "actual": 65387.81,
+        "budget": 83670.0,
+        "variance": -18282.19,
+        "variance_pct": -0.21850353
+      },
+      "other_inc_exp": {
+        "actual": -3000429.53,
+        "budget": -600.0,
+        "variance": -2999829.53,
+        "variance_pct": 4999.71588333
+      },
+      "depreciation_amortization": {
+        "actual": 49190.03,
+        "budget": 55620.0,
+        "variance": -6429.97,
+        "variance_pct": -0.11560536
+      },
+      "due_diligence": {
+        "actual": null,
+        "budget": null,
+        "variance": null,
+        "variance_pct": null
+      },
+      "total_other_income_expenses": {
+        "actual": -2907260.62,
+        "budget": 309915.57,
+        "variance": -3217176.19,
+        "variance_pct": -10.38081505
+      },
+      "total_expenses": {
+        "actual": 1863819.42,
+        "budget": 5421342.4,
+        "variance": -3557522.98,
+        "variance_pct": -0.65620703
+      },
+      "net_income": {
+        "actual": 4002404.06,
+        "budget": 449637.99,
+        "variance": 3552766.07,
+        "variance_pct": 7.90139213
+      }
+    },
+    "q2": {
+      "marketplace": {
+        "actual": 5317379.0,
+        "budget": 5266423.3,
+        "variance": 50955.7,
+        "variance_pct": 0.00967558
+      },
+      "mp_appraisal": {
+        "actual": 4960072.5,
+        "budget": 4949318.08,
+        "variance": 10754.42,
+        "variance_pct": 0.00217291
+      },
+      "other_marketplace": {
+        "actual": 357306.5,
+        "budget": 317105.22,
+        "variance": 40201.28,
+        "variance_pct": 0.12677583
+      },
+      "commercial_evaluations": {
+        "actual": 115872.5,
+        "budget": 92782.27,
+        "variance": 23090.23,
+        "variance_pct": 0.24886466
+      },
+      "residential_evaluations": {
+        "actual": 67075.0,
+        "budget": 78807.6,
+        "variance": -11732.6,
+        "variance_pct": -0.14887653
+      },
+      "environmentals": {
+        "actual": 132189.0,
+        "budget": 92001.87,
+        "variance": 40187.13,
+        "variance_pct": 0.4368078
+      },
+      "compliance_screen": {
+        "actual": 14165.0,
+        "budget": 17561.67,
+        "variance": -3396.67,
+        "variance_pct": -0.19341376
+      },
+      "site_inspections": {
+        "actual": 24225.0,
+        "budget": 25948.72,
+        "variance": -1723.72,
+        "variance_pct": -0.06642794
+      },
+      "avm": {
+        "actual": 3780.0,
+        "budget": 10003.09,
+        "variance": -6223.09,
+        "variance_pct": -0.6221169
+      },
+      "other_revenue_mp": {
+        "actual": null,
+        "budget": null,
+        "variance": null,
+        "variance_pct": null
+      },
+      "augur": {
+        "actual": 6754.44,
+        "budget": 16000.0,
+        "variance": -9245.56,
+        "variance_pct": -0.5778475
+      },
+      "market_data_reports": {
+        "actual": 434810.0,
+        "budget": 398160.0,
+        "variance": 36650.0,
+        "variance_pct": 0.09204842
+      },
+      "mountainseed_analytics": {
+        "actual": 78641.66,
+        "budget": 76151.93,
+        "variance": 2489.73,
+        "variance_pct": 0.03269428
+      },
+      "nbp": {
+        "actual": 324000.0,
+        "budget": 283500.0,
+        "variance": 40500.0,
+        "variance_pct": 0.14285714
+      },
+      "capital_markets": {
+        "actual": 125369.65,
+        "budget": 2412304.13,
+        "variance": -2286934.48,
+        "variance_pct": -0.94802909
+      },
+      "sale_leaseback_mres": {
+        "actual": null,
+        "budget": 2286934.48,
+        "variance": null,
+        "variance_pct": null
+      },
+      "fund_slb_acquisition_carried_interest": {
+        "actual": 20869.66,
+        "budget": 20869.66,
+        "variance": 0.0,
+        "variance_pct": 0.0
+      },
+      "fund_management_fees": {
+        "actual": 104499.99,
+        "budget": 104499.99,
+        "variance": 0.0,
+        "variance_pct": 0.0
+      },
+      "quaint_oak": {
+        "actual": 74223.0,
+        "budget": 74919.75,
+        "variance": -696.75,
+        "variance_pct": -0.00929995
+      },
+      "total_revenue": {
+        "actual": 6361177.75,
+        "budget": 8527459.11,
+        "variance": -2166281.36,
+        "variance_pct": -0.25403597
+      },
+      "direct_staff_costs": {
+        "actual": 1450481.54,
+        "budget": 1933751.55,
+        "variance": -483270.01,
+        "variance_pct": -0.24991318
+      },
+      "other_direct_costs": {
+        "actual": 200367.13,
+        "budget": 203072.74,
+        "variance": -2705.61,
+        "variance_pct": -0.01332336
+      },
+      "capital_markets_direct_costs": {
+        "actual": 103812.72,
+        "budget": 730955.44,
+        "variance": -627142.72,
+        "variance_pct": -0.85797668
+      },
+      "total_cost_of_sales": {
+        "actual": 1754661.39,
+        "budget": 2867779.73,
+        "variance": -1113118.34,
+        "variance_pct": -0.38814639
+      },
+      "gross_profit": {
+        "actual": 4606516.36,
+        "budget": 5659679.38,
+        "variance": -1053163.02,
+        "variance_pct": -0.18608175
+      },
+      "gross_margin": {
+        "actual": 0.72416092,
+        "budget": 0.66370056,
+        "variance": 0.06046037,
+        "variance_pct": 0.09109585
+      },
+      "ga_staff": {
+        "actual": 1392155.07,
+        "budget": 1441696.03,
+        "variance": -49540.96,
+        "variance_pct": -0.03436297
+      },
+      "sales_marketing": {
+        "actual": 923108.2,
+        "budget": 661276.99,
+        "variance": 261831.21,
+        "variance_pct": 0.39594787
+      },
+      "compliance_licensing": {
+        "actual": 81550.1,
+        "budget": 83717.13,
+        "variance": -2167.03,
+        "variance_pct": -0.02588509
+      },
+      "rent_office": {
+        "actual": 163399.53,
+        "budget": 165385.0,
+        "variance": -1985.47,
+        "variance_pct": -0.01200514
+      },
+      "hr_expenses": {
+        "actual": 48467.83,
+        "budget": 70191.0,
+        "variance": -21723.17,
+        "variance_pct": -0.30948654
+      },
+      "it_expenses": {
+        "actual": 101280.95,
+        "budget": 108536.63,
+        "variance": -7255.68,
+        "variance_pct": -0.06685006
+      },
+      "professional_fees": {
+        "actual": 172498.96,
+        "budget": 259780.0,
+        "variance": -87281.04,
+        "variance_pct": -0.3359806
+      },
+      "insurance": {
+        "actual": 28840.07,
+        "budget": 32866.29,
+        "variance": -4026.22,
+        "variance_pct": -0.12250303
+      },
+      "other_ga": {
+        "actual": 209535.6,
+        "budget": 203068.04,
+        "variance": 6467.56,
+        "variance_pct": 0.03184924
+      },
+      "total_operating_expenses": {
+        "actual": 3120836.31,
+        "budget": 3026517.1,
+        "variance": 94319.21,
+        "variance_pct": 0.03116428
+      },
+      "ebitda": {
+        "actual": 1485680.05,
+        "budget": 2633162.28,
+        "variance": -1147482.23,
+        "variance_pct": -0.43578105
+      },
+      "ebitda_margin": {
+        "actual": 0.23355424,
+        "budget": 0.30878627,
+        "variance": -0.07523203,
+        "variance_pct": -0.24363786
+      },
+      "sublease_income": {
+        "actual": -21408.93,
+        "budget": -21408.0,
+        "variance": -0.93,
+        "variance_pct": 4.344e-05
+      },
+      "interest_income_expense": {
+        "actual": 269144.05,
+        "budget": 243206.6,
+        "variance": 25937.45,
+        "variance_pct": 0.10664782
+      },
+      "other_inc_exp": {
+        "actual": 686530.43,
+        "budget": -600.0,
+        "variance": 687130.43,
+        "variance_pct": -1145.21738333
+      },
+      "depreciation_amortization": {
+        "actual": 45650.94,
+        "budget": 55620.0,
+        "variance": -9969.06,
+        "variance_pct": -0.17923517
+      },
+      "due_diligence": {
+        "actual": 7826.0,
+        "budget": 210000.0,
+        "variance": -202174.0,
+        "variance_pct": -0.96273333
+      },
+      "total_other_income_expenses": {
+        "actual": 987742.49,
+        "budget": 725277.09,
+        "variance": 262465.4,
+        "variance_pct": 0.36188292
+      },
+      "total_expenses": {
+        "actual": 5863240.19,
+        "budget": 6619573.92,
+        "variance": -756333.73,
+        "variance_pct": -0.11425716
+      },
+      "net_income": {
+        "actual": 497937.56,
+        "budget": 1907885.19,
+        "variance": -1409947.63,
+        "variance_pct": -0.73901073
+      }
+    },
+    "q3": {
+      "marketplace": {
+        "actual": 5211624.25,
+        "budget": 5245439.25,
+        "variance": -33815.0,
+        "variance_pct": -0.00644655
+      },
+      "mp_appraisal": {
+        "actual": 4742626.5,
+        "budget": 4930712.9,
+        "variance": -188086.4,
+        "variance_pct": -0.03814588
+      },
+      "other_marketplace": {
+        "actual": 468997.75,
+        "budget": 314726.36,
+        "variance": 154271.39,
+        "variance_pct": 0.49017628
+      },
+      "commercial_evaluations": {
+        "actual": 161637.75,
+        "budget": 94604.05,
+        "variance": 67033.7,
+        "variance_pct": 0.70857121
+      },
+      "residential_evaluations": {
+        "actual": 90510.0,
+        "budget": 80734.21,
+        "variance": 9775.79,
+        "variance_pct": 0.12108606
+      },
+      "environmentals": {
+        "actual": 159680.0,
+        "budget": 91311.69,
+        "variance": 68368.31,
+        "variance_pct": 0.74873566
+      },
+      "compliance_screen": {
+        "actual": 15700.0,
+        "budget": 17429.92,
+        "variance": -1729.92,
+        "variance_pct": -0.09925021
+      },
+      "site_inspections": {
+        "actual": 36240.0,
+        "budget": 25754.06,
+        "variance": 10485.94,
+        "variance_pct": 0.40715692
+      },
+      "avm": {
+        "actual": 4230.0,
+        "budget": 4892.43,
+        "variance": -662.43,
+        "variance_pct": -0.13539903
+      },
+      "other_revenue_mp": {
+        "actual": 1000.0,
+        "budget": null,
+        "variance": null,
+        "variance_pct": null
+      },
+      "augur": {
+        "actual": 50153.31,
+        "budget": 70263.33,
+        "variance": -20110.02,
+        "variance_pct": -0.28620932
+      },
+      "market_data_reports": {
+        "actual": 374770.0,
+        "budget": 417120.0,
+        "variance": -42350.0,
+        "variance_pct": -0.10152954
+      },
+      "mountainseed_analytics": {
+        "actual": 72583.33,
+        "budget": 72760.32,
+        "variance": -176.99,
+        "variance_pct": -0.00243255
+      },
+      "nbp": {
+        "actual": 271000.0,
+        "budget": 287750.0,
+        "variance": -16750.0,
+        "variance_pct": -0.05821025
+      },
+      "capital_markets": {
+        "actual": 1075622.99,
+        "budget": 1139716.1,
+        "variance": -64093.11,
+        "variance_pct": -0.05623603
+      },
+      "sale_leaseback_mres": {
+        "actual": 971123.0,
+        "budget": 971122.77,
+        "variance": 0.23,
+        "variance_pct": 2.4e-07
+      },
+      "fund_slb_acquisition_carried_interest": {
+        "actual": null,
+        "budget": 64093.34,
+        "variance": null,
+        "variance_pct": null
+      },
+      "fund_management_fees": {
+        "actual": 104499.99,
+        "budget": 104499.99,
+        "variance": 0.0,
+        "variance_pct": 0.0
+      },
+      "quaint_oak": {
+        "actual": 74223.0,
+        "budget": 74223.0,
+        "variance": 0.0,
+        "variance_pct": 0.0
+      },
+      "total_revenue": {
+        "actual": 7129976.88,
+        "budget": 7307272.01,
+        "variance": -177295.13,
+        "variance_pct": -0.02426283
+      },
+      "direct_staff_costs": {
+        "actual": 1698622.48,
+        "budget": 1698121.56,
+        "variance": 500.92,
+        "variance_pct": 0.00029498
+      },
+      "other_direct_costs": {
+        "actual": 206284.47,
+        "budget": 222524.14,
+        "variance": -16239.67,
+        "variance_pct": -0.07297937
+      },
+      "capital_markets_direct_costs": {
+        "actual": 323121.77,
+        "budget": 305939.54,
+        "variance": 17182.23,
+        "variance_pct": 0.05616216
+      },
+      "total_cost_of_sales": {
+        "actual": 2228028.72,
+        "budget": 2226585.25,
+        "variance": 1443.47,
+        "variance_pct": 0.00064829
+      },
+      "gross_profit": {
+        "actual": 4901948.16,
+        "budget": 5080686.76,
+        "variance": -178738.6,
+        "variance_pct": -0.03518001
+      },
+      "gross_margin": {
+        "actual": 0.68751249,
+        "budget": 0.69529186,
+        "variance": -0.00777937,
+        "variance_pct": -0.01118864
+      },
+      "ga_staff": {
+        "actual": 1384273.52,
+        "budget": 1517996.73,
+        "variance": -133723.21,
+        "variance_pct": -0.08809189
+      },
+      "sales_marketing": {
+        "actual": 796575.37,
+        "budget": 819774.64,
+        "variance": -23199.27,
+        "variance_pct": -0.02829958
+      },
+      "compliance_licensing": {
+        "actual": 62804.62,
+        "budget": 81571.2,
+        "variance": -18766.58,
+        "variance_pct": -0.2300638
+      },
+      "rent_office": {
+        "actual": 159463.82,
+        "budget": 164825.0,
+        "variance": -5361.18,
+        "variance_pct": -0.0325265
+      },
+      "hr_expenses": {
+        "actual": 42416.98,
+        "budget": 105660.0,
+        "variance": -63243.02,
+        "variance_pct": -0.59855215
+      },
+      "it_expenses": {
+        "actual": 119123.65,
+        "budget": 110600.32,
+        "variance": 8523.33,
+        "variance_pct": 0.07706421
+      },
+      "professional_fees": {
+        "actual": 334345.76,
+        "budget": 219729.33,
+        "variance": 114616.43,
+        "variance_pct": 0.52162552
+      },
+      "insurance": {
+        "actual": 29840.86,
+        "budget": 30279.0,
+        "variance": -438.14,
+        "variance_pct": -0.01447009
+      },
+      "other_ga": {
+        "actual": 35498.97,
+        "budget": 53256.4,
+        "variance": -17757.43,
+        "variance_pct": -0.3334328
+      },
+      "total_operating_expenses": {
+        "actual": 2964343.55,
+        "budget": 3103692.63,
+        "variance": -139349.08,
+        "variance_pct": -0.04489783
+      },
+      "ebitda": {
+        "actual": 1937604.61,
+        "budget": 1976994.13,
+        "variance": -39389.52,
+        "variance_pct": -0.01992394
+      },
+      "ebitda_margin": {
+        "actual": 0.27175468,
+        "budget": 0.2705516,
+        "variance": 0.00120308,
+        "variance_pct": 0.00444678
+      },
+      "sublease_income": {
+        "actual": -21408.93,
+        "budget": -21408.0,
+        "variance": -0.93,
+        "variance_pct": 4.344e-05
+      },
+      "interest_income_expense": {
+        "actual": 406595.59,
+        "budget": 369837.69,
+        "variance": 36757.9,
+        "variance_pct": 0.09938926
+      },
+      "other_inc_exp": {
+        "actual": -188342.97,
+        "budget": -750.0,
+        "variance": -187592.97,
+        "variance_pct": 250.12396
+      },
+      "depreciation_amortization": {
+        "actual": 50544.0,
+        "budget": 50700.0,
+        "variance": -156.0,
+        "variance_pct": -0.00307692
+      },
+      "due_diligence": {
+        "actual": 150841.38,
+        "budget": 70000.0,
+        "variance": 80841.38,
+        "variance_pct": 1.15487686
+      },
+      "total_other_income_expenses": {
+        "actual": 398229.07,
+        "budget": 468379.69,
+        "variance": -70150.62,
+        "variance_pct": -0.14977298
+      },
+      "total_expenses": {
+        "actual": 5590601.34,
+        "budget": 5798657.57,
+        "variance": -208056.23,
+        "variance_pct": -0.03588007
+      },
+      "net_income": {
+        "actual": 1539375.54,
+        "budget": 1508614.44,
+        "variance": 30761.1,
+        "variance_pct": 0.0203903
+      }
+    }
+  },
+  "full_year_budget": {
+    "marketplace": {
+      "actual": null,
+      "budget": 18304398.52,
+      "variance": null,
+      "variance_pct": null
+    },
+    "mp_appraisal": {
+      "actual": null,
+      "budget": 17189612.38,
+      "variance": null,
+      "variance_pct": null
+    },
+    "other_marketplace": {
+      "actual": null,
+      "budget": 1114786.14,
+      "variance": null,
+      "variance_pct": null
+    },
+    "commercial_evaluations": {
+      "actual": null,
+      "budget": 326176.88,
+      "variance": null,
+      "variance_pct": null
+    },
+    "residential_evaluations": {
+      "actual": null,
+      "budget": 277048.81,
+      "variance": null,
+      "variance_pct": null
+    },
+    "environmentals": {
+      "actual": null,
+      "budget": 323433.36,
+      "variance": null,
+      "variance_pct": null
+    },
+    "compliance_screen": {
+      "actual": null,
+      "budget": 61738.2,
+      "variance": null,
+      "variance_pct": null
+    },
+    "site_inspections": {
+      "actual": null,
+      "budget": 91222.95,
+      "variance": null,
+      "variance_pct": null
+    },
+    "avm": {
+      "actual": null,
+      "budget": 35165.96,
+      "variance": null,
+      "variance_pct": null
+    },
+    "other_revenue_mp": {
+      "actual": null,
+      "budget": null,
+      "variance": null,
+      "variance_pct": null
+    },
+    "augur": {
+      "actual": null,
+      "budget": 250000.0,
+      "variance": null,
+      "variance_pct": null
+    },
+    "market_data_reports": {
+      "actual": null,
+      "budget": 1498653.55,
+      "variance": null,
+      "variance_pct": null
+    },
+    "mountainseed_analytics": {
+      "actual": null,
+      "budget": 312697.07,
+      "variance": null,
+      "variance_pct": null
+    },
+    "nbp": {
+      "actual": null,
+      "budget": 1048500.0,
+      "variance": null,
+      "variance_pct": null
+    },
+    "capital_markets": {
+      "actual": null,
+      "budget": 8475139.0,
+      "variance": null,
+      "variance_pct": null
+    },
+    "sale_leaseback_mres": {
+      "actual": null,
+      "budget": 7675472.38,
+      "variance": null,
+      "variance_pct": null
+    },
+    "fund_slb_acquisition_carried_interest": {
+      "actual": null,
+      "budget": 381666.66,
+      "variance": null,
+      "variance_pct": null
+    },
+    "fund_management_fees": {
+      "actual": null,
+      "budget": 417999.96,
+      "variance": null,
+      "variance_pct": null
+    },
+    "quaint_oak": {
+      "actual": null,
+      "budget": 772319.5,
+      "variance": null,
+      "variance_pct": null
+    },
+    "total_revenue": {
+      "actual": null,
+      "budget": 30661707.65,
+      "variance": null,
+      "variance_pct": null
+    },
+    "direct_staff_costs": {
+      "actual": null,
+      "budget": 7379557.4,
+      "variance": null,
+      "variance_pct": null
+    },
+    "other_direct_costs": {
+      "actual": null,
+      "budget": 771966.36,
+      "variance": null,
+      "variance_pct": null
+    },
+    "capital_markets_direct_costs": {
+      "actual": null,
+      "budget": 3054836.5,
+      "variance": null,
+      "variance_pct": null
+    },
+    "total_cost_of_sales": {
+      "actual": null,
+      "budget": 11206360.26,
+      "variance": null,
+      "variance_pct": null
+    },
+    "gross_profit": {
+      "actual": null,
+      "budget": 19455347.39,
+      "variance": null,
+      "variance_pct": null
+    },
+    "gross_margin": {
+      "actual": null,
+      "budget": 0.63451611,
+      "variance": null,
+      "variance_pct": null
+    },
+    "ga_staff": {
+      "actual": null,
+      "budget": 7085151.2,
+      "variance": null,
+      "variance_pct": null
+    },
+    "sales_marketing": {
+      "actual": null,
+      "budget": 2418986.17,
+      "variance": null,
+      "variance_pct": null
+    },
+    "compliance_licensing": {
+      "actual": null,
+      "budget": 300191.0,
+      "variance": null,
+      "variance_pct": null
+    },
+    "rent_office": {
+      "actual": null,
+      "budget": 662530.0,
+      "variance": null,
+      "variance_pct": null
+    },
+    "hr_expenses": {
+      "actual": null,
+      "budget": 291729.0,
+      "variance": null,
+      "variance_pct": null
+    },
+    "it_expenses": {
+      "actual": null,
+      "budget": 425866.15,
+      "variance": null,
+      "variance_pct": null
+    },
+    "professional_fees": {
+      "actual": null,
+      "budget": 729806.0,
+      "variance": null,
+      "variance_pct": null
+    },
+    "insurance": {
+      "actual": null,
+      "budget": 155904.16,
+      "variance": null,
+      "variance_pct": null
+    },
+    "other_ga": {
+      "actual": null,
+      "budget": 364933.81,
+      "variance": null,
+      "variance_pct": null
+    },
+    "total_operating_expenses": {
+      "actual": null,
+      "budget": 12435097.5,
+      "variance": null,
+      "variance_pct": null
+    },
+    "ebitda": {
+      "actual": null,
+      "budget": 7020249.88,
+      "variance": null,
+      "variance_pct": null
+    },
+    "ebitda_margin": {
+      "actual": null,
+      "budget": 0.22895822,
+      "variance": null,
+      "variance_pct": null
+    },
+    "sublease_income": {
+      "actual": null,
+      "budget": -85632.0,
+      "variance": null,
+      "variance_pct": null
+    },
+    "interest_income_expense": {
+      "actual": null,
+      "budget": 272480.0,
+      "variance": null,
+      "variance_pct": null
+    },
+    "other_inc_exp": {
+      "actual": null,
+      "budget": -2400.0,
+      "variance": null,
+      "variance_pct": null
+    },
+    "depreciation_amortization": {
+      "actual": null,
+      "budget": 222480.0,
+      "variance": null,
+      "variance_pct": null
+    },
+    "due_diligence": {
+      "actual": null,
+      "budget": null,
+      "variance": null,
+      "variance_pct": null
+    },
+    "total_other_income_expenses": {
+      "actual": null,
+      "budget": 191929.34,
+      "variance": null,
+      "variance_pct": null
+    },
+    "total_expenses": {
+      "actual": null,
+      "budget": 23833387.11,
+      "variance": null,
+      "variance_pct": null
+    },
+    "net_income": {
+      "actual": null,
+      "budget": 6828320.54,
+      "variance": null,
+      "variance_pct": null
+    }
+  },
+  "provenance": {
+    "september.total_revenue": {
+      "sheet": "P&L",
+      "actual": "Z38",
+      "budget": "AA38"
+    },
+    "september.gross_profit": {
+      "sheet": "P&L",
+      "actual": "Z48",
+      "budget": "AA48"
+    },
+    "september.gross_margin": {
+      "sheet": "P&L",
+      "actual": "Z49",
+      "budget": "AA49"
+    },
+    "september.total_cost_of_sales": {
+      "sheet": "P&L",
+      "actual": "Z46",
+      "budget": "AA46"
+    },
+    "september.total_operating_expenses": {
+      "sheet": "P&L",
+      "actual": "Z63",
+      "budget": "AA63"
+    },
+    "september.ebitda": {
+      "sheet": "P&L",
+      "actual": "Z65",
+      "budget": "AA65"
+    },
+    "september.ebitda_margin": {
+      "sheet": "P&L",
+      "actual": "Z66",
+      "budget": "AA66"
+    },
+    "q3.total_revenue": {
+      "sheet": "P&L",
+      "actual": "AE38 (also AM38)",
+      "budget": "AF38 (also AR38)"
+    },
+    "q3.gross_profit": {
+      "sheet": "P&L",
+      "actual": "AE48",
+      "budget": "AF48"
+    },
+    "q3.gross_margin": {
+      "sheet": "P&L",
+      "actual": "AE49",
+      "budget": "AF49"
+    },
+    "q3.ebitda": {
+      "sheet": "P&L",
+      "actual": "AE65",
+      "budget": "AF65"
+    },
+    "q3.ebitda_margin": {
+      "sheet": "P&L",
+      "actual": "AE66",
+      "budget": "AF66"
+    },
+    "ytd.total_revenue": {
+      "sheet": "P&L",
+      "actual": "AO38",
+      "budget": "AT38 (=AP38+AQ38+AR38)"
+    },
+    "ytd.gross_profit": {
+      "sheet": "P&L",
+      "actual": "AO48",
+      "budget": "AT48"
+    },
+    "ytd.gross_margin": {
+      "sheet": "P&L",
+      "actual": "AO49",
+      "budget": "AT49"
+    },
+    "ytd.total_operating_expenses": {
+      "sheet": "P&L",
+      "actual": "AO63",
+      "budget": "AT63"
+    },
+    "ytd.ebitda": {
+      "sheet": "P&L",
+      "actual": "AO65",
+      "budget": "AT65"
+    },
+    "ytd.ebitda_margin": {
+      "sheet": "P&L",
+      "actual": "AO66",
+      "budget": "AT66"
+    },
+    "full_year_budget.total_revenue": {
+      "sheet": "P&L",
+      "budget": "AZ38"
+    },
+    "full_year_budget.ebitda": {
+      "sheet": "P&L",
+      "budget": "AZ65"
+    },
+    "quarters.q1": {
+      "sheet": "P&L",
+      "actual": "AK*",
+      "budget": "AP*"
+    },
+    "quarters.q2": {
+      "sheet": "P&L",
+      "actual": "AL*",
+      "budget": "AQ*"
+    },
+    "quarters.q3": {
+      "sheet": "P&L",
+      "actual": "AM*",
+      "budget": "AR*"
+    },
+    "monthly.2026-01": {
+      "sheet": "Q1 2026",
+      "actual": "P*",
+      "budget": "Q*"
+    },
+    "monthly.2026-02": {
+      "sheet": "Q1 2026",
+      "actual": "U*",
+      "budget": "V*"
+    },
+    "monthly.2026-03": {
+      "sheet": "Q1 2026",
+      "actual": "Z*",
+      "budget": "AA*"
+    },
+    "monthly.2026-04": {
+      "sheet": "Q2 2026",
+      "actual": "P*",
+      "budget": "Q*"
+    },
+    "monthly.2026-05": {
+      "sheet": "Q2 2026",
+      "actual": "U*",
+      "budget": "V*"
+    },
+    "monthly.2026-06": {
+      "sheet": "Q2 2026",
+      "actual": "Z*",
+      "budget": "AA*"
+    },
+    "monthly.2026-07": {
+      "sheet": "P&L",
+      "actual": "P*",
+      "budget": "Q*"
+    },
+    "monthly.2026-08": {
+      "sheet": "P&L",
+      "actual": "U*",
+      "budget": "V*"
+    },
+    "monthly.2026-09": {
+      "sheet": "P&L",
+      "actual": "Z*",
+      "budget": "AA*"
+    }
+  },
+  "notes": [
+    "Source: LT_BvA_Sep2026.xlsx from Max DiPlotti email 'Budget vs Actual - September 2026' (Oct 16 2026).",
+    "Authoritative period aggregates (september, q3, ytd, quarters, full_year_budget) are from the 'P&L' sheet.",
+    "Workbook dollar row labeled 'Gross Margin' is mapped to gross_profit; 'Gross Margin %' to gross_margin (decimal).",
+    "EBITDA / EBITDA % are as reported. No 'adjusted EBITDA' line exists on this workbook.",
+    "YTD actual = P&L AO (header 'Full Year'/'Actual'); AN (Q4 actual)=0 so AO = Q1+Q2+Q3 through Sep 2026.",
+    "YTD budget = P&L AT = AP(Q1 bud)+AQ(Q2 bud)+AR(Q3 bud). Do not use AR alone as 9-month budget: AR row-6 header says '9 QTD' but values equal Q3-only budget (same as AF).",
+    "Full-year budget = P&L AZ (row 6 'Full Year'). Row 7 on AZ oddly says 'Q1 2026 Budget'; values (~$30.66M revenue) treated as FY 2026 budget.",
+    "Monthly Jul\u2013Sep from P&L; Jan\u2013Mar from 'Q1 2026'; Apr\u2013Jun from 'Q2 2026'.",
+    "RECONCILIATION BREAK: Q2 sheet Total OpEx / EBITDA do not match P&L Q2 column. P&L AL63 OpEx $3,120,836.31 vs Q2 sheet AL62 $3,770,826.32 (diff \u2212$649,990). Entire gap is G&A Staff: P&L AL53 $1,392,155.07 vs Q2 AL52 $2,042,155.07 (exact \u2212$650,000). June G&A Staff on Q2 sheet Z52=$1,179,192.60 looks like the inflated month. Use quarters.q2 from P&L for OpEx/EBITDA; treat Apr\u2013Jun monthly OpEx/EBITDA/ga_staff as Q2-sheet snapshots that are stale vs the Sep P&L package. Revenue and gross profit DO reconcile across sheets.",
+    "Q1 sheet vs P&L Q1: revenue/GP match; EBITDA differs by ~$31 (P&L AK65 $1,095,143.44 vs Q1 AK65 $1,095,174.46) \u2014 immaterial, likely cache/rounding.",
+    "Revenue taxonomy varies by sheet: Q1 has nvv + loan_sales_mres, omits fund_slb_acquisition_carried_interest and other_revenue_mp; Q2/P&L include fund_slb_acquisition_carried_interest; P&L adds other_revenue_mp. Absent lines are null.",
+    "Cost of Sales = Direct Staff + Other Direct + Capital Markets Direct only (no vendor/appraiser pass-through). Prior AUDIT.md inferred Marketplace may be net of vendor cost; not re-verified here.",
+    "Other Income/Expenses (sublease, interest, other inc/exp, D&A, due diligence) are below EBITDA; included on september/q3/ytd from P&L only.",
+    "Reforecast tabs inspected, not loaded. Budget scenario label on monthly P&L cols is 'Q3 2026 Budget'.",
+    "units: money USD; margins decimal; variance=actual-budget; variance_pct=(actual-budget)/budget."
+  ]
+}

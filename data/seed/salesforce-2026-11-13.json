@@ -1,0 +1,719 @@
+{
+  "as_of": "2026-11-13 10:48 AM America/New_York (EST)",
+  "as_of_iso": "2026-11-13T10:48:11.632780-05:00",
+  "connector": "user-Salesforce soqlQuery",
+  "mode": "read-only; no Salesforce writes",
+  "query_source": {
+    "repo": "strecfc/mountainseed-command-center",
+    "branch": "cursor/leadership-command-center-5930",
+    "commit": "28f2536",
+    "file": "src/lib/salesforce.ts",
+    "constant": "DEFAULT_QUERIES",
+    "note": "These are the app's default SOQL strings. The app can override them with SF_SOQL_JSON; that env var is not visible in the repo, so these defaults were used."
+  },
+  "queries": {
+    "open_pipeline": {
+      "soql": "SELECT SUM(Amount) total, COUNT(Id) n FROM Opportunity WHERE IsClosed = false",
+      "ok": true,
+      "records": [
+        {
+          "total": 1115465847.0,
+          "n": 778
+        }
+      ]
+    },
+    "wins_ytd": {
+      "soql": "SELECT SUM(Amount) total, COUNT(Id) n FROM Opportunity WHERE IsWon = true AND CloseDate = THIS_YEAR",
+      "ok": true,
+      "records": [
+        {
+          "total": 69043795.0,
+          "n": 278
+        }
+      ]
+    },
+    "new_accounts": {
+      "soql": "SELECT COUNT(Id) n FROM Account WHERE CreatedDate = THIS_YEAR",
+      "ok": true,
+      "records": [
+        {
+          "n": 9373
+        }
+      ],
+      "note": "This is the app's query as written (all Account records created THIS_YEAR). The count is very large relative to a new-client interpretation."
+    },
+    "upsell": {
+      "soql": "SELECT COUNT(Id) n, SUM(Amount) total FROM Opportunity WHERE IsClosed = false AND Type = 'Existing Business'",
+      "ok": true,
+      "records": [
+        {
+          "n": 3,
+          "total": 55000.0
+        }
+      ]
+    },
+    "new_sales_won_ytd": {
+      "soql": "SELECT SUM(Amount) total, COUNT(Id) n FROM Opportunity WHERE IsWon = true AND CloseDate = THIS_YEAR AND Type != 'Existing Business'",
+      "ok": true,
+      "records": [
+        {
+          "total": 69043795.0,
+          "n": 278
+        }
+      ],
+      "note": "Identical to wins_ytd; no won opportunities this year have Type = 'Existing Business'."
+    },
+    "new_sales_won_month": {
+      "soql": "SELECT SUM(Amount) total, COUNT(Id) n FROM Opportunity WHERE IsWon = true AND CloseDate = THIS_MONTH AND Type != 'Existing Business'",
+      "ok": true,
+      "records": [
+        {
+          "total": 345040.0,
+          "n": 13
+        }
+      ]
+    },
+    "upsell_won_ytd": {
+      "soql": "SELECT SUM(Amount) total, COUNT(Id) n FROM Opportunity WHERE IsWon = true AND CloseDate = THIS_YEAR AND Type = 'Existing Business'",
+      "ok": true,
+      "records": [
+        {
+          "total": null,
+          "n": 0
+        }
+      ]
+    },
+    "upsell_won_month": {
+      "soql": "SELECT SUM(Amount) total, COUNT(Id) n FROM Opportunity WHERE IsWon = true AND CloseDate = THIS_MONTH AND Type = 'Existing Business'",
+      "ok": true,
+      "records": [
+        {
+          "total": null,
+          "n": 0
+        }
+      ]
+    },
+    "ma_stages": {
+      "soql": "SELECT StageName, COUNT(Id) n, SUM(Amount) total FROM Opportunity WHERE RecordType.Name = 'M&As' GROUP BY StageName",
+      "ok": true,
+      "records": [
+        {
+          "StageName": "Info Request",
+          "n": 1,
+          "total": null
+        },
+        {
+          "StageName": "Due Diligence",
+          "n": 2,
+          "total": null
+        },
+        {
+          "StageName": "Internal Review",
+          "n": 4,
+          "total": null
+        },
+        {
+          "StageName": "NDA Sent",
+          "n": 2,
+          "total": null
+        },
+        {
+          "StageName": "Initial Conversations",
+          "n": 5,
+          "total": null
+        },
+        {
+          "StageName": "Closed Lost",
+          "n": 17,
+          "total": null
+        },
+        {
+          "StageName": "LOI Sent",
+          "n": 2,
+          "total": null
+        },
+        {
+          "StageName": "Data Received",
+          "n": 5,
+          "total": null
+        },
+        {
+          "StageName": "Open",
+          "n": 23,
+          "total": null
+        }
+      ]
+    },
+    "churn_cases": {
+      "soql": "SELECT COUNT(Id) n FROM Case WHERE IsClosed = false AND Subject LIKE '%churn%'",
+      "ok": true,
+      "records": [
+        {
+          "n": 1
+        }
+      ]
+    },
+    "churned_accounts": {
+      "soql": "SELECT Id, Name, Closed_AMC_Date__c, Last_Order_Date__c, Days_Since_Last_Order__c, AMC_Client_Type__c, AMC_Closed_Lost_Reason__c, Owner.Name, RecordType.Name FROM Account WHERE Type = 'Past Client' AND RecordType.Name = 'Depository Institution' AND Closed_AMC_Date__c = LAST_N_DAYS:365 ORDER BY Closed_AMC_Date__c DESC",
+      "ok": true,
+      "totalSize": 36,
+      "records": [
+        {
+          "Id": "0016f00002bAXS8AAO",
+          "Name": "Lafayette State Bank",
+          "Closed_AMC_Date__c": "2026-11-04",
+          "Last_Order_Date__c": "2022-10-03",
+          "Days_Since_Last_Order__c": 1502,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Non Decision Maker",
+          "Owner": {
+            "Name": "Madie Dreesman"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "001U000001VyYFqIAN",
+          "Name": "Credit Union of Southern California",
+          "Closed_AMC_Date__c": "2026-10-31",
+          "Last_Order_Date__c": "2025-04-21",
+          "Days_Since_Last_Order__c": 571,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": {
+            "Name": "Thomas Jones"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "0010B00001zt0R8QAI",
+          "Name": "Goldenwest Federal Credit Union",
+          "Closed_AMC_Date__c": "2026-10-14",
+          "Last_Order_Date__c": "2023-09-26",
+          "Days_Since_Last_Order__c": 1144,
+          "AMC_Client_Type__c": "Base Core Only",
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": {
+            "Name": "Cameron Bowes"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "0010B000022QFHtQAO",
+          "Name": "Citizens National Bank of Cheboygan",
+          "Closed_AMC_Date__c": "2026-09-11",
+          "Last_Order_Date__c": "2025-01-13",
+          "Days_Since_Last_Order__c": 669,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Keeping Internal",
+          "Owner": {
+            "Name": "Madie Dreesman"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "001U000001VxtSTIAZ",
+          "Name": "First Community Bank",
+          "Closed_AMC_Date__c": "2026-08-31",
+          "Last_Order_Date__c": "2022-02-08",
+          "Days_Since_Last_Order__c": 1739,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Non Decision Maker",
+          "Owner": {
+            "Name": "Madie Dreesman"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "001U000001SykEAIAZ",
+          "Name": "Park State Bank & Trust",
+          "Closed_AMC_Date__c": "2026-08-21",
+          "Last_Order_Date__c": "2024-11-15",
+          "Days_Since_Last_Order__c": 728,
+          "AMC_Client_Type__c": "Core and Non-Core(low orders)",
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": {
+            "Name": "Thomas Jones"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "001U000000udvUuIAI",
+          "Name": "Horizon Bank - Waverly NE",
+          "Closed_AMC_Date__c": "2026-08-21",
+          "Last_Order_Date__c": "2024-03-13",
+          "Days_Since_Last_Order__c": 975,
+          "AMC_Client_Type__c": "No Orders in 140+ Days",
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": {
+            "Name": "Madie Dreesman"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "0010B00001q17CbQAI",
+          "Name": "Adams Bank & Trust",
+          "Closed_AMC_Date__c": "2026-08-20",
+          "Last_Order_Date__c": "2024-01-25",
+          "Days_Since_Last_Order__c": 1023,
+          "AMC_Client_Type__c": "Core and Non-Core",
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": {
+            "Name": "Whit Collmus"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "001U000000ZYueaIAD",
+          "Name": "Burling Bank",
+          "Closed_AMC_Date__c": "2026-08-18",
+          "Last_Order_Date__c": "2026-03-26",
+          "Days_Since_Last_Order__c": 232,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Keeping Internal",
+          "Owner": {
+            "Name": "Madie Dreesman"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "001U000001UPyKtIAL",
+          "Name": "Devon Bank",
+          "Closed_AMC_Date__c": "2026-08-03",
+          "Last_Order_Date__c": "2021-10-13",
+          "Days_Since_Last_Order__c": 1857,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Staying With Current Provider",
+          "Owner": {
+            "Name": "Madie Dreesman"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "001U000000Z8AKtIAN",
+          "Name": "First Bank of Alabama",
+          "Closed_AMC_Date__c": "2026-07-23",
+          "Last_Order_Date__c": "2023-10-04",
+          "Days_Since_Last_Order__c": 1136,
+          "AMC_Client_Type__c": "Review Only",
+          "AMC_Closed_Lost_Reason__c": "Keeping Internal",
+          "Owner": {
+            "Name": "Whit Collmus"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "001U000001VFoaGIAT",
+          "Name": "American Momentum Bank",
+          "Closed_AMC_Date__c": "2026-07-17",
+          "Last_Order_Date__c": "2021-11-16",
+          "Days_Since_Last_Order__c": 1823,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": {
+            "Name": "Madie Dreesman"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "001U000000Z8ALDIA3",
+          "Name": "HomeTrust Bank",
+          "Closed_AMC_Date__c": "2026-07-16",
+          "Last_Order_Date__c": "2022-01-10",
+          "Days_Since_Last_Order__c": 1768,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Keeping Internal",
+          "Owner": {
+            "Name": "Whit Collmus"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "001U000001hoblDIAQ",
+          "Name": "The Southern Bank Company",
+          "Closed_AMC_Date__c": "2026-07-08",
+          "Last_Order_Date__c": null,
+          "Days_Since_Last_Order__c": null,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": {
+            "Name": "Madie Dreesman"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "001U000000Z7Mb7IAF",
+          "Name": "Itasca Bank & Trust Co.",
+          "Closed_AMC_Date__c": "2026-07-06",
+          "Last_Order_Date__c": "2024-08-09",
+          "Days_Since_Last_Order__c": 826,
+          "AMC_Client_Type__c": "Non-Core Only",
+          "AMC_Closed_Lost_Reason__c": "No Longer Interested",
+          "Owner": {
+            "Name": "Madie Dreesman"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "001U000001jCMAOIA4",
+          "Name": "The Peoples Bank, Biloxi, Mississippi",
+          "Closed_AMC_Date__c": "2026-07-02",
+          "Last_Order_Date__c": null,
+          "Days_Since_Last_Order__c": null,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": {
+            "Name": "Madie Dreesman"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "001U000001Yt70aIAB",
+          "Name": "Androscoggin Savings Bank",
+          "Closed_AMC_Date__c": "2026-06-30",
+          "Last_Order_Date__c": "2024-07-25",
+          "Days_Since_Last_Order__c": 841,
+          "AMC_Client_Type__c": "No Orders in 140+ Days",
+          "AMC_Closed_Lost_Reason__c": "Keeping Internal",
+          "Owner": {
+            "Name": "Whit Collmus"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "0010B000022QFFPQA4",
+          "Name": "First State Bank of Burnet",
+          "Closed_AMC_Date__c": "2026-06-24",
+          "Last_Order_Date__c": "2021-09-07",
+          "Days_Since_Last_Order__c": 1893,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": {
+            "Name": "Madie Dreesman"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "0010B00001vIG2OQAW",
+          "Name": "West Coast Community Bank",
+          "Closed_AMC_Date__c": "2026-06-08",
+          "Last_Order_Date__c": "2026-01-15",
+          "Days_Since_Last_Order__c": 302,
+          "AMC_Client_Type__c": "Core and Non-Core",
+          "AMC_Closed_Lost_Reason__c": null,
+          "Owner": {
+            "Name": "Whit Collmus"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "001U000000wJZP1IAO",
+          "Name": "Plains State Bank",
+          "Closed_AMC_Date__c": "2026-06-03",
+          "Last_Order_Date__c": "2023-06-26",
+          "Days_Since_Last_Order__c": 1236,
+          "AMC_Client_Type__c": "Core and Non-Core",
+          "AMC_Closed_Lost_Reason__c": "Keeping Internal",
+          "Owner": {
+            "Name": "Whit Collmus"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "0016f00002t6As3AAE",
+          "Name": "Evermore Bank",
+          "Closed_AMC_Date__c": "2026-06-03",
+          "Last_Order_Date__c": "2024-04-08",
+          "Days_Since_Last_Order__c": 949,
+          "AMC_Client_Type__c": "Review Only",
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": {
+            "Name": "Madie Dreesman"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "001U000001cSAWVIA4",
+          "Name": "Citizens State Bank of La Crosse",
+          "Closed_AMC_Date__c": "2026-06-03",
+          "Last_Order_Date__c": "2023-02-09",
+          "Days_Since_Last_Order__c": 1373,
+          "AMC_Client_Type__c": "Base Core Only",
+          "AMC_Closed_Lost_Reason__c": "Staying With Current Provider",
+          "Owner": {
+            "Name": "Whit Collmus"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "0010B000022QFK5QAO",
+          "Name": "Capital Community Bank",
+          "Closed_AMC_Date__c": "2026-05-28",
+          "Last_Order_Date__c": "2021-11-29",
+          "Days_Since_Last_Order__c": 1810,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": {
+            "Name": "Madie Dreesman"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "001U000000zax4UIAQ",
+          "Name": "Americana Community Bank",
+          "Closed_AMC_Date__c": "2026-05-22",
+          "Last_Order_Date__c": "2021-05-12",
+          "Days_Since_Last_Order__c": 2011,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Keeping Internal",
+          "Owner": {
+            "Name": "Madie Dreesman"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "0010B000022QFOaQAO",
+          "Name": "Oakstar Bank",
+          "Closed_AMC_Date__c": "2026-05-18",
+          "Last_Order_Date__c": "2023-10-31",
+          "Days_Since_Last_Order__c": 1109,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Staying With Current Provider",
+          "Owner": {
+            "Name": "Madie Dreesman"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "0010B000022QFZFQA4",
+          "Name": "American First Credit Union",
+          "Closed_AMC_Date__c": "2026-05-13",
+          "Last_Order_Date__c": null,
+          "Days_Since_Last_Order__c": null,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Staying With Current Provider",
+          "Owner": {
+            "Name": "Madie Dreesman"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "0010B000022QFaxQAG",
+          "Name": "Greenwood Credit Union",
+          "Closed_AMC_Date__c": "2026-04-22",
+          "Last_Order_Date__c": "2023-04-04",
+          "Days_Since_Last_Order__c": 1319,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": {
+            "Name": "Madie Dreesman"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "001U000000Z89HoIAJ",
+          "Name": "North State Bank",
+          "Closed_AMC_Date__c": "2026-04-15",
+          "Last_Order_Date__c": "2021-12-06",
+          "Days_Since_Last_Order__c": 1803,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Staying With Current Provider",
+          "Owner": {
+            "Name": "Whit Collmus"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "0010B000022QFhHQAW",
+          "Name": "Fremont Federal Credit Union",
+          "Closed_AMC_Date__c": "2026-03-31",
+          "Last_Order_Date__c": "2023-09-22",
+          "Days_Since_Last_Order__c": 1148,
+          "AMC_Client_Type__c": "Non-Core Only",
+          "AMC_Closed_Lost_Reason__c": "Keeping Internal",
+          "Owner": {
+            "Name": "Madie Dreesman"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "001U000000dPntFIAS",
+          "Name": "Nicolet National Bank",
+          "Closed_AMC_Date__c": "2026-03-06",
+          "Last_Order_Date__c": null,
+          "Days_Since_Last_Order__c": null,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Keeping Internal",
+          "Owner": {
+            "Name": "Andrew Spysinski"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "0010B000020bxUqQAI",
+          "Name": "Academy Bank, National Association",
+          "Closed_AMC_Date__c": "2026-02-06",
+          "Last_Order_Date__c": "2024-11-05",
+          "Days_Since_Last_Order__c": 738,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": null,
+          "Owner": {
+            "Name": "Cameron Bowes"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "0010B000022QFHXQA4",
+          "Name": "The Bankers Bank - Oklahoma City, OK",
+          "Closed_AMC_Date__c": "2026-01-26",
+          "Last_Order_Date__c": null,
+          "Days_Since_Last_Order__c": null,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Appraisal Volume Too Small",
+          "Owner": {
+            "Name": "Madie Dreesman"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "001U000001jB8lJIAS",
+          "Name": "Builtwell Bank",
+          "Closed_AMC_Date__c": "2026-01-20",
+          "Last_Order_Date__c": null,
+          "Days_Since_Last_Order__c": null,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Lost to Competition",
+          "Owner": {
+            "Name": "Whit Collmus"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "001U000001e04SpIAI",
+          "Name": "Enterprise Bank & Trust",
+          "Closed_AMC_Date__c": "2026-01-08",
+          "Last_Order_Date__c": "2024-01-25",
+          "Days_Since_Last_Order__c": 1023,
+          "AMC_Client_Type__c": "Non-Core Only",
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": {
+            "Name": "Whit Collmus"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "0010B00001llRNRQA2",
+          "Name": "Listerhill Credit Union",
+          "Closed_AMC_Date__c": "2025-12-05",
+          "Last_Order_Date__c": "2021-11-18",
+          "Days_Since_Last_Order__c": 1821,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Staying With Current Provider",
+          "Owner": {
+            "Name": "Whit Collmus"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        },
+        {
+          "Id": "001U000000Z7OftIAF",
+          "Name": "S&T Bank",
+          "Closed_AMC_Date__c": "2025-11-21",
+          "Last_Order_Date__c": "2021-12-16",
+          "Days_Since_Last_Order__c": 1793,
+          "AMC_Client_Type__c": null,
+          "AMC_Closed_Lost_Reason__c": "Non Responsive",
+          "Owner": {
+            "Name": "Cameron Bowes"
+          },
+          "RecordType": {
+            "Name": "Depository Institution"
+          }
+        }
+      ]
+    }
+  },
+  "derived_for_app_view": {
+    "pipelineAmount": 1115465847.0,
+    "pipelineCount": 778,
+    "winsAmount": 69043795.0,
+    "winsCount": 278,
+    "newClients": 9373,
+    "upsellCount": 3,
+    "upsellAmount": 55000.0,
+    "newSalesWonYtd": 69043795.0,
+    "newSalesWonMonth": 345040.0,
+    "upsellWonYtd": null,
+    "upsellWonMonth": null,
+    "churnCases": 1,
+    "churnedAccountCount": 36
+  }
+}

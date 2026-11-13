@@ -1,0 +1,58 @@
+Source: Outlook email (Carl@mountainseed.com)
+From: Max DiPlotti <mdiplotti@mountainseed.com>
+Subject: MarketPlace Sales Scorecard
+Received: 2026-11-10 9:43 AM America/New_York (2026-11-10T14:43:22Z)
+Sent: 2026-11-10 9:41 AM America/New_York (2026-11-10T14:41:28Z)
+To: Patrick Roberts, Elisabeth Lanford, Taylor Ortego, Tristan Gagner, Madie Dreesman, Jackson Thomas, Chaz Davis, Client Success, Owen Huggins, Isabella Landis
+Cc: Carl Streck, Laurensia Sturgis, Jane Mardis, Susan Wall, Ashish Aiyar
+Non-inline attachments downloaded to this folder (inline signature image not downloaded):
+  YOY Orders Placed 11.1.26.xlsx
+  MarketPlace Enviromental Realization.pdf
+  MarketPlace Evaluation Realization.pdf
+  Clients with No Orders - Greater Than $5k.pdf
+  Clients with No Orders.pdf
+  Clients with No Orders.xlsx
+  MarketPlace Site Inspection Realization.pdf
+  New Client Sales Realization - Greater than $5k.pdf
+  New Client Sales Realization.pdf
+  New Client Sales Realization.xlsx
+  Core Business Pipeline by Closing Date and Stage - All Opportunities.pdf
+  Core Business Pipeline by Closing Date and Stage - All Opportunities.xlsx
+
+Week columns: 1-Nov | 25-Oct | 18-Oct | 11-Oct | 4-Oct | 27-Sep
+
+=== metrics from the email body ===
+Revenue | Adjusted Order Revenue (Thousands, Net of Pass-Thru) / Business Day | | $104.44 | $105.74 | 99% | $108.77 | $106.44 | $103.72 | $107.93 | $107.68 | $99.78 | $101.11
+Revenue | New Client Order Revenue (Reg Date from Dec 2024, Net of Pass-Thru) / Business Day | | $13.19 | $12.35 | 107% | $12.87 | $15.93 | $11.19 | $15.68 | $10.81 | $12.58 | $12.96
+Fin | New Client Adjusted Weekly Sales (Completed Order Revenue, Thousands, Net of Pass-Thru) / Business Day | | $12.52 | $9.64 | 130% | $10.90 | $15.77 | $14.81 | $10.27 | $10.96 | $10.95 | $12.36
+Revenue | AMC Weekly Meetings Set - New Meetings | 106 | | 105 | 101% | 17 | 18 | 23 | 17 | 14 | 27 | 7
+Revenue | AMC Weekly Meetings Set - Rescheduled Meetings | 41 | | 52 | 78% | 9 | 10 | 8 | 8 | 5 | 8 | 2
+Revenue | AMC Total Meetings Set | 147 | | 157 | 94% | 26 | 28 | 31 | 25 | 19 | 35 | 9
+Revenue | AMC Weekly Meetings Held (SDR) | 49 | | 63 | 78% | 10 | 8 | 8 | 8 | 11 | 4 | 10
+Revenue | AMC Meetings Held % (SDR) | | 33.3% | 40% | 83% | 40% | 29% | 26% | 33% | 65% | 11% | 96%
+Revenue | AMC Meetings Held to Positive Stage | 27 | | 21 | 129% | 3 | 4 | 4 | 8 | 5 | 2 | 4
+Revenue | AMC Positive Meetings to Held Ratio | | 55% | 33% | 165% | 33% | 50% | 50% | 100% | 45% | 50% | 40%
+Revenue | Weekly Pipeline Increase - AMC (Thousands) | | $165 | $155 | 107% | $155 | $120 | $196 | $252 | $170 | $90 | $165
+Revenue | SDR Closed Won $ (Thousands) | $210 | | $173 | 121% | $29 | $0 | $85 | $0 | $0 | $0 | $125
+Revenue | Projected Annual Value of New EL Clients (Thousands) | $244 | | $330 | 74% | $55 | $0 | $119 | $0 | $0 | $0 | $125
+Revenue | Opportunities without activity in last 14 days - AMC | | 1 | 0 | - | 0 | 2 | 0 | 0 | 2 | 0 | 0
+MP - Revenue | Evaluation – Realization | 152% | | 100% | 152% | 100% | 152% | 149% | 142% | 138% | 125% | 114%
+Revenue | # of Clients > $5k with 0 Orders (Closed during or after Dec 2024; in system >28 days) | | 1 | 5 | | 5 | 1 | 2 | 1 | 1 | 1 | 1
+Revenue | Onboarding SLA | | 94% | 85% | 111% | 85% | 94% | 94% | 94% | 94% | 94% | 94%
+Revenue | MP Client Logo Churn | 9.02% | | 10% | 90% | 10% | 9.02% | 9.02% | 9.02% | 9.02% | 8.65% | 9.02%
+Revenue | % of Goal Order Revenue YTD (Closed during or after Dec 2024; assumes 28-day implementation period) | 168% | | 100% | 168% | 100% | 168% | 168% | 160% | 160% | 160% | 163%
+Revenue | Year-over-Year Net Retention % | 101.8% | | 100% | 102% | 100% | 120% | 89% | 103% | 102% | 101% | 97%
+Revenue | AMC MQL's Created | 14 | | 9 | 152% | 2 | 0 | 1 | 4 | 2 | 5 | 2
+Revenue | Client Mappings Created | 23 | | 23.1 | 100% | 11.5 | 14 | 9 | | | |
+Revenue | In Person Meetings | 23 | | 4 | 623% | 1 | 4 | 3 | 7 | 3 | 5 | 1
+Revenue | Client Reports | 10 | | | | | 3 | 0 | 0 | 0 | 1 | 6
+Ops | Commercial % of Reviews > 5 BD Total Turn (Reviewer Receives Assignment to Complete) | | 19% | 12% | 161% | 12% | 16% | 20% | 30% | 25% | 12% | 13%
+Ops | Residential % of Reviews > 5 BD Total Turn (Reviewer Receives Assignment to Complete) | | 6% | 10% | 64% | 10% | 3% | 5% | 4% | 9% | 5% | 12%
+Ops | Commercial Average Total Review Turn (Reviewer Receives Assignment to Complete) | | 4.2 | | | 5.2 | 3.9 | 4.4 | 4.7 | 4.5 | 4.1 | 3.7
+Ops | Residential Average Total Review Turn (Reviewer Receives Assignment to Complete) | | 3.3 | | | 4.2 | 2.8 | 3.3 | 3.2 | 3.4 | 3.2 | 3.8
+Ops | COMM % of Reviews > 3 BD to get Revisions Completed | | 14% | 25% | 57% | 25% | 16% | 16% | 15% | 14% | 10% | 14%
+Ops | RESI % of Reviews > 3 BD to get Revisions Completed | | 9% | 18% | 51% | 18% | 4% | 8% | 7% | 13% | 3% | 20%
+Ops | COMM Average BD to get Revisions Completed | | 2.0 | 3.0 | 68% | 3.0 | 2.1 | 2.2 | 2.0 | 2.1 | 1.8 | 2.0
+Ops | RESI Average BD to get Revisions Completed | | 1.6 | 2.0 | 78% | 2.0 | 1.2 | 1.5 | 1.6 | 1.7 | 1.3 | 2.2
+Ops | COMM Revision % | | 40% | | | | 40% | 37% | 43% | 43% | 37% | 42%
+Ops | RESI Revision % | | 30% | | | | 34% | 29% | 23% | 30% | 32% | 33%

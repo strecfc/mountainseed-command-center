@@ -1,0 +1,61 @@
+Source: Outlook email from Max DiPlotti (mdiplotti@mountainseed.com)
+Subject: Scorecard
+Received: 2026-11-03 4:22 PM America/New_York (2026-11-03T21:22:32Z)
+To: Carl Streck, Jane Mardis, Laurensia Sturgis, Patrick Roberts, Susan Wall
+Cc: Stephanie Slagle, Ashish Aiyar
+Attachment (non-inline): Augur Uploads Goal (October) - SC.xlsx
+Saved as: /workspace/leadership-scorecards/2026-11-03-Augur-Uploads-Goal-October-SC.xlsx
+
+Week columns: 25-Oct | 18-Oct | 11-Oct | 4-Oct | 27-Sep
+Columns: CATEGORY | metric | Total QTD | AVG QTD | QTD GOAL | QTD Goal % | WK GOAL | weekly values
+
+=== MarketPlace ===
+Revenue | Adjusted Order Revenue (Thousands, Net of Pass-Thru) / Business Day | (blank Total) | $104.04 | $105.14 | 99% | $105.14 | $103.72 | $107.93 | $107.68 | $99.78 | $101.11
+Revenue | % of Orders Placed with MDR | | 27.3% | | | | 28.7% | 24.4% | 27.8% | 24.1% | 31.6%
+Revenue | MDR's Placed per BD (#) | | 18.7 | 22.0 | 85% | 22.0 | 19.6 | 17.8 | 20.3 | 16.2 | 19.4
+Revenue | AMC Weekly Meetings Held (SDR) | 41 | | 52 | 78% | 10 | 8 | 8 | 11 | 4 | 10
+Revenue | Projected Annual Value of New AMC EL Clients + Upsell (Thousands) | $249 | | $275 | 90% | $55 | $124 | $0 | $0 | $0 | $125
+Revenue | MP Client Logo Churn | 9.02% | | 10% | 90% | 10% | 9.02% | 9.02% | 9.02% | 8.65% | 9.02%
+Revenue | % of Goal Order Revenue YTD (Closed during or after Dec 2024; assumes 28-day implementation period) | 167% | | 100% | 167% | 100% | 167% | 160% | 160% | 160% | 163%
+Revenue | Year-over-Year Net Retention % | 98.1% | | 100% | 98% | 100% | 89% | 103% | 102% | 101% | 97%
+Ops | ADJ % of Appraisals Received After Appraiser Due Date (>1BD) | | 5% | 10% | 53% | 10% | 5% | 7% | 4% | 6% | 5%
+Ops | Normalized Combined Staff Utilization (Less Effective Overtime Units) Ramp-Up | | 12.4 | 13.0 | 96% | 13.0 | 13.0 | 13.8 | 11.1 | 10.9 | 13.3
+Ops | Commercial % of Reviews > 5 BD Total Turn (Reviewer Receives Assignment to Complete) | | 20% | 12% | 166% | 12% | 20% | 30% | 25% | 12% | 13%
+Ops | Residential % of Reviews > 5 BD Total Turn (Reviewer Receives Assignment to Complete) | | 7% | 10% | 71% | 10% | 5% | 4% | 9% | 5% | 12%
+Ops | QCR Volume | | 19 | | | | 20 | 22 | 13 | 20 | 18
+Ops | CRR Volume (Team Leads and CRA's) | | 6 | | | | 6 | 10 | 9 | 3 | 1
+Fin | Cash Balance - MAM/MRES/MS Holdings (Thousands) | | $4,039 | | | | $3,824 | $3,862 | $4,209 | $4,116 | $4,182
+Fin | Gross Margin (Blended) | 68.1% | | 69.5% | 98% | 69.5% | 68% | 69% | 64% | 68% | 70%
+Fin | Adjusted Sales (Completed Order Revenue, Thousands, Net of Pass-Thru) / Business Day | | $90.73 | $89.59 | 101% | $89.59 | $87.48 | $90.77 | $94.65 | $87.40 | $93.34
+Fin | Expense Budget to Actual % | | 92% | 100% | | | | | | | 92%
+Fin | Voluntary Employee Turnover | 0.0% | 0.0% | 1.6% | 0% | 0.3% | 0.0% | 0.0% | 0.0% | 0.0% | 0.0%
+
+=== Sales Leaseback ===
+Revenue | Value of Bank LOI's Signed ($000) - SLB ($10 MM +) | $15,776 | $3,155 | $26,923 | 59% | $5,385 | $0 | $0 | $0 | $0 | $15,776
+Revenue | Non-Fortress Value of Bank LOI's Signed ($000) - (< $10 MM) | $0 | $0 | $8,077 | 0% | $1,615 | $0 | $0 | $0 | $0 | $0
+
+=== Augur ===
+Revenue | Augur Qualified Pipeline ARR ($000) | | $2,158.1 | $1,255.0 | | $1,255.0 | $2,160.3 | $1,728.6 | $2,260.2 | $2,303.0 | $2,338.6
+Revenue | Augur Closed Won ARR ($000) | $40.3 | $8.1 | $106.9 | 38% | $21.4 | $0.0 | $3.0 | $26.0 | $6.5 | $4.8
+Revenue | Augur Retained ARR Past 30 Day Opt Out ($000) | 93.2% | | $0.9 | | 90.0% | 93.4% | 93.2% | 93.2% | 93.2% | 96.4%
+Technology | System Uptime % | | 99.4% | 100.0% | 99% | 100.0% | 100.0% | 97.2% | 100.0% | 100.0% | 100.0%
+Technology | MTTR - Mean Time to Resolve | | 114.6 | 120.0 | 96% | 120.0 | 0.0 | 573.0 | 0.0 | 0.0 | 0.0
+Technology | Release Quality Rate | | 95% | 100.0% | 95% | 100.0% | 100% | 75% | 100% | 100% | 100%
+Technology | AI + Infrastructure Cost per Transaction | | $4.24 | $3.50 | 121% | $3.50 | $3.76 | $3.82 | $3.57 | $5.97 | $4.09
+Technology | Augur Client Uploads (Total) | | 76.8 | 261.2 | 29% | 261.2 | 100 | 77 | 90 | 64 | 53
+
+=== NBP ===
+Ops | NBP Partner Participation % (Of Accepted Total) | | 42.3% | 45.00% | 94% | 45.00% | 43.4% | 33.6% | 43.0% | 54.5% | 37.3%
+Ops | NBP Partners Bids Won # per BD (of Accepted Total) | | 5.1 | 4.9 | 104% | 4.9 | 6.0 | 4.4 | 6.3 | 5.0 | 3.8
+Ops | NBP Partners Bids Won % (of Participation Total) | | 20.6% | 17.50% | 118% | 17.50% | 22.2% | 20.6% | 24.5% | 16.4% | 20.9%
+Ops | NBP Partners Win % Off Panel | | 78.5% | 45.0% | 174% | 45.0% | 70.0% | 94.4% | 75.0% | 75.0% | 66.7%
+Ops | Discount Per NBP Win | | $1,000 | $1,000 | 100% | $1,000 | $1,000 | $1,000 | $1,000 | $1,000 | $1,000
+
+=== M&A ===
+Corporate Dev. | M&A Pipeline (Revenue in Millions) | | $63.71 | | | | $63.76 | $63.76 | $63.76 | $63.76 | $63.51
+Corporate Dev. | M&A NDA Sent | 1 | 0.2 | 3.8 | 26% | 0.8 | 0 | 0 | 0 | 0 | 1
+Corporate Dev. | M&A NDA Signed | 3 | 0.6 | 3.8 | 78% | 0.8 | 0 | 0 | 0 | 2 | 1
+Corporate Dev. | M&A LOI Sent | 1 | 0.2 | 1.9 | 52% | 0.4 | 0 | 0 | 0 | 0 | 1
+Corporate Dev. | M&A LOI Signed | 0 | 0.0 | 1.2 | 0% | 0.2 | 0 | 0 | 0 | 0 | 0
+
+Clarification from Max (same day replies): QCR Volume and CRR Volume are weekly totals, not per business day. QCR averages ~100-120/month so ~20/week is in line.

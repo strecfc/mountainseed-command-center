@@ -1,0 +1,1413 @@
+{
+  "as_of": "2026-11-09 America/New_York",
+  "source_note": "Parsed from Max DiPlotti Outlook emails to Carl. Gmail search for Max DiPlotti scorecard/L10/leadership returned 0 results. Numbers quoted exactly from email bodies; named person owners are not on the scorecard (only category labels Revenue/Ops/Fin/Technology/Corporate Dev.).",
+  "canonical_latest": {
+    "email_received_et": "2026-11-03 4:22 PM America/New_York",
+    "subject": "Scorecard",
+    "week_columns": [
+      "25-Oct",
+      "18-Oct",
+      "11-Oct",
+      "4-Oct",
+      "27-Sep"
+    ],
+    "latest_week": "25-Oct"
+  },
+  "emails_found": [
+    {
+      "received_et": "2026-11-03 4:22 PM America/New_York",
+      "subject": "Scorecard",
+      "from": "Max DiPlotti <mdiplotti@mountainseed.com>",
+      "type": "leadership_consolidated",
+      "has_attachments": true,
+      "attachment_names": [
+        "Augur Uploads Goal (October) - SC.xlsx",
+        "ms9.6.24...jpg (inline)"
+      ],
+      "saved_paths": [
+        "/workspace/leadership-scorecards/2026-11-03-Augur-Uploads-Goal-October-SC.xlsx",
+        "/workspace/leadership-scorecards/2026-11-03-Scorecard-body.txt"
+      ],
+      "week_ending_featured": "25-Oct",
+      "notes": "Canonical latest L10 leadership scorecard. Same-day replies clarified QCR/CRR are weekly totals."
+    },
+    {
+      "received_et": "2026-10-27 5:22 PM America/New_York",
+      "subject": "Scorecard",
+      "from": "Max DiPlotti <mdiplotti@mountainseed.com>",
+      "type": "leadership_consolidated",
+      "has_attachments": true,
+      "attachment_names": [
+        "Augur Uploads Goal (October) - SC.xlsx"
+      ],
+      "saved_paths": [
+        "/workspace/leadership-scorecards/2026-10-27-Augur-Uploads-Goal-October-SC.xlsx",
+        "/workspace/leadership-scorecards/2026-10-27-Scorecard-meta.txt"
+      ],
+      "week_ending_featured": "18-Oct"
+    },
+    {
+      "received_et": "2026-10-13 5:23 PM America/New_York",
+      "subject": "Scorecard",
+      "from": "Max DiPlotti <mdiplotti@mountainseed.com>",
+      "type": "leadership_consolidated",
+      "has_attachments": false,
+      "attachment_names": [],
+      "saved_paths": [
+        "/workspace/leadership-scorecards/2026-10-13-Scorecard-meta.txt"
+      ],
+      "week_ending_featured": "4-Oct",
+      "notes": "Draft goals note; QCR/CRR not yet present."
+    },
+    {
+      "received_et": "2026-10-06 6:02 PM America/New_York",
+      "subject": "Scorecard",
+      "from": "Max DiPlotti <mdiplotti@mountainseed.com>",
+      "type": "leadership_consolidated",
+      "has_attachments": false,
+      "attachment_names": [],
+      "saved_paths": [
+        "/workspace/leadership-scorecards/2026-10-06-Scorecard-meta.txt"
+      ],
+      "week_ending_featured": "27-Sep",
+      "notes": "Goals not yet updated for Q4; QCR/CRR not yet present."
+    },
+    {
+      "received_et": "2026-09-15 4:26 PM America/New_York",
+      "subject": "Scorecard",
+      "from": "Max DiPlotti <mdiplotti@mountainseed.com>",
+      "type": "leadership_consolidated",
+      "has_attachments": false,
+      "attachment_names": [],
+      "saved_paths": [
+        "/workspace/leadership-scorecards/2026-09-15-Scorecard-meta.txt"
+      ],
+      "week_ending_featured": "6-Sep",
+      "notes": "M&A section labeled DRAFT; QCR/CRR not present."
+    },
+    {
+      "received_et": "2026-10-27 9:20 AM America/New_York",
+      "subject": "MarketPlace Sales Scorecard",
+      "from": "Max DiPlotti <mdiplotti@mountainseed.com>",
+      "type": "team_specialty",
+      "has_attachments": true,
+      "attachment_names": [
+        "YOY Orders Placed 10.18.26.xlsx",
+        "MarketPlace Site Inspection Realization.pdf",
+        "Clients with No Orders - Greater Than $5k.pdf",
+        "Clients with No Orders.pdf",
+        "Clients with No Orders.xlsx",
+        "New Client Sales Realization - Greater than $5k.pdf",
+        "New Client Sales Realization.pdf",
+        "New Client Sales Realization.xlsx",
+        "Core Business Pipeline by Closing Date and Stage - All Opportunities.pdf",
+        "Core Business Pipeline by Closing Date and Stage - All Opportunities.xlsx",
+        "MarketPlace Enviromental Realization.pdf",
+        "MarketPlace Evaluation Realization.pdf"
+      ],
+      "saved_paths": [
+        "/workspace/leadership-scorecards/2026-10-27-MarketPlace-Sales-Scorecard-notes.txt"
+      ],
+      "notes": "Body metrics parsed; multi-file attachments listed but not all downloaded (body already had the metric rows Carl needs)."
+    },
+    {
+      "received_et": "2026-10-27 9:18 AM America/New_York",
+      "subject": "Augur Sales Scorecard",
+      "type": "team_specialty",
+      "has_attachments": false,
+      "notes": "Separate Augur sales activity scorecard (meetings set/held etc.)."
+    },
+    {
+      "received_et": "2026-10-27 9:18 AM America/New_York",
+      "subject": "Capital Markets Scorecard",
+      "type": "team_specialty",
+      "has_attachments": false,
+      "notes": "Separate Cap Markets outbound activity scorecard."
+    },
+    {
+      "received_et": "2026-10-20 ~9:14 AM / update 10:03 AM America/New_York",
+      "subject": "M&A Scorecard / Re: M&A Scorecard",
+      "type": "team_specialty",
+      "has_attachments": false,
+      "notes": "Same M&A funnel metrics as consolidated Scorecard M&A section."
+    }
+  ],
+  "metrics_on_leadership_scorecard_2026_11_03": [
+    {
+      "section": "MarketPlace",
+      "category": "Revenue",
+      "label": "Adjusted Order Revenue (Thousands, Net of Pass-Thru) / Business Day",
+      "owner_category": "Revenue",
+      "total_qtd": null,
+      "avg_qtd": "$104.04",
+      "qtd_goal": "$105.14",
+      "qtd_goal_pct": "99%",
+      "wk_goal": "$105.14",
+      "latest_week": "25-Oct",
+      "latest_value": "$103.72",
+      "weekly_values": {
+        "25-Oct": "$103.72",
+        "18-Oct": "$107.93",
+        "11-Oct": "$107.68",
+        "4-Oct": "$99.78",
+        "27-Sep": "$101.11"
+      },
+      "four_week_trend": [
+        "$103.72",
+        "$107.93",
+        "$107.68",
+        "$99.78"
+      ]
+    },
+    {
+      "section": "MarketPlace",
+      "category": "Revenue",
+      "label": "% of Orders Placed with MDR",
+      "owner_category": "Revenue",
+      "total_qtd": null,
+      "avg_qtd": "27.3%",
+      "qtd_goal": null,
+      "qtd_goal_pct": null,
+      "wk_goal": null,
+      "latest_week": "25-Oct",
+      "latest_value": "28.7%",
+      "weekly_values": {
+        "25-Oct": "28.7%",
+        "18-Oct": "24.4%",
+        "11-Oct": "27.8%",
+        "4-Oct": "24.1%",
+        "27-Sep": "31.6%"
+      },
+      "four_week_trend": [
+        "28.7%",
+        "24.4%",
+        "27.8%",
+        "24.1%"
+      ]
+    },
+    {
+      "section": "MarketPlace",
+      "category": "Revenue",
+      "label": "MDR's Placed per BD (#)",
+      "owner_category": "Revenue",
+      "total_qtd": null,
+      "avg_qtd": "18.7",
+      "qtd_goal": "22.0",
+      "qtd_goal_pct": "85%",
+      "wk_goal": "22.0",
+      "latest_week": "25-Oct",
+      "latest_value": "19.6",
+      "weekly_values": {
+        "25-Oct": "19.6",
+        "18-Oct": "17.8",
+        "11-Oct": "20.3",
+        "4-Oct": "16.2",
+        "27-Sep": "19.4"
+      },
+      "four_week_trend": [
+        "19.6",
+        "17.8",
+        "20.3",
+        "16.2"
+      ]
+    },
+    {
+      "section": "MarketPlace",
+      "category": "Revenue",
+      "label": "AMC Weekly Meetings Held (SDR)",
+      "owner_category": "Revenue",
+      "total_qtd": "41",
+      "avg_qtd": null,
+      "qtd_goal": "52",
+      "qtd_goal_pct": "78%",
+      "wk_goal": "10",
+      "latest_week": "25-Oct",
+      "latest_value": "8",
+      "weekly_values": {
+        "25-Oct": "8",
+        "18-Oct": "8",
+        "11-Oct": "11",
+        "4-Oct": "4",
+        "27-Sep": "10"
+      },
+      "four_week_trend": [
+        "8",
+        "8",
+        "11",
+        "4"
+      ]
+    },
+    {
+      "section": "MarketPlace",
+      "category": "Revenue",
+      "label": "Projected Annual Value of New AMC EL Clients + Upsell (Thousands)",
+      "owner_category": "Revenue",
+      "total_qtd": "$249",
+      "avg_qtd": null,
+      "qtd_goal": "$275",
+      "qtd_goal_pct": "90%",
+      "wk_goal": "$55",
+      "latest_week": "25-Oct",
+      "latest_value": "$124",
+      "weekly_values": {
+        "25-Oct": "$124",
+        "18-Oct": "$0",
+        "11-Oct": "$0",
+        "4-Oct": "$0",
+        "27-Sep": "$125"
+      },
+      "four_week_trend": [
+        "$124",
+        "$0",
+        "$0",
+        "$0"
+      ]
+    },
+    {
+      "section": "MarketPlace",
+      "category": "Revenue",
+      "label": "MP Client Logo Churn",
+      "owner_category": "Revenue",
+      "total_qtd": "9.02%",
+      "avg_qtd": null,
+      "qtd_goal": "10%",
+      "qtd_goal_pct": "90%",
+      "wk_goal": "10%",
+      "latest_week": "25-Oct",
+      "latest_value": "9.02%",
+      "weekly_values": {
+        "25-Oct": "9.02%",
+        "18-Oct": "9.02%",
+        "11-Oct": "9.02%",
+        "4-Oct": "8.65%",
+        "27-Sep": "9.02%"
+      },
+      "four_week_trend": [
+        "9.02%",
+        "9.02%",
+        "9.02%",
+        "8.65%"
+      ],
+      "notes": "Goal is ceiling (lower is better); QTD Goal % of 90% means at 90% of the 10% churn goal."
+    },
+    {
+      "section": "MarketPlace",
+      "category": "Revenue",
+      "label": "% of Goal Order Revenue YTD (Closed during or after Dec 2024; assumes 28-day implementation period)",
+      "owner_category": "Revenue",
+      "total_qtd": "167%",
+      "avg_qtd": null,
+      "qtd_goal": "100%",
+      "qtd_goal_pct": "167%",
+      "wk_goal": "100%",
+      "latest_week": "25-Oct",
+      "latest_value": "167%",
+      "weekly_values": {
+        "25-Oct": "167%",
+        "18-Oct": "160%",
+        "11-Oct": "160%",
+        "4-Oct": "160%",
+        "27-Sep": "163%"
+      },
+      "four_week_trend": [
+        "167%",
+        "160%",
+        "160%",
+        "160%"
+      ]
+    },
+    {
+      "section": "MarketPlace",
+      "category": "Revenue",
+      "label": "Year-over-Year Net Retention %",
+      "owner_category": "Revenue",
+      "total_qtd": "98.1%",
+      "avg_qtd": null,
+      "qtd_goal": "100%",
+      "qtd_goal_pct": "98%",
+      "wk_goal": "100%",
+      "latest_week": "25-Oct",
+      "latest_value": "89%",
+      "weekly_values": {
+        "25-Oct": "89%",
+        "18-Oct": "103%",
+        "11-Oct": "102%",
+        "4-Oct": "101%",
+        "27-Sep": "97%"
+      },
+      "four_week_trend": [
+        "89%",
+        "103%",
+        "102%",
+        "101%"
+      ]
+    },
+    {
+      "section": "MarketPlace",
+      "category": "Ops",
+      "label": "ADJ % of Appraisals Received After Appraiser Due Date (>1BD)",
+      "owner_category": "Ops",
+      "total_qtd": null,
+      "avg_qtd": "5%",
+      "qtd_goal": "10%",
+      "qtd_goal_pct": "53%",
+      "wk_goal": "10%",
+      "latest_week": "25-Oct",
+      "latest_value": "5%",
+      "weekly_values": {
+        "25-Oct": "5%",
+        "18-Oct": "7%",
+        "11-Oct": "4%",
+        "4-Oct": "6%",
+        "27-Sep": "5%"
+      },
+      "four_week_trend": [
+        "5%",
+        "7%",
+        "4%",
+        "6%"
+      ],
+      "notes": "Lower is better; QTD Goal % 53% means beating the 10% ceiling."
+    },
+    {
+      "section": "MarketPlace",
+      "category": "Ops",
+      "label": "Normalized Combined Staff Utilization (Less Effective Overtime Units) Ramp-Up",
+      "owner_category": "Ops",
+      "total_qtd": null,
+      "avg_qtd": "12.4",
+      "qtd_goal": "13.0",
+      "qtd_goal_pct": "96%",
+      "wk_goal": "13.0",
+      "latest_week": "25-Oct",
+      "latest_value": "13.0",
+      "weekly_values": {
+        "25-Oct": "13.0",
+        "18-Oct": "13.8",
+        "11-Oct": "11.1",
+        "4-Oct": "10.9",
+        "27-Sep": "13.3"
+      },
+      "four_week_trend": [
+        "13.0",
+        "13.8",
+        "11.1",
+        "10.9"
+      ]
+    },
+    {
+      "section": "MarketPlace",
+      "category": "Ops",
+      "label": "Commercial % of Reviews > 5 BD Total Turn (Reviewer Receives Assignment to Complete)",
+      "owner_category": "Ops",
+      "total_qtd": null,
+      "avg_qtd": "20%",
+      "qtd_goal": "12%",
+      "qtd_goal_pct": "166%",
+      "wk_goal": "12%",
+      "latest_week": "25-Oct",
+      "latest_value": "20%",
+      "weekly_values": {
+        "25-Oct": "20%",
+        "18-Oct": "30%",
+        "11-Oct": "25%",
+        "4-Oct": "12%",
+        "27-Sep": "13%"
+      },
+      "four_week_trend": [
+        "20%",
+        "30%",
+        "25%",
+        "12%"
+      ],
+      "notes": "Lower is better."
+    },
+    {
+      "section": "MarketPlace",
+      "category": "Ops",
+      "label": "Residential % of Reviews > 5 BD Total Turn (Reviewer Receives Assignment to Complete)",
+      "owner_category": "Ops",
+      "total_qtd": null,
+      "avg_qtd": "7%",
+      "qtd_goal": "10%",
+      "qtd_goal_pct": "71%",
+      "wk_goal": "10%",
+      "latest_week": "25-Oct",
+      "latest_value": "5%",
+      "weekly_values": {
+        "25-Oct": "5%",
+        "18-Oct": "4%",
+        "11-Oct": "9%",
+        "4-Oct": "5%",
+        "27-Sep": "12%"
+      },
+      "four_week_trend": [
+        "5%",
+        "4%",
+        "9%",
+        "5%"
+      ],
+      "notes": "Lower is better."
+    },
+    {
+      "section": "MarketPlace",
+      "category": "Ops",
+      "label": "QCR Volume",
+      "owner_category": "Ops",
+      "total_qtd": null,
+      "avg_qtd": "19",
+      "qtd_goal": null,
+      "qtd_goal_pct": null,
+      "wk_goal": null,
+      "latest_week": "25-Oct",
+      "latest_value": "20",
+      "weekly_values": {
+        "25-Oct": "20",
+        "18-Oct": "22",
+        "11-Oct": "13",
+        "4-Oct": "20",
+        "27-Sep": "18"
+      },
+      "four_week_trend": [
+        "20",
+        "22",
+        "13",
+        "20"
+      ],
+      "notes": "Weekly total (not per BD). Max 2026-11-03: averages 100-120/month so ~20/week is in line."
+    },
+    {
+      "section": "MarketPlace",
+      "category": "Ops",
+      "label": "CRR Volume (Team Leads and CRA's)",
+      "owner_category": "Ops",
+      "total_qtd": null,
+      "avg_qtd": "6",
+      "qtd_goal": null,
+      "qtd_goal_pct": null,
+      "wk_goal": null,
+      "latest_week": "25-Oct",
+      "latest_value": "6",
+      "weekly_values": {
+        "25-Oct": "6",
+        "18-Oct": "10",
+        "11-Oct": "9",
+        "4-Oct": "3",
+        "27-Sep": "1"
+      },
+      "four_week_trend": [
+        "6",
+        "10",
+        "9",
+        "3"
+      ],
+      "notes": "Weekly total (not per BD). Label includes CRA's but is review volume by team leads and CRAs, not appraisal files completed by CRA vs fee appraisers."
+    },
+    {
+      "section": "MarketPlace",
+      "category": "Fin",
+      "label": "Cash Balance - MAM/MRES/MS Holdings (Thousands)",
+      "owner_category": "Fin",
+      "total_qtd": null,
+      "avg_qtd": "$4,039",
+      "qtd_goal": null,
+      "qtd_goal_pct": null,
+      "wk_goal": null,
+      "latest_week": "25-Oct",
+      "latest_value": "$3,824",
+      "weekly_values": {
+        "25-Oct": "$3,824",
+        "18-Oct": "$3,862",
+        "11-Oct": "$4,209",
+        "4-Oct": "$4,116",
+        "27-Sep": "$4,182"
+      },
+      "four_week_trend": [
+        "$3,824",
+        "$3,862",
+        "$4,209",
+        "$4,116"
+      ]
+    },
+    {
+      "section": "MarketPlace",
+      "category": "Fin",
+      "label": "Gross Margin (Blended)",
+      "owner_category": "Fin",
+      "total_qtd": "68.1%",
+      "avg_qtd": null,
+      "qtd_goal": "69.5%",
+      "qtd_goal_pct": "98%",
+      "wk_goal": "69.5%",
+      "latest_week": "25-Oct",
+      "latest_value": "68%",
+      "weekly_values": {
+        "25-Oct": "68%",
+        "18-Oct": "69%",
+        "11-Oct": "64%",
+        "4-Oct": "68%",
+        "27-Sep": "70%"
+      },
+      "four_week_trend": [
+        "68%",
+        "69%",
+        "64%",
+        "68%"
+      ]
+    },
+    {
+      "section": "MarketPlace",
+      "category": "Fin",
+      "label": "Adjusted Sales (Completed Order Revenue, Thousands, Net of Pass-Thru) / Business Day",
+      "owner_category": "Fin",
+      "total_qtd": null,
+      "avg_qtd": "$90.73",
+      "qtd_goal": "$89.59",
+      "qtd_goal_pct": "101%",
+      "wk_goal": "$89.59",
+      "latest_week": "25-Oct",
+      "latest_value": "$87.48",
+      "weekly_values": {
+        "25-Oct": "$87.48",
+        "18-Oct": "$90.77",
+        "11-Oct": "$94.65",
+        "4-Oct": "$87.40",
+        "27-Sep": "$93.34"
+      },
+      "four_week_trend": [
+        "$87.48",
+        "$90.77",
+        "$94.65",
+        "$87.40"
+      ]
+    },
+    {
+      "section": "MarketPlace",
+      "category": "Fin",
+      "label": "Expense Budget to Actual %",
+      "owner_category": "Fin",
+      "total_qtd": null,
+      "avg_qtd": "92%",
+      "qtd_goal": "100%",
+      "qtd_goal_pct": null,
+      "wk_goal": null,
+      "latest_week": "25-Oct",
+      "latest_value": null,
+      "weekly_values": {
+        "25-Oct": null,
+        "18-Oct": null,
+        "11-Oct": null,
+        "4-Oct": null,
+        "27-Sep": "92%"
+      },
+      "four_week_trend": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "section": "MarketPlace",
+      "category": "Fin",
+      "label": "Voluntary Employee Turnover",
+      "owner_category": "Fin",
+      "total_qtd": "0.0%",
+      "avg_qtd": "0.0%",
+      "qtd_goal": "1.6%",
+      "qtd_goal_pct": "0%",
+      "wk_goal": "0.3%",
+      "latest_week": "25-Oct",
+      "latest_value": "0.0%",
+      "weekly_values": {
+        "25-Oct": "0.0%",
+        "18-Oct": "0.0%",
+        "11-Oct": "0.0%",
+        "4-Oct": "0.0%",
+        "27-Sep": "0.0%"
+      },
+      "four_week_trend": [
+        "0.0%",
+        "0.0%",
+        "0.0%",
+        "0.0%"
+      ]
+    },
+    {
+      "section": "Sales Leaseback",
+      "category": "Revenue",
+      "label": "Value of Bank LOI's Signed ($000) - SLB ($10 MM +)",
+      "owner_category": "Revenue",
+      "total_qtd": "$15,776",
+      "avg_qtd": "$3,155",
+      "qtd_goal": "$26,923",
+      "qtd_goal_pct": "59%",
+      "wk_goal": "$5,385",
+      "latest_week": "25-Oct",
+      "latest_value": "$0",
+      "weekly_values": {
+        "25-Oct": "$0",
+        "18-Oct": "$0",
+        "11-Oct": "$0",
+        "4-Oct": "$0",
+        "27-Sep": "$15,776"
+      },
+      "four_week_trend": [
+        "$0",
+        "$0",
+        "$0",
+        "$0"
+      ]
+    },
+    {
+      "section": "Sales Leaseback",
+      "category": "Revenue",
+      "label": "Non-Fortress Value of Bank LOI's Signed ($000) - (< $10 MM)",
+      "owner_category": "Revenue",
+      "total_qtd": "$0",
+      "avg_qtd": "$0",
+      "qtd_goal": "$8,077",
+      "qtd_goal_pct": "0%",
+      "wk_goal": "$1,615",
+      "latest_week": "25-Oct",
+      "latest_value": "$0",
+      "weekly_values": {
+        "25-Oct": "$0",
+        "18-Oct": "$0",
+        "11-Oct": "$0",
+        "4-Oct": "$0",
+        "27-Sep": "$0"
+      },
+      "four_week_trend": [
+        "$0",
+        "$0",
+        "$0",
+        "$0"
+      ]
+    },
+    {
+      "section": "Augur",
+      "category": "Revenue",
+      "label": "Augur Qualified Pipeline ARR ($000)",
+      "owner_category": "Revenue",
+      "total_qtd": null,
+      "avg_qtd": "$2,158.1",
+      "qtd_goal": "$1,255.0",
+      "qtd_goal_pct": null,
+      "wk_goal": "$1,255.0",
+      "latest_week": "25-Oct",
+      "latest_value": "$2,160.3",
+      "weekly_values": {
+        "25-Oct": "$2,160.3",
+        "18-Oct": "$1,728.6",
+        "11-Oct": "$2,260.2",
+        "4-Oct": "$2,303.0",
+        "27-Sep": "$2,338.6"
+      },
+      "four_week_trend": [
+        "$2,160.3",
+        "$1,728.6",
+        "$2,260.2",
+        "$2,303.0"
+      ]
+    },
+    {
+      "section": "Augur",
+      "category": "Revenue",
+      "label": "Augur Closed Won ARR ($000)",
+      "owner_category": "Revenue",
+      "total_qtd": "$40.3",
+      "avg_qtd": "$8.1",
+      "qtd_goal": "$106.9",
+      "qtd_goal_pct": "38%",
+      "wk_goal": "$21.4",
+      "latest_week": "25-Oct",
+      "latest_value": "$0.0",
+      "weekly_values": {
+        "25-Oct": "$0.0",
+        "18-Oct": "$3.0",
+        "11-Oct": "$26.0",
+        "4-Oct": "$6.5",
+        "27-Sep": "$4.8"
+      },
+      "four_week_trend": [
+        "$0.0",
+        "$3.0",
+        "$26.0",
+        "$6.5"
+      ]
+    },
+    {
+      "section": "Augur",
+      "category": "Revenue",
+      "label": "Augur Retained ARR Past 30 Day Opt Out ($000)",
+      "owner_category": "Revenue",
+      "total_qtd": "93.2%",
+      "avg_qtd": null,
+      "qtd_goal": "$0.9",
+      "qtd_goal_pct": null,
+      "wk_goal": "90.0%",
+      "latest_week": "25-Oct",
+      "latest_value": "93.4%",
+      "weekly_values": {
+        "25-Oct": "93.4%",
+        "18-Oct": "93.2%",
+        "11-Oct": "93.2%",
+        "4-Oct": "93.2%",
+        "27-Sep": "96.4%"
+      },
+      "four_week_trend": [
+        "93.4%",
+        "93.2%",
+        "93.2%",
+        "93.2%"
+      ],
+      "notes": "Displayed as retention %, despite ($000) in label."
+    },
+    {
+      "section": "Augur",
+      "category": "Technology",
+      "label": "System Uptime %",
+      "owner_category": "Technology",
+      "total_qtd": null,
+      "avg_qtd": "99.4%",
+      "qtd_goal": "100.0%",
+      "qtd_goal_pct": "99%",
+      "wk_goal": "100.0%",
+      "latest_week": "25-Oct",
+      "latest_value": "100.0%",
+      "weekly_values": {
+        "25-Oct": "100.0%",
+        "18-Oct": "97.2%",
+        "11-Oct": "100.0%",
+        "4-Oct": "100.0%",
+        "27-Sep": "100.0%"
+      },
+      "four_week_trend": [
+        "100.0%",
+        "97.2%",
+        "100.0%",
+        "100.0%"
+      ]
+    },
+    {
+      "section": "Augur",
+      "category": "Technology",
+      "label": "MTTR - Mean Time to Resolve",
+      "owner_category": "Technology",
+      "total_qtd": null,
+      "avg_qtd": "114.6",
+      "qtd_goal": "120.0",
+      "qtd_goal_pct": "96%",
+      "wk_goal": "120.0",
+      "latest_week": "25-Oct",
+      "latest_value": "0.0",
+      "weekly_values": {
+        "25-Oct": "0.0",
+        "18-Oct": "573.0",
+        "11-Oct": "0.0",
+        "4-Oct": "0.0",
+        "27-Sep": "0.0"
+      },
+      "four_week_trend": [
+        "0.0",
+        "573.0",
+        "0.0",
+        "0.0"
+      ]
+    },
+    {
+      "section": "Augur",
+      "category": "Technology",
+      "label": "Release Quality Rate",
+      "owner_category": "Technology",
+      "total_qtd": null,
+      "avg_qtd": "95%",
+      "qtd_goal": "100.0%",
+      "qtd_goal_pct": "95%",
+      "wk_goal": "100.0%",
+      "latest_week": "25-Oct",
+      "latest_value": "100%",
+      "weekly_values": {
+        "25-Oct": "100%",
+        "18-Oct": "75%",
+        "11-Oct": "100%",
+        "4-Oct": "100%",
+        "27-Sep": "100%"
+      },
+      "four_week_trend": [
+        "100%",
+        "75%",
+        "100%",
+        "100%"
+      ]
+    },
+    {
+      "section": "Augur",
+      "category": "Technology",
+      "label": "AI + Infrastructure Cost per Transaction",
+      "owner_category": "Technology",
+      "total_qtd": null,
+      "avg_qtd": "$4.24",
+      "qtd_goal": "$3.50",
+      "qtd_goal_pct": "121%",
+      "wk_goal": "$3.50",
+      "latest_week": "25-Oct",
+      "latest_value": "$3.76",
+      "weekly_values": {
+        "25-Oct": "$3.76",
+        "18-Oct": "$3.82",
+        "11-Oct": "$3.57",
+        "4-Oct": "$5.97",
+        "27-Sep": "$4.09"
+      },
+      "four_week_trend": [
+        "$3.76",
+        "$3.82",
+        "$3.57",
+        "$5.97"
+      ],
+      "notes": "Lower is better."
+    },
+    {
+      "section": "Augur",
+      "category": "Technology",
+      "label": "Augur Client Uploads (Total)",
+      "owner_category": "Technology",
+      "total_qtd": null,
+      "avg_qtd": "76.8",
+      "qtd_goal": "261.2",
+      "qtd_goal_pct": "29%",
+      "wk_goal": "261.2",
+      "latest_week": "25-Oct",
+      "latest_value": "100",
+      "weekly_values": {
+        "25-Oct": "100",
+        "18-Oct": "77",
+        "11-Oct": "90",
+        "4-Oct": "64",
+        "27-Sep": "53"
+      },
+      "four_week_trend": [
+        "100",
+        "77",
+        "90",
+        "64"
+      ]
+    },
+    {
+      "section": "NBP",
+      "category": "Ops",
+      "label": "NBP Partner Participation % (Of Accepted Total)",
+      "owner_category": "Ops",
+      "total_qtd": null,
+      "avg_qtd": "42.3%",
+      "qtd_goal": "45.00%",
+      "qtd_goal_pct": "94%",
+      "wk_goal": "45.00%",
+      "latest_week": "25-Oct",
+      "latest_value": "43.4%",
+      "weekly_values": {
+        "25-Oct": "43.4%",
+        "18-Oct": "33.6%",
+        "11-Oct": "43.0%",
+        "4-Oct": "54.5%",
+        "27-Sep": "37.3%"
+      },
+      "four_week_trend": [
+        "43.4%",
+        "33.6%",
+        "43.0%",
+        "54.5%"
+      ]
+    },
+    {
+      "section": "NBP",
+      "category": "Ops",
+      "label": "NBP Partners Bids Won # per BD (of Accepted Total)",
+      "owner_category": "Ops",
+      "total_qtd": null,
+      "avg_qtd": "5.1",
+      "qtd_goal": "4.9",
+      "qtd_goal_pct": "104%",
+      "wk_goal": "4.9",
+      "latest_week": "25-Oct",
+      "latest_value": "6.0",
+      "weekly_values": {
+        "25-Oct": "6.0",
+        "18-Oct": "4.4",
+        "11-Oct": "6.3",
+        "4-Oct": "5.0",
+        "27-Sep": "3.8"
+      },
+      "four_week_trend": [
+        "6.0",
+        "4.4",
+        "6.3",
+        "5.0"
+      ]
+    },
+    {
+      "section": "NBP",
+      "category": "Ops",
+      "label": "NBP Partners Bids Won % (of Participation Total)",
+      "owner_category": "Ops",
+      "total_qtd": null,
+      "avg_qtd": "20.6%",
+      "qtd_goal": "17.50%",
+      "qtd_goal_pct": "118%",
+      "wk_goal": "17.50%",
+      "latest_week": "25-Oct",
+      "latest_value": "22.2%",
+      "weekly_values": {
+        "25-Oct": "22.2%",
+        "18-Oct": "20.6%",
+        "11-Oct": "24.5%",
+        "4-Oct": "16.4%",
+        "27-Sep": "20.9%"
+      },
+      "four_week_trend": [
+        "22.2%",
+        "20.6%",
+        "24.5%",
+        "16.4%"
+      ]
+    },
+    {
+      "section": "NBP",
+      "category": "Ops",
+      "label": "NBP Partners Win % Off Panel",
+      "owner_category": "Ops",
+      "total_qtd": null,
+      "avg_qtd": "78.5%",
+      "qtd_goal": "45.0%",
+      "qtd_goal_pct": "174%",
+      "wk_goal": "45.0%",
+      "latest_week": "25-Oct",
+      "latest_value": "70.0%",
+      "weekly_values": {
+        "25-Oct": "70.0%",
+        "18-Oct": "94.4%",
+        "11-Oct": "75.0%",
+        "4-Oct": "75.0%",
+        "27-Sep": "66.7%"
+      },
+      "four_week_trend": [
+        "70.0%",
+        "94.4%",
+        "75.0%",
+        "75.0%"
+      ]
+    },
+    {
+      "section": "NBP",
+      "category": "Ops",
+      "label": "Discount Per NBP Win",
+      "owner_category": "Ops",
+      "total_qtd": null,
+      "avg_qtd": "$1,000",
+      "qtd_goal": "$1,000",
+      "qtd_goal_pct": "100%",
+      "wk_goal": "$1,000",
+      "latest_week": "25-Oct",
+      "latest_value": "$1,000",
+      "weekly_values": {
+        "25-Oct": "$1,000",
+        "18-Oct": "$1,000",
+        "11-Oct": "$1,000",
+        "4-Oct": "$1,000",
+        "27-Sep": "$1,000"
+      },
+      "four_week_trend": [
+        "$1,000",
+        "$1,000",
+        "$1,000",
+        "$1,000"
+      ]
+    },
+    {
+      "section": "M&A",
+      "category": "Corporate Dev.",
+      "label": "M&A Pipeline (Revenue in Millions)",
+      "owner_category": "Corporate Dev.",
+      "total_qtd": null,
+      "avg_qtd": "$63.71",
+      "qtd_goal": null,
+      "qtd_goal_pct": null,
+      "wk_goal": null,
+      "latest_week": "25-Oct",
+      "latest_value": "$63.76",
+      "weekly_values": {
+        "25-Oct": "$63.76",
+        "18-Oct": "$63.76",
+        "11-Oct": "$63.76",
+        "4-Oct": "$63.76",
+        "27-Sep": "$63.51"
+      },
+      "four_week_trend": [
+        "$63.76",
+        "$63.76",
+        "$63.76",
+        "$63.76"
+      ]
+    },
+    {
+      "section": "M&A",
+      "category": "Corporate Dev.",
+      "label": "M&A NDA Sent",
+      "owner_category": "Corporate Dev.",
+      "total_qtd": "1",
+      "avg_qtd": "0.2",
+      "qtd_goal": "3.8",
+      "qtd_goal_pct": "26%",
+      "wk_goal": "0.8",
+      "latest_week": "25-Oct",
+      "latest_value": "0",
+      "weekly_values": {
+        "25-Oct": "0",
+        "18-Oct": "0",
+        "11-Oct": "0",
+        "4-Oct": "0",
+        "27-Sep": "1"
+      },
+      "four_week_trend": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "section": "M&A",
+      "category": "Corporate Dev.",
+      "label": "M&A NDA Signed",
+      "owner_category": "Corporate Dev.",
+      "total_qtd": "3",
+      "avg_qtd": "0.6",
+      "qtd_goal": "3.8",
+      "qtd_goal_pct": "78%",
+      "wk_goal": "0.8",
+      "latest_week": "25-Oct",
+      "latest_value": "0",
+      "weekly_values": {
+        "25-Oct": "0",
+        "18-Oct": "0",
+        "11-Oct": "0",
+        "4-Oct": "2",
+        "27-Sep": "1"
+      },
+      "four_week_trend": [
+        "0",
+        "0",
+        "0",
+        "2"
+      ]
+    },
+    {
+      "section": "M&A",
+      "category": "Corporate Dev.",
+      "label": "M&A LOI Sent",
+      "owner_category": "Corporate Dev.",
+      "total_qtd": "1",
+      "avg_qtd": "0.2",
+      "qtd_goal": "1.9",
+      "qtd_goal_pct": "52%",
+      "wk_goal": "0.4",
+      "latest_week": "25-Oct",
+      "latest_value": "0",
+      "weekly_values": {
+        "25-Oct": "0",
+        "18-Oct": "0",
+        "11-Oct": "0",
+        "4-Oct": "0",
+        "27-Sep": "1"
+      },
+      "four_week_trend": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "section": "M&A",
+      "category": "Corporate Dev.",
+      "label": "M&A LOI Signed",
+      "owner_category": "Corporate Dev.",
+      "total_qtd": "0",
+      "avg_qtd": "0.0",
+      "qtd_goal": "1.2",
+      "qtd_goal_pct": "0%",
+      "wk_goal": "0.2",
+      "latest_week": "25-Oct",
+      "latest_value": "0",
+      "weekly_values": {
+        "25-Oct": "0",
+        "18-Oct": "0",
+        "11-Oct": "0",
+        "4-Oct": "0",
+        "27-Sep": "0"
+      },
+      "four_week_trend": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    }
+  ],
+  "marketplace_sales_scorecard_extras_relevant": [
+    {
+      "source": "MarketPlace Sales Scorecard 2026-10-27",
+      "label": "New Client Order Revenue (Reg Date from Dec 2024, Net of Pass-Thru) / Business Day",
+      "avg_qtd": "$13.01",
+      "qtd_goal": "$12.25",
+      "qtd_goal_pct": "106%",
+      "wk_goal": "$12.25",
+      "weekly_values": {
+        "18-Oct": "$15.68",
+        "11-Oct": "$10.81",
+        "4-Oct": "$12.58",
+        "27-Sep": "$12.96"
+      },
+      "four_week_trend": [
+        "$15.68",
+        "$10.81",
+        "$12.58",
+        "$12.96"
+      ]
+    },
+    {
+      "source": "MarketPlace Sales Scorecard 2026-10-27",
+      "label": "Projected Annual Value of New EL Clients (Thousands)",
+      "total_qtd": "$125",
+      "qtd_goal": "$220",
+      "qtd_goal_pct": "57%",
+      "wk_goal": "$55",
+      "weekly_values": {
+        "18-Oct": "$0",
+        "11-Oct": "$0",
+        "4-Oct": "$0",
+        "27-Sep": "$125"
+      },
+      "note": "Leadership Scorecard uses \"Projected Annual Value of New AMC EL Clients + Upsell\" which was $249 QTD / $275 goal on Nov 3."
+    },
+    {
+      "source": "MarketPlace Sales Scorecard 2026-10-27",
+      "label": "Evaluation \u2013 Realization",
+      "total_qtd": "142%",
+      "qtd_goal": "100%",
+      "qtd_goal_pct": "142%",
+      "weekly_values": {
+        "18-Oct": "142%",
+        "11-Oct": "138%",
+        "4-Oct": "125%",
+        "27-Sep": "114%"
+      },
+      "four_week_trend": [
+        "142%",
+        "138%",
+        "125%",
+        "114%"
+      ],
+      "note": "Non-appraisal evaluation upsell proxy; Environmental Realization is an attachment title, not a body metric row."
+    },
+    {
+      "source": "MarketPlace Sales Scorecard 2026-10-27",
+      "label": "Year-over-Year Net Retention %",
+      "total_qtd": "100.7%",
+      "qtd_goal": "100%",
+      "qtd_goal_pct": "101%",
+      "weekly_values": {
+        "18-Oct": "103%",
+        "11-Oct": "102%",
+        "4-Oct": "101%",
+        "27-Sep": "97%"
+      }
+    }
+  ],
+  "carl_seven_topic_mapping": [
+    {
+      "carl_topic": "churn",
+      "coverage": "partial",
+      "scorecard_metrics": [
+        "MP Client Logo Churn",
+        "Year-over-Year Net Retention %",
+        "# of Clients > $5k with 0 Orders (Closed during or after Dec 2024; in system >28 days) [MarketPlace Sales Scorecard]"
+      ],
+      "gap": "No order-volume drop / at-risk account count / Churn Watch risk tiers. Logo churn and YoY net retention are the closest weekly metrics.",
+      "latest": {
+        "MP Client Logo Churn": {
+          "total_qtd": "9.02%",
+          "goal": "10%",
+          "weeks_25Oct_to_27Sep": [
+            "9.02%",
+            "9.02%",
+            "9.02%",
+            "8.65%",
+            "9.02%"
+          ]
+        },
+        "Year-over-Year Net Retention %": {
+          "total_qtd": "98.1%",
+          "goal": "100%",
+          "weeks": [
+            "89%",
+            "103%",
+            "102%",
+            "101%",
+            "97%"
+          ]
+        }
+      }
+    },
+    {
+      "carl_topic": "new_sales",
+      "coverage": "strong",
+      "scorecard_metrics": [
+        "Projected Annual Value of New AMC EL Clients + Upsell (Thousands)",
+        "AMC Weekly Meetings Held (SDR)",
+        "% of Goal Order Revenue YTD (Closed during or after Dec 2024; assumes 28-day implementation period)",
+        "New Client Order Revenue (Reg Date from Dec 2024, Net of Pass-Thru) / Business Day [MarketPlace Sales]",
+        "SDR Closed Won $ (Thousands) [MarketPlace Sales]",
+        "Augur Closed Won ARR ($000)"
+      ],
+      "gap": "No explicit new-logo count or first-paid-order count on the leadership Scorecard; sales scorecard has more pipeline/meeting detail.",
+      "latest": {
+        "Projected Annual Value of New AMC EL Clients + Upsell (Thousands)": {
+          "total_qtd": "$249",
+          "qtd_goal": "$275",
+          "qtd_goal_pct": "90%",
+          "wk_goal": "$55",
+          "25-Oct": "$124"
+        },
+        "AMC Weekly Meetings Held (SDR)": {
+          "total_qtd": "41",
+          "qtd_goal": "52",
+          "qtd_goal_pct": "78%",
+          "wk_goal": "10",
+          "25-Oct": "8"
+        },
+        "% of Goal Order Revenue YTD ...": {
+          "total_qtd": "167%",
+          "goal": "100%"
+        }
+      }
+    },
+    {
+      "carl_topic": "client_upsell_non_appraisal_revenue",
+      "coverage": "partial",
+      "scorecard_metrics": [
+        "Projected Annual Value of New AMC EL Clients + Upsell (Thousands) [bundles new + upsell]",
+        "Evaluation \u2013 Realization [MarketPlace Sales]",
+        "MarketPlace Enviromental Realization.pdf / MarketPlace Evaluation Realization.pdf / MarketPlace Site Inspection Realization.pdf [attachments]",
+        "Augur Closed Won ARR ($000) / Augur Qualified Pipeline ARR ($000)"
+      ],
+      "gap": "No standalone non-appraisal revenue $ vs $2.5M/$3M target. Upsell is combined with new EL value on the leadership Scorecard. Realization %s are proxies, not dollar P&L."
+    },
+    {
+      "carl_topic": "M&A",
+      "coverage": "strong_funnel_weak_closed_revenue",
+      "scorecard_metrics": [
+        "M&A Pipeline (Revenue in Millions)",
+        "M&A NDA Sent",
+        "M&A NDA Signed",
+        "M&A LOI Sent",
+        "M&A LOI Signed"
+      ],
+      "gap": "No acquired annual revenue closed vs $10M assumption, and no post-close retention of acquired clients.",
+      "latest": {
+        "M&A Pipeline (Revenue in Millions)": {
+          "avg_qtd": "$63.71",
+          "weeks": [
+            "$63.76",
+            "$63.76",
+            "$63.76",
+            "$63.76",
+            "$63.51"
+          ]
+        },
+        "M&A LOI Signed": {
+          "total_qtd": "0",
+          "qtd_goal": "1.2",
+          "qtd_goal_pct": "0%"
+        },
+        "M&A NDA Signed": {
+          "total_qtd": "3",
+          "qtd_goal": "3.8",
+          "qtd_goal_pct": "78%"
+        }
+      }
+    },
+    {
+      "carl_topic": "gross_margin",
+      "coverage": "present_blended_only",
+      "scorecard_metrics": [
+        "Gross Margin (Blended)"
+      ],
+      "gap": "No appraisal vs non-appraisal margin split. Weekly values look rounded; Total QTD 68.1% vs goal 69.5% (98%).",
+      "latest": {
+        "Gross Margin (Blended)": {
+          "total_qtd": "68.1%",
+          "qtd_goal": "69.5%",
+          "qtd_goal_pct": "98%",
+          "wk_goal": "69.5%",
+          "weeks_25Oct_to_27Sep": [
+            "68%",
+            "69%",
+            "64%",
+            "68%",
+            "70%"
+          ]
+        }
+      }
+    },
+    {
+      "carl_topic": "ebitda_margin_long_ridge_35pct",
+      "coverage": "missing",
+      "scorecard_metrics": [],
+      "gap": "EBITDA margin / Adjusted EBITDA / Long Ridge 35% target do not appear on the weekly leadership Scorecard. Closest related: Expense Budget to Actual % (92% AVG QTD) and Gross Margin (Blended). Monthly Budget vs Actual emails from Max cover P&L more deeply but are monthly, not weekly."
+    },
+    {
+      "carl_topic": "cra_vs_regular_appraisers_files_done",
+      "coverage": "missing_as_requested_partial_adjacent",
+      "scorecard_metrics": [
+        "CRR Volume (Team Leads and CRA's)",
+        "QCR Volume"
+      ],
+      "definition_on_scorecard": "CRR Volume (Team Leads and CRA's) = weekly count of collateral risk reviews done by team leads and CRAs (Max confirmed weekly totals, not per BD). QCR Volume = weekly quality-control review count (~20/week; Max said 100-120/month average).",
+      "gap": "No split of appraisal files completed by Collateral Risk Associates (staff) versus regular/fee appraisers. No fee, cost, margin-per-file, or turn-time by CRA vs fee appraiser. Adjacent ops metrics: Commercial/Residential % of Reviews > 5 BD Total Turn, ADJ % of Appraisals Received After Appraiser Due Date, Normalized Combined Staff Utilization.",
+      "latest": {
+        "QCR Volume": {
+          "avg_qtd": "19",
+          "weeks": [
+            "20",
+            "22",
+            "13",
+            "20",
+            "18"
+          ]
+        },
+        "CRR Volume (Team Leads and CRA's)": {
+          "avg_qtd": "6",
+          "weeks": [
+            "6",
+            "10",
+            "9",
+            "3",
+            "1"
+          ]
+        }
+      }
+    }
+  ],
+  "cra_definition": {
+    "present": true,
+    "label": "CRR Volume (Team Leads and CRA's)",
+    "means": "Weekly volume of CRR (collateral risk reviews) performed by team leads and CRAs \u2014 not files completed by CRA vs regular appraisers.",
+    "qcr_label": "QCR Volume",
+    "qcr_means": "Weekly quality control review volume; Max said 100-120/month average so ~20/week is normal.",
+    "files_done_cra_vs_regular_appraisers": "NOT on scorecard"
+  },
+  "owner_note": "The scorecard does not name a person owner per metric. Categories are Revenue, Ops, Fin, Technology, Corporate Dev. Max DiPlotti (Director of FP&A) sends the package before Wednesday L10s."
+}
