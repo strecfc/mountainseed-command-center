@@ -34,7 +34,7 @@ Copy `.env.example` to `.env.local`. Never commit real passwords, Salesforce sec
 | `SF_USERNAME` / `SF_PASSWORD` / `SF_SECURITY_TOKEN` | Optional. Used only when both username and password are set. The token is appended to the password. |
 | `SF_SOQL_JSON` | Optional JSON object of query name to SOQL. Overrides `open_pipeline`, `wins_ytd`, `new_accounts`, `upsell`, `ma_stages`, and `churn_cases`. |
 
-If the Salesforce variables are empty, every Salesforce tile says **Not connected** and the app does not call Salesforce.
+If the Salesforce variables are empty and no snapshot is stored, Salesforce figures say **Not connected** and the app does not call Salesforce. A stored snapshot still displays. The seed includes the pull from 13 Nov 2026, 10:48 AM ET.
 
 ## Run locally
 
@@ -71,7 +71,7 @@ Max DiPlotti's leadership Scorecard is the weekly source.
 - Or enter one week in the form. Existing weeks are updated; older weeks stay, so trends keep their history.
 - Each tile shows the value, the goal, this week, the trailing four scorecard weeks, quarter-to-date pace, the last updated time, and the source.
 
-The seeded week ending is **25 Oct 2026**, from the Scorecard received **3 Nov 2026, 4:22 PM ET**.
+The seeded week ending is **1 Nov 2026**, from the Scorecard received **10 Nov 2026, 4:21 PM ET**, plus the MarketPlace Sales Scorecard received the same morning at **9:43 AM ET**. The four workbooks from that MarketPlace email are in `data/seed/marketplace-2026-11-10/`. The 3 Nov 2026 email remains in the repo as the parser fixture.
 
 ## Monthly budget vs actual
 
@@ -147,7 +147,7 @@ Use a host with managed Postgres. Railway or Render fit a long-running Node serv
 4. Sign in, change anything you do not want left on the seeded admin, and add the rest of the leadership team.
 5. Add Salesforce when the connected app is ready: `SF_LOGIN_URL` (My Domain), `SF_CLIENT_ID`, and `SF_CLIENT_SECRET`. The daily pull uses the OAuth client-credentials grant. Set `SF_USERNAME` and `SF_PASSWORD` only if that org still needs the username-password grant. Use **Admin → Sync now** or wait for the daily job. The default queries are open pipeline, year-to-date wins, new accounts, open existing-business opportunities, M&A opportunities whose record type is `M&As`, and open cases whose subject contains “churn”. Override any of those with `SF_SOQL_JSON`. A failed query is stored on that snapshot and does not block the others.
 
-Seed data is loaded once, the first time the database is empty. Later uploads are not overwritten by the seed.
+The first boot loads targets, the Augur workbook, and the budget parser. Seed version 2 then loads the 10 Nov 2026 scorecards and the 13 Nov 2026 Salesforce snapshot. On a database that already had an earlier seed, that boot replaces the leadership and MarketPlace scorecard rows and adds the snapshot. It does not replace the September 2026 budget, targets, or Augur deals. Later admin uploads are left in place on the next boot.
 
 ## Tests
 

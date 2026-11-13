@@ -9,6 +9,15 @@ function parseNumber(value: string | null | undefined): number | null {
   return Number.isFinite(n) ? n : null;
 }
 
+function formatPlainDollars(value: number): string {
+  if (value === 0) return "$0";
+  const sign = value < 0 ? "-" : "";
+  const abs = Math.abs(value);
+  if (abs >= 1_000_000) return `${sign}$${(abs / 1_000_000).toFixed(abs >= 10_000_000 ? 1 : 2)}M`;
+  if (abs >= 1000) return `${sign}$${Math.round(abs / 1000)}k`;
+  return `${sign}$${Math.round(abs)}`;
+}
+
 function compact(value: string): string {
   const n = parseNumber(value);
   if (n == null) return value;
@@ -89,10 +98,16 @@ export function HomeBoard({ model, recentChurn = [] }: { model: DashboardModel; 
       kicker: "New sales",
       value: withUnit(newSales, newSales?.headline),
       detail: newSales?.headlineGoal ? `vs ${withUnit(newSales, newSales.headlineGoal)} QTD goal` : "vs plan",
-      extra: realization && realization.headline !== "Awaiting data"
-        ? `Client upsell: awaiting Salesforce · Eval realization ${realization.headline} vs ${realization.headlineGoal || "100%"}`
-        : "Client upsell: awaiting Salesforce",
-      period: "New EL value · MarketPlace Sales Scorecard · through 18 Oct 2026",
+      extra: `${
+        model.salesforce.state === "ok" || model.salesforce.state === "partial"
+          ? `Client upsell: ${model.salesforce.upsellWonYtd == null ? "$0" : formatPlainDollars(model.salesforce.upsellWonYtd)} won YTD`
+          : "Client upsell: awaiting Salesforce"
+      }${
+        realization && realization.headline !== "Awaiting data"
+          ? ` · Eval realization ${realization.headline} vs ${realization.headlineGoal || "100%"}`
+          : ""
+      }`,
+      period: `New EL value · MarketPlace Sales Scorecard · through ${model.featuredLabel}`,
       status: newSales?.overall || "none",
       names: [],
     },

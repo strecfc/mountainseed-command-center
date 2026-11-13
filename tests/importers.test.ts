@@ -53,6 +53,30 @@ describe("leadership scorecard importer", () => {
   });
 });
 
+describe("10 Nov 2026 scorecards", () => {
+  it("reads the leadership week ending 1 Nov and the MarketPlace new-sales row", () => {
+    const leadership = parseScorecardText(fs.readFileSync(path.join(seedDir, "scorecard-body-2026-11-10.txt"), "utf8"));
+    const marketplace = parseScorecardText(fs.readFileSync(path.join(seedDir, "marketplace-sales-2026-11-10.txt"), "utf8"));
+    expect(leadership.receivedAt).toBe("2026-11-10T21:21:58Z");
+    expect(leadership.weeks[0]).toBe("2026-11-01");
+    const margin = leadership.metrics.find((metric) => metric.label === "Gross Margin (Blended)");
+    expect(margin?.totalQtd).toBe("68.9%");
+    expect(margin?.weekly["2026-11-01"]).toBe("73%");
+    const retention = leadership.metrics.find((metric) => metric.label === "Year-over-Year Net Retention %");
+    expect(retention?.weekly["2026-11-01"]).toBe("120%");
+    expect(retention?.totalQtd).toBe("101.8%");
+    const churn = leadership.metrics.find((metric) => metric.label === "MP Client Logo Churn");
+    expect(churn?.totalQtd).toBe("9.02%");
+    const newEl = marketplace.metrics.find((metric) => metric.label === "Projected Annual Value of New EL Clients (Thousands)");
+    expect(newEl?.totalQtd).toBe("$244");
+    expect(newEl?.qtdGoal).toBe("$330");
+    const realization = marketplace.metrics.find((metric) => metric.label === "Evaluation – Realization");
+    expect(realization?.category.replace(/^MP\s*-\s*/i, "")).toBe("Revenue");
+    expect(realization?.totalQtd).toBe("152%");
+    expect(realization?.qtdGoal).toBe("100%");
+  });
+});
+
 describe("marketplace notes importer", () => {
   const metrics = parseMarketplaceNotes(fs.readFileSync(path.join(seedDir, "marketplace-notes.txt"), "utf8"));
 

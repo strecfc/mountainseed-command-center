@@ -18,7 +18,7 @@ export type ParsedScorecard = {
   receivedAt: string | null;
 };
 
-const CATEGORY = /^(Revenue|Ops|Fin|Technology|Corporate Dev\.?|Operations|Finance)$/i;
+const CATEGORY = /^(?:MP\s*-\s*)?(Revenue|Ops|Fin|Technology|Corporate Dev\.?|Operations|Finance)$/i;
 
 export function parseScorecardText(text: string, year = 2026): ParsedScorecard {
   const weekHeader = text.match(/Week columns:\s*(.+)/i);
@@ -71,7 +71,7 @@ export function parseScorecardText(text: string, year = 2026): ParsedScorecard {
 }
 
 function normalizeCategory(value: string): string {
-  const trimmed = value.trim();
+  const trimmed = value.trim().replace(/^MP\s*-\s*/i, "");
   if (/^corporate dev/i.test(trimmed)) return "Corporate Dev.";
   if (/^ops/i.test(trimmed)) return "Ops";
   if (/^fin/i.test(trimmed)) return "Fin";

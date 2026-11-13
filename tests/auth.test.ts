@@ -121,7 +121,7 @@ describe("signed-in access and seed", () => {
     const margin = body.heroes.find((hero: { id: string }) => hero.id === "gross-margin");
     const ebitda = body.heroes.find((hero: { id: string }) => hero.id === "ebitda");
     const revenue = body.heroes.find((hero: { id: string }) => hero.id === "revenue");
-    expect(margin.headline).toBe("68.1%");
+    expect(margin.headline).toBe("68.9%");
     expect(margin.overall).toBe("yellow");
     expect(margin.lines.some((line: { label: string; value: string }) => line.label.includes("30 Sep 2026") && line.value.startsWith("68.1%"))).toBe(true);
     expect(ebitda.headline).toBe("23.3%");
@@ -137,9 +137,22 @@ describe("signed-in access and seed", () => {
     expect(churn.overall).toBe("green");
     expect(churn.windows[0].value).toBe("9.02%");
     const retention = body.defense.find((item: { label: string }) => item.label === "Year-over-Year Net Retention %");
-    expect(retention.windows[0].value).toBe("89%");
-    expect(retention.overall).toBe("red");
-    expect(body.salesforce.state).toBe("not_connected");
+    expect(retention.windows[0].value).toBe("120%");
+    expect(retention.overall).toBe("green");
+    expect(body.salesforce.state).toBe("ok");
+    expect(body.salesforce.upsellWonYtd).toBe(0);
+    expect(body.featuredLabel).toBe("1 Nov 2026");
+    const newEl = body.upsell.find((item: { label: string }) => item.label === "Projected Annual Value of New EL Clients (Thousands)");
+    expect(newEl.headline).toBe("$244");
+    expect(newEl.headlineGoal).toBe("$330");
+    expect(body.counts).toMatchObject({ onTrack: 8, watch: 2, offTrack: 9 });
+    const { offTrackReadouts } = await import("@/components/HomeBoard");
+    const off = offTrackReadouts(body);
+    expect(off.map((item: { label: string }) => item.label).slice(0, 3)).toEqual([
+      "Projected Annual Value of New AMC EL Clients + Upsell (Thousands)",
+      "SDR Closed Won $ (Thousands)",
+      "Projected Annual Value of New EL Clients (Thousands)",
+    ]);
     expect(body.newSales.find((item: { label: string }) => item.label === "Pipeline coverage").headline).toBe("Awaiting data");
     expect(body.augur.deals.length).toBeGreaterThan(10);
   });

@@ -182,6 +182,14 @@ export async function runDailyPull(): Promise<{ status: string; message: string 
   return result;
 }
 
+function moneyTotal(record: Record<string, unknown> | undefined): number | null {
+  if (!record) return null;
+  const total = num(record, "total");
+  if (total != null) return total;
+  if (num(record, "n") === 0) return 0;
+  return null;
+}
+
 function num(record: Record<string, unknown> | undefined, key: string): number | null {
   if (!record) return null;
   const value = record[key];
@@ -232,7 +240,6 @@ export async function salesforceView(): Promise<SalesforceView> {
     maStages: null,
     queryErrors: [],
   };
-  if (!salesforceConfig()) return empty;
   await ready();
   const rows = await query<{ pulled_at: string; status: string; message: string | null; payload: string | null }>(
     "SELECT pulled_at, status, message, payload FROM salesforce_snapshots ORDER BY pulled_at DESC LIMIT 1",
@@ -262,10 +269,10 @@ export async function salesforceView(): Promise<SalesforceView> {
     newClients: num(first("new_accounts"), "n"),
     upsellCount: num(first("upsell"), "n"),
     upsellAmount: num(first("upsell"), "total"),
-    newSalesWonYtd: num(first("new_sales_won_ytd"), "total"),
-    newSalesWonMonth: num(first("new_sales_won_month"), "total"),
-    upsellWonYtd: num(first("upsell_won_ytd"), "total"),
-    upsellWonMonth: num(first("upsell_won_month"), "total"),
+    newSalesWonYtd: moneyTotal(first("new_sales_won_ytd")),
+    newSalesWonMonth: moneyTotal(first("new_sales_won_month")),
+    upsellWonYtd: moneyTotal(first("upsell_won_ytd")),
+    upsellWonMonth: moneyTotal(first("upsell_won_month")),
     churnCases: num(first("churn_cases"), "n"),
     maStages: stages,
     queryErrors: errors,
